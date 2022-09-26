@@ -3,42 +3,39 @@ let hour, min, sec, max, timeToAdd; // hora, minutos, segundos, tiempo a añadir
 
 function checkNumber(num) {
   while (isNaN(num) || num < 0) {// mientras no sea número o sea menor de 0 
-    num = prompt(`Introduzca un número entero positivo`);
-    // assert
-    alert(`chequeando que se ha introducido bien el número por el prompt : ${num}`)
+    num = parseInt( prompt(`Introduzca un número entero positivo`) )
   }
   timeToAdd = Math.trunc(num/max) 
-  // assert
-  alert(`chequeando que el tiempo a añadir a los minutos es correcto : ${timeToAdd}`)
-
-  //assert
-  alert(`chequeando que el resultado que va a devolver el chequeador es correcto : ${num%max}`)
-
   return num % max
 }
 
-function setSecond(seconds) {
+function setSecond() {
   timeToAdd = 0
   max = 60;
-  sec = prompt(`Introduzca los segundos`);
+  sec = parseInt( prompt(`Introduzca los segundos`) )
   sec = checkNumber(sec);
-  alert(sec)
 }
 
-function setMinut(minutes, minutesAdded) {
+function setMinut() {
   max = 60;
-  min = prompt(`Introduzca los minutos`);
-   // assert
-   alert(`min =  ${min}`)
-   // assert
-   alert(`timeToAdd =  ${timeToAdd}`)
-  min =+ timeToAdd
-  // assert
-  alert(`min =  ${min}`)
+  min = parseInt( prompt(`Introduzca los minutos`) );
+  min = min + timeToAdd
   min = checkNumber(min);
-  // assert
-  alert(`min =  ${min}`)
 }
+
+function setHour() {
+  max = 24
+  hour = parseInt( prompt(`Introduzca las horas`) )
+  hour = hour + timeToAdd
+  hour = checkNumber(hour)
+}
+
+function showTime() {
+  alert(`Son las ${hour}:${min}:${sec} `)
+}
+
 
 setSecond()
 setMinut()
+setHour()
+showTime()
