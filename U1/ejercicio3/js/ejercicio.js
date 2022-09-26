@@ -1,5 +1,5 @@
 //Dada una hora en horas, minutos y segundos, indicar qué hora será pasado un segundo.
-let hour, min, sec, timeToAdd; // hora, minutos, segundos, tiempo a añadir
+let hour, min, sec, max, timeToAdd; // hora, minutos, segundos, tiempo a añadir
 
 function checkNumber(num) {
   while (isNaN(num) || num < 0) {// mientras no sea número o sea menor de 0 
@@ -28,9 +28,16 @@ function setSecond(seconds) {
 function setMinut(minutes, minutesAdded) {
   max = 60;
   min = prompt(`Introduzca los minutos`);
+   // assert
+   alert(`min =  ${min}`)
+   // assert
+   alert(`timeToAdd =  ${timeToAdd}`)
   min =+ timeToAdd
+  // assert
+  alert(`min =  ${min}`)
   min = checkNumber(min);
-  alert(min)
+  // assert
+  alert(`min =  ${min}`)
 }
 
 setSecond()
