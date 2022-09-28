@@ -5,3 +5,29 @@ son correctos. Si no lo son, solicitarlos de nuevo, si lo son, mostrar el result
 Realizar con Swich
  */
 'use strict';
+let num1, num2, op
+num1 = parseInt(prompt("Introduzca un número"))
+num2 = parseInt(prompt("Introduzca un número"))
+
+do {
+    op = (prompt("Introduzca un operador lógico"))
+} while ( !( op==='+' || op==='-' || op==='*' || op==='/' ) ) // repite hasta que no introduzca un operador válido
+
+switch (op) {
+    case '+':
+        console.log(num1+num2);
+        break;
+    case '-':
+        console.log(num1-num2);
+        break;
+
+    case '*':
+        console.log(num1*num2);
+        break;
+
+    case '/':
+        console.log(num1/num2);
+        break;
+    default:
+        break;
+}
