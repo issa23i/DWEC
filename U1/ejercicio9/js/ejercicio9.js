@@ -7,11 +7,12 @@ Realizar con Swich
 'use strict';
 let num1, num2, op
 num1 = parseInt(prompt("Introduzca un número"))
-num2 = parseInt(prompt("Introduzca un número"))
 
 do {
     op = (prompt("Introduzca un operador lógico"))
 } while ( !( op==='+' || op==='-' || op==='*' || op==='/' ) ) // repite hasta que no introduzca un operador válido
+
+num2 = parseInt(prompt("Introduzca un número"))
 
 switch (op) {
     case '+':
@@ -26,8 +27,14 @@ switch (op) {
         break;
 
     case '/':
-        console.log(num1/num2);
+        if(num2===0){
+           console.log("El dividendo no puede ser 0"); 
+        } else {
+            console.log(num1/num2);
+        }
         break;
+
     default:
+        console.log("Hubo un error");
         break;
 }
