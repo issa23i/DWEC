@@ -1,6 +1,5 @@
 .tmp.drivedownload/
 .tmp.driveupload/
 Classroom/
-*.gdoc
-Notas - Desarrollo Web Entorno Cliente - Javier.gdoc
-Notas - Desarrollo Web Entorno Cliente - Mario.gdoc
+.docx
+.gdoc
