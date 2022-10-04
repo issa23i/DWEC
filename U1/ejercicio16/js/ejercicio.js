@@ -14,7 +14,7 @@ character = prompt('Introduzca un caracter').charAt(0)
 number = parseInt(prompt('Introduzca un número'))
 word = character.repeat(number) // n veces character
 
-const line = (w) => { 
+const line = w => { 
     if (w.length === 0) {
         return
     }
