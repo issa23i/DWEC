@@ -3,8 +3,7 @@
 un sentido que en otro), pe. miFuncion(2002) devolverá true.
  */
 const capicua = str => {
-    return str.trim().split('').reverse().toString().replaceAll(',', '') === str ? true : false
-    
+    return str.trim().split('').reverse().toString().replaceAll(',', '') === str ? true : false  
 }
 
 console.log(capicua("hola_aloh"));

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * 27. En un vector de números, indicar:
  */
@@ -33,6 +34,25 @@ console.log(`El producto de los números positivos del vector es: \n
     ${positives}`);
 
 // e. Cuántos son primos y cuáles son.
+
+
+//////////////////////
+const isPrime = (n) => {
+    n = Math.abs(n)
+    let isPrime = true
+    
+
+
+    // for (let i = 2; i < n; i++) {
+    //   if (n%i==0) {isPrime = false}
+    // }
+    if (n===2) {isPrime = false}
+    (isPrime) ?  primes.push(n): notPrimes.push(n) 
+}
+//////////////////////////
+
+
+
 let primes = []
 let notPrimes = []
 numbers.forEach(element => {
@@ -57,12 +77,14 @@ for (let i = 0; i < numbers.length; i++) {
 console.log(`Los números que ocupan las posiciones pares en el Array son: \n
         ${parPlace}`);
 
-// g. El número mayor.
-let major = Math.max.apply(null, numbers) 
+// g. El número mayor. // utilizar sort
+// let major = Math.max.apply(null, numbers) 
+let major = numbers.reduce((x,y) => x>y?x:y)
 console.log(`El número mayor del array es : ${major}`);
 
 // h. El número menor.
-let minor = Math.min.apply(null, numbers)
+// let minor = Math.min.apply(null, numbers)
+let minor = numbers.reduce( (x,y) => x<y ? x : y )
 console.log(`El número menor del array es : ${minor}`);
 
 // i. La media de todos los números, los números que están por encima y los que están por debajo.
