@@ -37,32 +37,19 @@ console.log(`El producto de los números positivos del vector es: \n
 
 
 //////////////////////
-const isPrime = (n) => {
-    n = Math.abs(n)
-    let isPrime = true
-    
-
-
-    // for (let i = 2; i < n; i++) {
-    //   if (n%i==0) {isPrime = false}
-    // }
-    if (n===2) {isPrime = false}
-    (isPrime) ?  primes.push(n): notPrimes.push(n) 
-}
-//////////////////////////
-
-
-
-let primes = []
-let notPrimes = []
-numbers.forEach(element => {
-    let isPrime = true
-    for (let i = 2; i < Math.abs(element); i++) {
-      if (element%i==0) {isPrime = false}
+const isPrime = n => {
+    for (let i = 2; i < Math.abs(n); i++) {
+        if (n%i===0) {
+            return false
+        } else {
+            continue
+        }
     }
-    if (element===2) {isPrime = false}
-    (isPrime) ?  primes.push(element): notPrimes.push(element)  
-})
+    return true
+}
+let primes = numbers.filter(n => isPrime(n)) // usa la función isPrime para filtrar
+let notPrimes = numbers.filter(n => !(isPrime(n))) // filtra los numeros no incluidos en primes
+
 console.log(`Los números primos del vector son: \n
     ${primes} \n
 Los números que no son primos en el vector son : \n

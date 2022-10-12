@@ -14,8 +14,8 @@ console.log(`La cadena más larga del array es : ${strings.sort( (a,b) => b.leng
  * @returns el largo de la cadena, si es nulo retorna 0
  */
 let regEx = /a+/g
-const getAs = (str,) => {
-    let matches = str.match(regEx)
+const getAs = (str,rgEx) => {
+    let matches = str.match(rgEx)
     if (matches == null) {
          return 0 
     } else {
@@ -24,17 +24,13 @@ const getAs = (str,) => {
 }
 strings.sort( (a,b) => getAs(b) - getAs(a)) // ordena por números de a que encuentra en cada cadena
 
-console.log(`La cadena con más "a" es : ${strings[0]} \n ${strings}`);
+console.log(`La cadena con más "a" es : ${strings[0]}`); // devuelve la primera posición del vector
 
 // d. Cuántas cadenas hay que tengan la ‘b’ y cuáles son.
 regEx = /b+/g
-let bMatchs = (str, regEx) => str.match(regEx)
-let arrayResults = []
-strings.forEach(str => {
-    if (bMatchs(str,regEx)!=null){
-        arrayResults.push(str)
-    }
-} )
+let regxMatchs = (str, regEx) => str.match(regEx)
+let arrayResults = strings.filter(x => regxMatchs(x,regEx))
+
 
 console.log(`Hay ${arrayResults.length} coincidencias encontradas en las cadenas : \n ${arrayResults.join()}`);
 
