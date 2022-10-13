@@ -79,7 +79,8 @@ Lista ordenada de mayor a menor: \n ${orderedListReverse}`);
 
 
 // k. Buscar un valor introducido por el usuario e indicar si existe o no.
-let userValue = prompt(`Introduzca un número a buscar: `)
+//let userValue = prompt(`Introduzca un número a buscar: `)
+let userValue = 56
 let encontrado = numbers.find(a => a == userValue)
 encontrado ? console.log(`¡El número ${userValue} ha sido encontrado!`) : console.log(`El número ${userValue} no ha sido encontrado`);
 
