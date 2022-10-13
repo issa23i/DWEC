@@ -34,9 +34,6 @@ console.log(`El producto de los números positivos del vector es: \n
     ${positives}`);
 
 // e. Cuántos son primos y cuáles son.
-
-
-//////////////////////
 const isPrime = n => {
     for (let i = 2; i < Math.abs(n); i++) {
         if (n%i===0) {
@@ -56,13 +53,9 @@ Los números que no son primos en el vector son : \n
     ${notPrimes}`);
 
 // f. Los números que ocupan las posiciones pares del vector.
-let parPlace = []
-for (let i = 0; i < numbers.length; i++) {
-    if (i%2===0) {parPlace.push(numbers[i])}
-        
-}
+const pares = numbers.filter(n => n%2===0)
 console.log(`Los números que ocupan las posiciones pares en el Array son: \n
-        ${parPlace}`);
+        ${pares}`);
 
 // g. El número mayor. // utilizar sort
 // let major = Math.max.apply(null, numbers) 
