@@ -36,11 +36,7 @@ console.log(`El producto de los números positivos del vector es: \n
 // e. Cuántos son primos y cuáles son.
 const isPrime = n => {
     for (let i = 2; i < Math.abs(n); i++) {
-        if (n%i===0) {
-            return false
-        } else {
-            continue
-        }
+        if (n%i===0) return false
     }
     return true
 }
@@ -59,7 +55,7 @@ console.log(`Los números que ocupan las posiciones pares en el Array son: \n
 
 // g. El número mayor. // utilizar sort
 // let major = Math.max.apply(null, numbers) 
-let major = numbers.reduce((x,y) => x>y?x:y)
+let major = numbers.reduce( (x,y) => x>y ? x : y )
 console.log(`El número mayor del array es : ${major}`);
 
 // h. El número menor.
@@ -80,7 +76,9 @@ Lista ordenada de mayor a menor: \n ${orderedListReverse}`);
 
 // k. Buscar un valor introducido por el usuario e indicar si existe o no.
 //let userValue = prompt(`Introduzca un número a buscar: `)
+ 
 let userValue = 56
 let encontrado = numbers.find(a => a == userValue)
+e
 encontrado ? console.log(`¡El número ${userValue} ha sido encontrado!`) : console.log(`El número ${userValue} no ha sido encontrado`);
 
