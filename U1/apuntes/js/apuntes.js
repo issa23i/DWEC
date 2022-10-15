@@ -19,9 +19,9 @@ do{
 
 // Arrow Functions
 //Expresión de la función
-const sumar = function (n1,n2) {
-    return n1+n2;
-    }
+//const sumar = function (n1,n2) {
+//    return n1+n2;
+//    }
     /*Arrow function equivalente: se elimina la palabra reservada function y fue
     ra del parántesis de los parámetros pones la flecha =>
     además las {} son opcionales si solo tienes una línea y el return es
@@ -42,10 +42,10 @@ const sumar = function (n1,n2) {
     además las {} son opcionales si solo tienes una línea y puedes quitar los pa
     réntesis () si sólo tienes un parámetro Si no hubiera parámetros hay que
     poner los paréntesis ()*/
-    const aprendiendo = tecnologia => console.log(`Aprendiendo ${tecnologia}`)
+    //const aprendiendo = tecnologia => console.log(`Aprendiendo ${tecnologia}`)
     aprendiendo('JavaScript');
     
-    Ejemplo:
+    //Ejemplo:
     let nombres = ['Pedro', 'Juan', 'Elena'];
     console.log(nombres.map(nom => nom.length));
     // Muestra el array con los valores [5, 4, 5]
