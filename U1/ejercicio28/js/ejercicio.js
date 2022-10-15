@@ -1,3 +1,4 @@
+'use strict';
 /**
 28. En un vector de cadenas, indicar:
 **/
@@ -8,39 +9,17 @@ console.log(`La cadena más corta del array es : ${strings.reduce( (a,b) => a.le
 
 // b. La cadena más larga.
 console.log(`La cadena más larga del array es : ${strings.reduce( (a,b) => a.length<b.length ? b : a )}`);
+
 // c. La cadena con más letras ‘a’.
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// esta igual que la anterior !!!!!!!!!!!!!
-
-
-// let nuevoArray = palabra1.split('').filter( l => l==='a')
-// console.log(nuevoArray); // 'aaaaa'
-// console.log(nuevoArray.length); // 5
-// console.log(`La cadena con más "a" es : ${strings.reduce( (strA, strB) = (strA.split('').filter(c => c==='a')).length > (strB.split('').filter(c => c==='a')).length )}`)
-
-// aquí match tiene que usarse en un string, hacer iteracion
-const getAs = (str,rgEx) => {
-    let matches = str.toString().match(rgEx)
-
-    if (matches == null) {
-         return 0 
-    } else {
-        return matches.length
-    }
-}
-
-strResult = strings.reduce ( (a,b) => getAs(a,regEx) - getAs(b,regEx))
-console.log(`La cadena con más "a" es : ${strResult}`); // devuelve la primera posición del vector
+let regEx = /a+/g
+console.log(`La cadena con más "a" es : ${strings.reduce( (strA, strB) => (strA.split('').filter(c => c==='a')).length > (strB.split('').filter(c => c==='a')).length ? strA : strB)}`)
 
 // d. Cuántas cadenas hay que tengan la ‘b’ y cuáles son.
 
-///// este con reduce
 regEx = /b+/g
 let regxMatchs = (str, regEx) => str.match(regEx)
 let arrayResults = strings.filter(x => regxMatchs(x,regEx))
 
-
 console.log(`Hay ${arrayResults.length} coincidencias encontradas en las cadenas : \n ${arrayResults.join()}`);
 
-// let bsArray = Array.cuantasB.apply(null,strings)
 
