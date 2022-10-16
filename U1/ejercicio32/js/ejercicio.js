@@ -9,9 +9,9 @@ const vowelsCounter = (str) => {
 }
 
 const consonantsCounter = (str) => {
-    let reges = new RegExp(/[^\W]/gi)
+    let reges = new RegExp(/\W/g)
     // largo de la cadena - vocales - otros caracteres
-    return str.length - vowelsCounter(str) - Array.from((str).matchAll(/\W/g)).length
+    return str.length - vowelsCounter(str) - Array.from((str).matchAll(reges)).length
 }
 
 
