@@ -14,11 +14,10 @@ const consonantsCounter = (str) => {
     return str.length - vowelsCounter(str) - Array.from((str).matchAll(reges)).length
 }
 
+const vowelsAndConsonantsCouter = (str) => {
+    let result = {vocales: vowelsCounter(str), consonantes: consonantsCounter(str)}
+    return result
+}
 
 let str = 'Hola Mundo'
-console.log(`La palabra ${str} tiene ${vowelsCounter(str)} vocales`);
-console.log(`La palabra ${str} tiene ${consonantsCounter(str)} consonantes`);
-
-
-
-
+console.log(`La palabra ${str} tiene ${vowelsAndConsonantsCouter(str)[vocales]} vocales y `);

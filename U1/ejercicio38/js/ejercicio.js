@@ -7,8 +7,8 @@ const orderedArrays = array => {
     // para que no se modifique el array pasado por parametro dos veces
     let asc = [ ...array].sort( (a,b) => a -b)
     let desc = [ ...array].sort( (a,b) => b -a)
-    console.log(`asc: ${asc}, desc: ${desc}`);
+    return {ascendente: asc, descendente: desc}
 }
 
 const nums = [7,5,7,8,6]
-orderedArrays(nums)
+console.log(orderedArrays(nums)); 

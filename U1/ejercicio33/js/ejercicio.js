@@ -5,5 +5,5 @@
 // ¡ o ¿
 let rg = new RegExp(/^([^0-9]\w)+ {1}([^0-9]\w)+$/) // 
 const validateName = (str) => rg.test(str)
-let str = 'Isabel Pastor'
+let str = 'Isabel Pérez'
 console.log(`El nombre ${str} es ${validateName(str)}`);

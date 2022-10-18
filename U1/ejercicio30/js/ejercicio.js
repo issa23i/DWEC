@@ -2,8 +2,15 @@
 
 // 30. Programa una función para saber la edad de una persona, sabiendo la fecha de nacimiento.
 
-let birthday = new Date(2015,5,22)
-
-const yearsOld = (b) =>  new Date().getFullYear() - b.getFullYear()
-
-console.log(yearsOld(birthday));
+const yearsOld = (y,m,d) =>  {
+    let today = new Date()
+    let birthday = new Date(y,m,d)
+    let year = today.getFullYear() - Math.abs(birthday.getFullYear())
+    if(d>today.getDay && m==today.getMonth) {
+        year--;
+    } else if (m>today.getMonth) {
+        year--;
+    }
+    return year
+}
+console.log(yearsOld(1975,3,6));

@@ -5,7 +5,7 @@
 const maxMin = array =>  {
     let min = array.reduce((n,m) => n<m ? n : m)
     let max = array.reduce((n,m) => n>m ? n : m)
-    return [min,max]
+    return {nenor: min, mayor: max}
 }
 const array = [44, 15, -8, 10, -6]
 console.log(maxMin(array));
