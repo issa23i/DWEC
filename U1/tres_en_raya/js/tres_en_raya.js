@@ -59,6 +59,9 @@ const freeCells = (matriz, empty) => {
  * @returns boolean
  */
 const checkIsEmpty = (matriz, move, empty) => {
+    ////// control /////////////////////////////////////////////////////////////////////////
+    matriz[move["fila"]][move["columna"]] === empty ? console.log('truej') : console.log('faklse');
+    ///////// fin de control ////////////////////////////////////////////////////////////
     matriz[move["fila"]][move["columna"]] === empty ? true : false
 }
 
@@ -90,7 +93,7 @@ const run = () => {
             let movement
             do{
                 movement = newMovement(turno)
-                if (! checkIsEmpty(matriz,movement,empty)) { console.log(`celda ocupada, vuelva a intentarlo`);}
+                if (! (checkIsEmpty(matriz,movement,empty)) ) { console.log(`celda ocupada, vuelva a intentarlo`);}
 
             } while ( ! (checkIsEmpty(matriz,movement,empty)) ) // repetir hasta encontrar una celda vacía
             
