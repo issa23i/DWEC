@@ -90,6 +90,13 @@ const run = () => {
             let movement = newMovement(turno)
             let isEmpty = checkIsEmpty(matriz,movement,empty)
             // comprueba que esa celta está vacía, si no sigue pidiendo
+
+
+        /////////////////////////////  ¡¡¡¡¡VARNING!!!!!  ////////////////////////////////////
+            //////////////////////////////  ERROR  ////////////////////////////////////
+            /// SI PONGO EL SIGUIENTE WHIELE COMO NEGACIÓN !ISEMPTY, ENTRA EN UN BUCLE INFINITO ////
+            //////////////////////////////  ERROR  ////////////////////////////////////
+
             while ( isEmpty ){ // mientras devuelva false, repetir hasta encontrar una celda vacía
                 console.log(`celda ocupada, vuelva a intentarlo`);
                 movement = newMovement(turno)
