@@ -48,7 +48,6 @@ const freeCells = (matriz, empty) => {
     let cellFree = false
     for (const i of matriz) {
         matriz.map(i => i.map (j => { if (j === empty) cellFree = true}))
-        console.log(cellFree);
     }
     return cellFree
 }
@@ -59,9 +58,13 @@ const freeCells = (matriz, empty) => {
  * @returns boolean
  */
 const checkIsEmpty = (matriz, move, empty) => {
-    ////// control /////////////////////////////////////////////////////////////////////////
-    matriz[move["fila"]][move["columna"]] === empty ? console.log('truej') : console.log('faklse');
-    ///////// fin de control ////////////////////////////////////////////////////////////
+    ////////*********************** comprobación **************** */
+    console.log('va a devolver');
+    console.log(matriz[move["fila"]][move["columna"]] === empty);
+    console.log('verdad verdadera porque está vacía');
+    //////////////////////////////////////////////////////////////////////
+
+
     matriz[move["fila"]][move["columna"]] === empty ? true : false
 }
 
@@ -84,25 +87,31 @@ const run = () => {
     let matriz = [...Array(3)].map(() => Array(3).fill(empty)) // se crea y rellena de celdas vacías cell[0]='empty'
     let turno = player[1] // jugador 2 (cambia a jugador 1 en la primera iteración)
     
-    while (isTresEnRaya(matriz, empty) ===' ') {  
+    while (isTresEnRaya(matriz, empty) === ' ') {  
         
         if (freeCells(matriz, empty)){ // comprobar que aún quedan huecos vacíos
 
             // cambiar de jugador
             turno === player[0] ? turno = player[1] : turno = player[0]
-            let movement
-            do{
+            // pide movimiento al jugador que tiene el turno
+            let movement = newMovement(turno)
+            let isEmpty = checkIsEmpty(matriz,movement,empty)
+            // comprueba que esa celta está vacía, si no sigue pidiendo
+            while ( isEmpty ){ // mientras devuelva false, repetir hasta encontrar una celda vacía
+                console.log(`celda ocupada, vuelva a intentarlo`);
                 movement = newMovement(turno)
-                if (! (checkIsEmpty(matriz,movement,empty)) ) { console.log(`celda ocupada, vuelva a intentarlo`);}
+            }
 
-            } while ( ! (checkIsEmpty(matriz,movement,empty)) ) // repetir hasta encontrar una celda vacía
-            
             // pone la ficha del jugador que tiene el turno
-            matriz[movement["fila"][movement["columna"]] = turno]
+            matriz[movement["fila"]][movement["columna"]] = turno
+            /******//////////////////      comprobación ///////////////////////////// */
+            console.log(`el jugador ${turno} a puesto la ficha ${movement["fila"]} ${movement["columna"]}`);
+            /**////////////////////////////////////////////////////////////////////// */
         } else { 
             console.log(`El tablero está lleno y no se ha hecho tres en raya, empate`);
             return
         }
+        
     }
     console.log(`¡¡¡ Enhorabuena ${turno}, has ganado !!!`);
 }
