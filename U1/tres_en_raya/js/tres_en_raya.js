@@ -58,13 +58,6 @@ const freeCells = (matriz, empty) => {
  * @returns boolean
  */
 const checkIsEmpty = (matriz, move, empty) => {
-    ////////*********************** comprobación **************** */
-    console.log('va a devolver');
-    console.log(matriz[move["fila"]][move["columna"]] === empty);
-    console.log('verdad verdadera porque está vacía');
-    //////////////////////////////////////////////////////////////////////
-
-
     matriz[move["fila"]][move["columna"]] === empty ? true : false
 }
 
@@ -105,7 +98,7 @@ const run = () => {
             // pone la ficha del jugador que tiene el turno
             matriz[movement["fila"]][movement["columna"]] = turno
             /******//////////////////      comprobación ///////////////////////////// */
-            console.log(`el jugador ${turno} a puesto la ficha ${movement["fila"]} ${movement["columna"]}`);
+            console.log(`el jugador ${turno} a puesto la ficha (${movement["fila"]},${movement["columna"]})`);
             /**////////////////////////////////////////////////////////////////////// */
         } else { 
             console.log(`El tablero está lleno y no se ha hecho tres en raya, empate`);
