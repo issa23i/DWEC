@@ -47,9 +47,8 @@ const isTresEnRaya = (matriz, empty) => {
 const freeCells = (matriz, empty) => {
     let cellFree = false
     for (const i of matriz) {
-        for (const j of i) {
-            cellFree = matriz[i][j] === empty
-        }
+        matriz.map(i => i.map (j => { if (j === empty) cellFree = true}))
+        console.log(cellFree);
     }
     return cellFree
 }
@@ -60,7 +59,7 @@ const freeCells = (matriz, empty) => {
  * @returns boolean
  */
 const checkIsEmpty = (matriz, move, empty) => {
-    matriz[move["fila"]][move["columna"]]===empty ? true : false
+    matriz[move["fila"]][move["columna"]] === empty ? true : false
 }
 
 /**
@@ -83,7 +82,9 @@ const run = () => {
     let turno = player[1] // jugador 2 (cambia a jugador 1 en la primera iteración)
     
     while (isTresEnRaya(matriz, empty) ===' ') {  
+        
         if (freeCells(matriz, empty)){ // comprobar que aún quedan huecos vacíos
+
             // cambiar de jugador
             turno === player[0] ? turno = player[1] : turno = player[0]
             let movement
