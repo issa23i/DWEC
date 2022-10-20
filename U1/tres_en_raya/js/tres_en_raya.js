@@ -1,3 +1,11 @@
+/**
+ *  corregir : CONTRA LA MÁQUINA
+ * CORREGIR: PROMPT RECOGER ENTRADA CON STRING
+ * LLENO : CONTAR JUGADAS PARA SABER CUÁNDO PUEDE SER TRES EN RAYA (3 JUGADAS) Y SALTAR LLENO CUANDO 9 JUGADAS 
+ * CONSOLE.LOG TABLE MUESTRA LA TABLA
+ */
+
+
 /**3. TRES EN RAYA
 Realiza el juego del tres en raya contra otro jugador o contra la máquina (con números aleatorios).
 Puedes hacerlo usando en cada jugada las coordenadas de X u O desde 0,0 (esquina superior
@@ -88,11 +96,12 @@ const run = () => {
             turno === player[0] ? turno = player[1] : turno = player[0]
             // pide movimiento al jugador que tiene el turno
             let movement = newMovement(turno)
+
+
             let isEmpty = checkIsEmpty(matriz,movement,empty)
             // comprueba que esa celta está vacía, si no sigue pidiendo
 
 
-        /////////////////////////////  ¡¡¡¡¡VARNING!!!!!  ////////////////////////////////////
             //////////////////////////////  ERROR  ////////////////////////////////////
             /// SI PONGO EL SIGUIENTE WHIELE COMO NEGACIÓN !ISEMPTY, ENTRA EN UN BUCLE INFINITO ////
             //////////////////////////////  ERROR  ////////////////////////////////////
