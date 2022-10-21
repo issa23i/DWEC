@@ -3,8 +3,9 @@
  * CORREGIR: PROMPT RECOGER ENTRADA CON STRING
  * LLENO : CONTAR JUGADAS PARA SABER CUÁNDO PUEDE SER TRES EN RAYA (3 JUGADAS) Y SALTAR LLENO CUANDO 9 JUGADAS 
  * CONSOLE.LOG TABLE MUESTRA LA TABLA
+ * EMPTY : SE PASA DEMASIADO POR PARÁMETRO, MEJOR QUE LA CELDA VACÍA SEA CON ' '
+ * ¿¿ REALIZAR CLASES ??? POR EJEMPLO CLASS JUGADA
  */
-
 
 /**3. TRES EN RAYA
 Realiza el juego del tres en raya contra otro jugador o contra la máquina (con números aleatorios).
@@ -66,7 +67,7 @@ const freeCells = (matriz, empty) => {
  * @returns boolean
  */
 const checkIsEmpty = (matriz, move, empty) => {
-    matriz[move["fila"]][move["columna"]] === empty ? true : false
+    return matriz[move["fila"]][move["columna"]] === empty ? true : false
 }
 
 /**
@@ -81,6 +82,10 @@ const newMovement = (player) => {
     
 }
 
+const botPlay = (matriz) => {
+    /// AQUÍ UN RANDOM
+    // TIENE QUE DEVOLVER LA JUGADA
+}
 
 const run = () => {
     let player = ['player 1', 'player 2']
@@ -101,12 +106,11 @@ const run = () => {
             let isEmpty = checkIsEmpty(matriz,movement,empty)
             // comprueba que esa celta está vacía, si no sigue pidiendo
 
-
             //////////////////////////////  ERROR  ////////////////////////////////////
             /// SI PONGO EL SIGUIENTE WHIELE COMO NEGACIÓN !ISEMPTY, ENTRA EN UN BUCLE INFINITO ////
             //////////////////////////////  ERROR  ////////////////////////////////////
 
-            while ( isEmpty ){ // mientras devuelva false, repetir hasta encontrar una celda vacía
+            while ( ! isEmpty ){ // mientras devuelva false, repetir hasta encontrar una celda vacía
                 console.log(`celda ocupada, vuelva a intentarlo`);
                 movement = newMovement(turno)
             }
@@ -115,6 +119,7 @@ const run = () => {
             matriz[movement["fila"]][movement["columna"]] = turno
             /******//////////////////      comprobación ///////////////////////////// */
             console.log(`el jugador ${turno} a puesto la ficha (${movement["fila"]},${movement["columna"]})`);
+            console.table(matriz);
             /**////////////////////////////////////////////////////////////////////// */
         } else { 
             console.log(`El tablero está lleno y no se ha hecho tres en raya, empate`);
