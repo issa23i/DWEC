@@ -36,3 +36,17 @@ const funcion3 = (array,c) => {
     return repetidos
 }
 console.log(funcion3(entrada,'a'));
+
+///********* otra forma con expresiones regulares
+const ocurrencias = (expre) => {
+    const result = expre.match(expre)
+    if (result === null)return 0
+    else return result.length;
+}
+
+const c = (entrada , caracter) => {
+    const textos = entrada.filter(item => typeof(item) =="string")
+    const expr = new RegExp(c,"ig");
+    return textos.filter (item => ocurrencias(item,expr) >= 2)
+}
+//************** */
