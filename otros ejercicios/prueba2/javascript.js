@@ -25,15 +25,49 @@ const funcion1 = vector => {
 const funcion2 = vector => {
     return vector.sort( (n,m) => n-m  )
 }
-console.log(funcion2(vector));
+// console.log(funcion2(vector));
 
 // dado un array de textos, crea una funcion que devuelva un nuevo array
 //
 let textos = ["hola", "pala", "adios"]
 
 const funcion3 = (array, c) => {
-    return array.map(txt => txt.split(c).toString().replaceAll(",",""))
+    // return array.map(txt => txt.split(c).toString().replaceAll(",","")) // otra forma de hacerlo
+    return array.map(txt => txt.includes(c) ? txt.replaceAll(c,"") : txt)
 
 }
 
-console.log(funcion3(textos,"a"));
+// console.log(funcion3(textos,"a"));
+
+// ordenar de menor a mayor numero de caracteres
+const funcion4 =(array) => {
+    return array.sort( (a,b) => a.length - b.length)
+}
+// console.log(funcion4(textos));
+
+// dado una url devuelve el nombre del dominio
+let url = "http://www.dominio.com/uno/dos/123456"
+
+const funcion5 = (url) => {
+    return url.substring(url.indexOf(".")+1,url.lastIndexOf("."))
+}
+const funcion6 = (url) => {
+    return parseInt(url.substring(url.lastIndexOf("/")+1,))
+}
+console.log(funcion5(url));
+console.log(funcion6(url));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
