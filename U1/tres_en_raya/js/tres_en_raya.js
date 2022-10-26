@@ -61,7 +61,12 @@ const isTresEnRaya = (matriz) => {
  * @returns boolean
  */
  const checkIsEmpty = (matriz, move) => {
-    return matriz[move["fila"]][move["columna"]] === ' '? true : false
+
+    if(matriz[move["fila"]][move["columna"]] === ' ') {
+        return true
+    }
+    return false
+    // return matriz[move["fila"]][move["columna"]] === ' '? true : false
 }
 
 
@@ -73,12 +78,17 @@ const isTresEnRaya = (matriz) => {
  */
  const newMovement = () => {
     let regex = new RegExp(/[0-9]{1}\,[0-9]{1}/)
-    let str = parseInt(prompt(`Inserte el número de fila y columna F,C`))
+    let str = prompt(`Inserte el número de fila y columna F,C`)
+
     if ( regex.test(str)){
         str = str.split(',')
     let row = str[0]
     let col = str[1]
-    return {fila:row,columna:col}
+
+    
+    let movimiento = {fila:row,columna:col}
+
+    return movimiento
     }
     return null
 }
@@ -90,12 +100,15 @@ const isTresEnRaya = (matriz) => {
  * @returns el objeto literal movimiento fila, columna
  */
 const botPlay = (matriz) => {
+    let movement = null
     if(freeCells(matriz)){
-        let movement = null
+        movement = null
         do{
-            movement = {fila:getRandomInt(3),columna:getRandomInt(3)}
-        } while (checkIsEmpty(matriz,movement))
+            movement = {fila:(parseInt(Math.random()*(3-0.000000000001))).toString(),columna:(parseInt(Math.random()*(3-0.000000000001))).toString()}
+
+        } while (!checkIsEmpty(matriz,movement))
     }
+
    return movement 
 }
 
@@ -111,7 +124,9 @@ const run = () => {
         // turno del jugador
         // bucle hasta que el jugador haga un movimiento válido y la celda esté vacía
         let movimiento = newMovement()
+
         while(movimiento===null || ! checkIsEmpty(matriz,movimiento)){
+ 
             movimiento = newMovement()
         }
         matriz[movimiento["fila"]][movimiento["columna"]] = 'X'
@@ -120,7 +135,7 @@ const run = () => {
         console.table(matriz);
         
         // si no ha ganado el jugador
-        if(!tresEnRaya(matriz)){
+        if(!isTresEnRaya(matriz)){
             // turno de la máquina
             movimiento = botPlay(matriz)
             matriz[movimiento["fila"]][movimiento["columna"]] = 'O'
@@ -128,13 +143,13 @@ const run = () => {
             console.table(matriz);
         }
  
-    } while (freeCells(matriz) && tresEnRaya(matriz)===null)
+    } while (freeCells(matriz) && isTresEnRaya(matriz)===null)
 
     if (!freeCells(matriz)){
         console.log("¡¡¡ EMPATE !!!");
-    } else if (tresEnRaya(matriz)==='X'){
+    } else if (isTresEnRaya(matriz)==='X'){
         console.log("¡¡¡ ENHORABUENA, HAS GANADO !!!");
-    } else if (tresEnRaya(matriz)==='O'){
+    } else if (isTresEnRaya(matriz)==='O'){
         console.log("¡ HAS PERDIDO !");
     } else {
         console.log("Algo salió mal. Fin del juego");
