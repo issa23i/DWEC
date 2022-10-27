@@ -17,7 +17,6 @@ const toIPasen = (alumnos) => {
         ipasen[2] = ipasen[2].slice(0,3) // tres primeras letras del apellido2
         ipasen[3] = ipasen[3].slice(5,8) // tres últimos dígitos del dni (sin la letra)
         ipasen = ipasen.toString().replaceAll(",","").toLowerCase()
-        const {nombre, dni, iPasen} = alumno
         alumno["iPasen"] = ipasen
     })
     return alumnos
