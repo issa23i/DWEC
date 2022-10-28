@@ -30,22 +30,22 @@ class Pelicula{
     }
     validarIMDB(IMDB) {
         let regex = new RegExp(/[a-zA-Z]{2}[0-9]{7}/)
-        regex.test(IMDB) ? IMDB : ""
+        return regex.test(IMDB) ? IMDB : ""
     }
 
     validarTitulo(titulo) {
         let regex = new RegExp(/.{2-100}/)
-        regex.test(titulo) ? titulo : ""
+        return regex.test(titulo) ? titulo : ""
     }
 
     validarDirector(director){
         let regex = new RegExp(/.{2-50}/)
-        regex.test(director) ? director : ""
+        return regex.test(director) ? director : ""
     }
 
     validarAEstreno(a_estreno){
         let regex = new RegExp(/[0-9]{4}/)
-        regex.test(a_estreno) ? a_estreno : ""
+        return regex.test(a_estreno) ? a_estreno : ""
     }
 
     validarPais(pais){
@@ -54,7 +54,7 @@ class Pelicula{
 
     validarGenero(genero){
         let generos = Pelicula.generos()
-        generos.includes(genero) ? genero : ""
+        return generos.includes(genero) ? genero : ""
     }
 
     static generos(){ 
@@ -63,7 +63,7 @@ class Pelicula{
 
     validarCalificacion(calificacion){
         let regex = new RegExp(/[0-9]{1,2}\.{0,1}[0-9]{0,1}/)
-        regex.test(calificacion) ? calificacion : ""
+        return regex.test(calificacion) ? calificacion : ""
     }
 
     fichaTecnica () {
@@ -73,7 +73,7 @@ class Pelicula{
             a_estreno: this.a_estreno, 
             pais: this.pais, 
             genero: this.genero, 
-            calificacion: this.genero}
+            calificacion: this.calificacion}
     }
 
 }
