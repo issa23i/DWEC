@@ -30,7 +30,7 @@ const pushDni = () => {
 }
 
 const letra = (dni) =>{
-    control=	[T,	R,	W,	A,	G,	M,	Y,	F,	P,	D,	X,	B,	N,	J,	Z,	S,	Q,	V,	H,	L,	C,	K,	E]
+    control=['T',	'R',	'W',	'A',	'G',	'M',	'Y',	'F',	'P',	'D',	'X',	'B',	'N',	'J',	'Z',	'S',	'Q',	'V',	'H',	'L',	'C',	'K',	'E']
     return control[dni%23]
 
 }
