@@ -4,6 +4,12 @@
 
 const removeDuplicates = array => array.filter( (n,m) => array.indexOf(n) === m) 
 const array = ['x',10,'x',2,'10',10, true,true]
-console.log(removeDuplicates(array));
+// console.log(removeDuplicates(array));
 // OTRA FORMA ES CON SET
 // cpmst sinDuplicados = (elementes = undefined) => [...new Set (elements)];
+let conjunto = new Set(array)
+conjunto = Array.from(conjunto)
+console.log(conjunto);
+
+let sinDuplicados = (array) => [...new Set (array)]
+console.log(sinDuplicados(array));

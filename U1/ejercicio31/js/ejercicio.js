@@ -6,7 +6,7 @@
 const howLong = (y,m,d) =>  {
     let today = new Date()
     let year = today.getFullYear() - Math.abs(new Date(y,m,d).getFullYear())
-    if(d>today.getDay && m==today.getMonth) {
+    if(d>today.getDate && m==today.getMonth) {
         year--;
     } else if (m>today.getMonth) {
         year--;

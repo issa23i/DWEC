@@ -17,5 +17,14 @@ const peersAndOdd2 = array => {
     return {pares: peers, impares: odd}
 }
 let array= [1,2,3,4,5,6,7,8,9,0]
-console.log(peersAndOdd(array));
-console.log(peersAndOdd2(array));
+//console.log(peersAndOdd(array));
+//console.log(peersAndOdd2(array));
+
+///////////////
+const paresImpares = array => {
+    let pares = []
+    let impares = []
+    array.map(n => n%2 === 0? pares.push(n) : impares.push(n))
+    return {pares: pares, impares: impares}
+}
+console.log(paresImpares(array));

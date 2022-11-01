@@ -6,3 +6,10 @@ let regexEmail = new RegExp(/^[\w\._-]+@\w+\.\w{2,4}$/)
 console.log(
     regexEmail.test('das@ie.com')
 );
+let email = 'javier.ferrer@iesmartinezm.es'
+
+const validar = email => {
+    let regex = new RegExp(/\w+@\w+\.\w{2,}/)
+    return regex.test(email)
+}
+console.log(validar(email));
