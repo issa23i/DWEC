@@ -9,7 +9,12 @@ const array = ['x',10,'x',2,'10',10, true,true]
 // cpmst sinDuplicados = (elementes = undefined) => [...new Set (elements)];
 let conjunto = new Set(array)
 conjunto = Array.from(conjunto)
-console.log(conjunto);
+// console.log(conjunto);
 
 let sinDuplicados = (array) => [...new Set (array)]
 console.log(sinDuplicados(array));
+
+// en ejercicios resueltos :
+// lo del undefined es que si no se pasa parámetro, será undefined
+// const withoutDuplicates1 = (elements = undefined) => elements.filter((item,index)=>elements.indexOf(item) === index);
+// console.log(withoutDuplicates1(array));
