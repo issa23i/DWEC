@@ -19,5 +19,15 @@ const vowelsAndConsonantsCouter = (str) => {
     return result
 }
 
-let str = 'Hola Mundo'
-console.log(`La palabra ${str} tiene ${vowelsAndConsonantsCouter(str)[vocales]} vocales y `);
+let str = 'aaaaattttt 123--_?¿¡! '
+//console.log(`La palabra ${str} tiene ${vowelsAndConsonantsCouter(str)[vocales]} vocales y `);
+
+const vocalesYconsonantes = str => {
+    let largo = str.length
+    let regexVocales = new RegExp(/[aeiouáéíóú]/gi)
+    let vocales = (str.match(regexVocales)).length
+    let regexConsonantes = new RegExp(/[^aeiouáéíóú\d_¡!¿?\s\-]/gi)
+    let consonantes = (str.match(regexConsonantes)).length
+    return {vocales: vocales, consonantes: consonantes, total: largo}
+}
+console.log(vocalesYconsonantes(str));
