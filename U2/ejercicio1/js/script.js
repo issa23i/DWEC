@@ -17,12 +17,6 @@ for (const boton of botones) {
 }
 const btnNuevoNumero = btn
 
-
-
-// $d.appendChild(listaDesordenada)
-// .appendChild(itemListaDesordenada)
-// .textContent(Math.random()*(100))
-
 // eventListener
 const addUl = () => {
     // crear lista desordenada
