@@ -18,87 +18,11 @@
             <label disabled for="apellido2">Apellido 2:</label>
             <input type="text" name="apellido2" tabindex="3">
         </fieldset>
-        <fieldset>
-            <legend>Password</legend>
-            <label for="user">Nombre de usuario:</label>
-            <input type="text" name="usuario" id="usuario">
-            <label for="pass">Contraseña</label>
-            <input type="password" name="pass" id="passw">
-        </fieldset>
-        <fieldset>
-            <legend>Archivos</legend>
-            <label for="files"></label>
-            <input type="file" name="files" id="files" accept=".pdf" size="1800"><!-- size pixeles -->
-        </fieldset>
-        <fieldset>
             <legend>Botones</legend>
             <fieldset>
                 <button type="button" name="botonenviar">Nuevo número</button>
+                <ul id="resultado"></ul>
             </fieldset>
-            <fieldset>
-                <label for="sexo">Hombre</label>
-                <input type="radio" name="sexo" value="male" id="male"> <!-- los grupos en botones se definen por el name -->
-                <label for="sexo">Mujer</label>
-                <input type="radio" name="sexo" value="female" id="female">
-            </fieldset>
-            <fieldset>
-                <label for="estudios">Estudios</label>
-                <input type="radio" name="estudios" value="pri" id="primarios">Estudios primarios</input>
-                <input type="radio" name="estudios" value="univ" id="universitarios">Estudios universitarios</input>
-            </fieldset>
-        </fieldset>
-        <fieldset>
-            <legend>Lista de opciones </legend>
-            <select multiple name="provincia" id="provincia">
-                <optgroup label="Provincias">
-                    <option value="z">Zaragoza</option>
-                    <option selected value="t">Teruel</option>
-                </optgroup>
-                <optgroup label="Provincias Andaluzas">
-                    <option value="s">Sevilla</option>
-                    <option selected value="c">Cádiz</option>
-                    <option value="m">Málaga</option>
-                </optgroup>
-            </select>
-        </fieldset>
-        <fieldset>
-            <legend>Check Boxes</legend>
-            <label for="numeros">Números</label>
-            <input type="checkbox" name="numeros" id="uno" value="num 1">uno</input>
-            <input type="checkbox" name="numeros" id="uno" value="num 2">dos</input>
-        </fieldset>
-        <fieldset>
-            <legend>Fecha y hora</legend>
-            <label for="hora">Hora</label>
-            <input type="datetime" name="hora" id="hora">
-            <label for="fecha">Fecha</label>
-            <input type="date" name="fecha" id="fecha">
-            <label for="fechahora">Fecha y Hora</label>
-            <input type="datetime-local" name="fechahora" id="fechahora">
-        </fieldset>
-        <fieldset>
-            <legend>Lista</legend>
-            <input list="editor">
-                <datalist id="editor">
-                    <option value="Aton"></option>
-                    <option value="JS"></option>
-                    <option value="CSS3"></option>
-                    <option value="HTML"></option>
-                    <option value="Java"></option>
-                </datalist>
-        </fieldset>
-        <fieldset>
-            <legend>Colores</legend>
-            <label for="color">Color</label>
-            <input type="color" name="color" id="color">
-        </fieldset>
-        <fieldset>
-            <legend>Área de texto </legend>
-            <textarea readonly name="textarea1" id="textarea1" cols="30" rows="10">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates labore debitis necessitatibus incidunt vero, 
-                nesciunt voluptatibus, 
-                repellat impedit architecto veritatis quas fugiat quidem soluta, ex ducimus ab consectetur. Illo, eligendi.
-            </textarea>
         </fieldset>
         <fieldset>
             <legend> Botones </legend>
