@@ -32,3 +32,6 @@ const addUl = () => {
 btnNuevoNumero.addEventListener("click",addUl)
 
 // hacer que además del número , el color también sea aleatorio
+// hacer que además cuando pulse un botón, creará otro botón con el value del boton
+        // pista: usar el this. dentro del eventlistener que hace referencia al boton
+        //          alert(this.textContent)
