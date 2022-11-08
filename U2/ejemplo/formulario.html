@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="apuntes2.html" method="post" enctype="application/x-www-form-urlencoded"> <!--enctype para encriptar --> 
+        
+        <fieldset>
+            <legend>Inputs de texto</legend>
+            <label for="nombre">Nombre:</label>
+            <input required type="text" name="nombre" tabindex="1">
+            <label for="apellido1">Apellido 1:</label>
+            <input placeholder="Introduce tu primer apellido" type="text" name="apellido1" tabindex="2">
+            <label disabled for="apellido2">Apellido 2:</label>
+            <input type="text" name="apellido2" tabindex="3">
+        </fieldset>
+        <fieldset>
+            <legend>Login</legend>
+            <label for="usuario">Usuario:</label>
+            <input required type="text" name="usuario">
+            <label for="pass">Contraseña:</label>
+            <input placeholder="Introduce tu Contraseña" type="password" name="pass" tabindex="4">
+        <fieldset>
+        <fieldset>
+            
+            <legend> Botones </legend>
+            <button type="submit" name="botonenviar">Enviar</button>
+            <button type="reset" name="botonborrar">Borrar</button>
+        </fieldset>
+    </form>
+    <script src="js/contrasenya.js"></script>
+</body>
+</html>

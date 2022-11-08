@@ -31,4 +31,4 @@ const addUl = () => {
 }
 btnNuevoNumero.addEventListener("click",addUl)
 
-
+// hacer que además del número , el color también sea aleatorio
