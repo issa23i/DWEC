@@ -15,25 +15,37 @@ for (const boton of botones) {
         $btn = boton
     }
 }
-const btnNuevoNumero = $btn
+const $btnNuevoNumero = $btn
+
+const $btnNuevoBoton = $d.querySelector('[name="boton"]')
+
+const addButton = () => {
+    $newButton = $btnNuevoBoton.cloneNode()
+    $newButton.textContent = $btnNuevoBoton.value
+    $btnNuevoBoton.insertAdjacentElement("afterend",$newButton)
+    
+}
+
+$btnNuevoBoton.addEventListener("click",addButton)
+
+// color random
+const setRandomColor = () => `rgb(${parseInt(Math.random()*255)},${parseInt(Math.random()*255)},${parseInt(Math.random()*255)})`
 
 // eventListener
 const addUl = () => {
     // crear lista desordenada
-    const listaDesordenada = $d.getElementById("resultado")
-    const itemListaDesordenada = $d.createElement('li')
+    const $listaDesordenada = $d.getElementById("resultado")
+    const $itemListaDesordenada = $d.createElement('li')
     // hacer li hijo de ul
-    listaDesordenada.appendChild(itemListaDesordenada)
+    $listaDesordenada.appendChild($itemListaDesordenada)
     // añadir un número random en la lista
-    itemListaDesordenada.textContent = parseInt(Math.random()*(100))
-    // insertar después de el elemento e la lista desordenada
-    
-    // pista:
-    // estilos // elemento.style....
+    $itemListaDesordenada.textContent = parseInt(Math.random()*(100))
+    // añadir estilo aleatorio
+    $itemListaDesordenada.style.backgroundColor=setRandomColor()
 }
-btnNuevoNumero.addEventListener("click",addUl)
+$btnNuevoNumero.addEventListener("click",addUl)
 
-// hacer que además del número , el color también sea aleatorio
+
 // hacer que además cuando pulse un botón, creará otro botón con el value del boton
         // pista: usar el this. dentro del eventlistener que hace referencia al boton
-        //          alert(this.textContent)
+        // alert(this.textContent)
