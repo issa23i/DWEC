@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+table{
+    border-spacing: 0px;
+    text-align: center;
+}
+td{
+    padding: 0.5em;
+    border: 1px solid grey;
+}
+.casiPrimo{
+    background-color: yellow;
+}
