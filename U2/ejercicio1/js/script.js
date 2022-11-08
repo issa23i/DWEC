@@ -9,13 +9,13 @@ const $d = document
 
 // encontrar el botón con textContent "Nuevo número"
 const botones = $d.querySelectorAll("button")
-let btn
+let $btn
 for (const boton of botones) {
     if (boton.textContent == "Nuevo número" ){
-        btn = boton
+        $btn = boton
     }
 }
-const btnNuevoNumero = btn
+const btnNuevoNumero = $btn
 
 // eventListener
 const addUl = () => {
@@ -28,6 +28,8 @@ const addUl = () => {
     itemListaDesordenada.textContent = parseInt(Math.random()*(100))
     // insertar después de el elemento e la lista desordenada
     
+    // pista:
+    // estilos // elemento.style....
 }
 btnNuevoNumero.addEventListener("click",addUl)
 
