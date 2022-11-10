@@ -1,0 +1,11 @@
+
+p{
+    width: 100px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid black;
+    background-color: brown;
+}
+.oculto {
+    display: none;
+}
