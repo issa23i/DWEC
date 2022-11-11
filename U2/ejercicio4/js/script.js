@@ -8,19 +8,23 @@ const $body = $d.body;
 
 const hideDelete = () => {
   // Array de los tres $p
-  const pes = $d.querySelectorAll('p');
-  console.log(pes);
-  for (const p of pes) {
-    p.addEventListener("mouseout", pHidden);
-    p.addEventListener("click", pDelete);
+  let pes = $d.querySelectorAll('p');
+  
+  for (let p of pes) {
+    p.addEventListener('mouseout', pHidden);
+    p.addEventListener('dblclick', pDelete);
   }
 };
 
-const pDelete = () => {
-  this.remove();
+const pDelete = (e) => {
+  // evento.elemento.remove()
+  e.target.remove();
+  
 };
 
-const pHidden = () => {
-  this.classList = ["oculto"];
+const pHidden = (e) => {
+  // evento.elemento.classList.add("oculto");
+  e.target.classList.add("oculto");
+  
 };
 hideDelete();
