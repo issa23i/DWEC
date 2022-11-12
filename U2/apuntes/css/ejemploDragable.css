@@ -1,0 +1,13 @@
+.caja {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.contenedor {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
