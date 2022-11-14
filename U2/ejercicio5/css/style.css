@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-p{
-    width: 200px;
-    height: 100px;
-    margin: 10px;
-    border: 2px solid black;
-    background-color: brown;
-    color: wheat;
-    text-align: center;
-    padding: 30px;
-    font-size: x-large;
-=======
+
 
 body{
     height: 100vh;
@@ -22,5 +11,4 @@ p{
     background-color: brown;
     color: aliceblue;
     text-align: center;
->>>>>>> c7f8b733e00c190683466a64e55504d6e4b165f1
 }
