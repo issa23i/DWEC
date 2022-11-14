@@ -59,5 +59,3 @@ const getDNIS = (e) => {
 DNIs()
 
 
- 
->>>>>>> c7f8b733e00c190683466a64e55504d6e4b165f1
