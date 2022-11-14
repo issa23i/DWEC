@@ -3,31 +3,26 @@
 click en “Comenzar Saludos”, lance un setInterval que cada 5 segundos muestra un
 “alert” con “Hola”. El botón “Parar Saludos” parará esa secuencia.
  */
-
 const $d = document
 const $body = $d.body
-const $btnStart = $d.createElement('button')
-const $btnStop = $d.createElement('button')
-$btnStart.textContent = 'Comenzar Saludos'
-$btnStop.textContent = 'Parar Saludos'
-$body.insertAdjacentElement("afterbegin",$btnStart)
+const $btnComenzar = $d.querySelector("[value='Comenzar Saludos']")
+const $btnParar = $d.querySelector("[value='Parar Saludos']")
 
-$body.insertAdjacentElement("afterbegin",$btnStop)
-
-let int 
-
+let interval
 
 const saludos = () => {
-    $btnStart.addEventListener('click',interval)
-    $btnStop.addEventListener('click',stopSaludos)
+    $btnComenzar.addEventListener('click', comenzar)
+    $btnParar.addEventListener('click', parar)
 }
 
-const interval = () => {
-    int = setInterval(() => {
-    alert('Hola')
-    }, 2000);
+const comenzar = () => {
+    interval = setInterval(() => {
+        alert("Hola")
+    }, 5000);
 }
 
-const stopSaludos = () => {
-    clearInterval(int)
+const parar = () => {
+    clearInterval(interval)
 }
+
+saludos()
