@@ -1,4 +1,5 @@
 let caja = document.querySelector(".caja");
+/** LA CAJA TIENE QUE SER DRAGABLE TRUE PARA PODER ARRASTRARLA */
 caja.draggable = true; //hacemos el elemento arrastrable
 let contenedor = document.querySelector(".contenedor");
 
@@ -14,6 +15,7 @@ contenedor.addEventListener("dragleave", (e) => {
   console.log("dragleave");
 });
 
+/** ESTE ES IMPEPINABLE, TIENE QUE TENER EL PREVENDEFAULT SI O SÍ ANTES DEL DROP */
 contenedor.addEventListener("dragover", (e) => {
   e.preventDefault(); //para que ejecute el drop
   console.log("dragover");
@@ -33,6 +35,7 @@ caja.addEventListener("dragend", (e) => {
 });
 
 caja.addEventListener("drag", (e) => {
-  //este evento se ejecuta constantemente
+  //este evento se ejecuta constantemente MIENTRAS TIENE COGIDO EL OBJETO Y NO LO HAS SOLTADO (ARRASTRANDO)
   console.log("drag");
 });
+console.log(navigator.geolocation);
