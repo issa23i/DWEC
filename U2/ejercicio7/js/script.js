@@ -1,3 +1,4 @@
+
 /**
  * 7. Realiza un programa que cuando se presione una tecla, calcule cuántos DNIs de 4 cifras
 (del 0001 al 9999) tienen esa letra y te mostrará los DNIs y sus letras en un elemento
@@ -20,7 +21,6 @@ const DNIs = () => {
  * @returns string
  */
  const getLetraDNI = (n) => {
-    let resto = n%23
     let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E']
     return letras[n%23]
  }
@@ -30,7 +30,6 @@ const DNIs = () => {
   * @param {string} letra 
   */
 const getDNIS = (e) => {
-
     /// borrar si ya se ha pulsado antes una tecla
     let options = $d.querySelectorAll('option')
     if (options.length>0){
@@ -57,5 +56,3 @@ const getDNIS = (e) => {
 }
 DNIs()
 
-
- 

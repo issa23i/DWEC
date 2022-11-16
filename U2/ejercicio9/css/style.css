@@ -1,0 +1,11 @@
+img{
+    width: 200px;
+    margin: 100px 200px;
+}
+body img:nth-child(3){
+    float:right
+}
+
+body img:nth-child(2){
+    display: none;
+}
