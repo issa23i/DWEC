@@ -1,0 +1,19 @@
+p{
+    height: 150px;
+    width: 150px;
+    border: 1em solid rgb(2, 2, 51);
+    border-radius: 10px;
+}
+p:first-of-type{
+    background-color: rgb(1, 1, 95);
+}
+p:nth-of-type(2){
+    background-color: rgb(59, 59, 130);
+}
+p:last-of-type{
+    background-color: rgb(113, 113, 134);
+}
+
+.oculto {
+    display: none;
+}
