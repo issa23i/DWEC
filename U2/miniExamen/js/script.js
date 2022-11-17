@@ -21,7 +21,6 @@ const colores = (e) => {
 
 const crearBotones = () => {
     let n = $input.value
-    console.log(n); 
     for (let i = 0; i < n; i++) {
         let colorRandom = randomRGB()
         let $btn = $d.createElement('button')
