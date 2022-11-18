@@ -2,7 +2,7 @@
 const $d = document
 const $body = $d.body
 const $btnCrear = $d.querySelector('[class="crearBotones"]')
-const $btnReiniciar = $d.querySelector('[class="reiniciar"]')
+const $btnReiniciar = $d.querySelector('.reiniciar')
 const $input = $d.querySelector('input')
 
 
@@ -33,7 +33,7 @@ const crearBotones = () => {
 }
 
 const borrar = () => {
-    let botonesCreados = $d.querySelectorAll('[class="colores"]')
+    let botonesCreados = $d.querySelectorAll('.colores')
     botonesCreados.forEach(e => {
         e.remove()
     });
