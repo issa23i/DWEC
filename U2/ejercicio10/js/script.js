@@ -22,16 +22,24 @@ const dniOK = (dni) => {
     return letraDNI(num) === letra
 }
 
-getLetra('44753262T')
+
 const validarDNI = (e) => {
-    e.preventDefault();
+    
     if($input.value=="" || (!dniOK($input.value))){
+        e.preventDefault();
         alert(`Introduzca un dni válido`)
         return
     }
     alert("Formulario enviado correctamente")
 }
 
-$input.addEventListener('blur',validarDNI)
+const validarDNIInput = () => {
+    if($input.value=="" || (!dniOK($input.value))){
+        alert(`Introduzca un dni válido`)
+        return
+    }
+}
+
+$input.addEventListener('blur',validarDNIInput)
 $btn.addEventListener('click',validarDNI)
 
