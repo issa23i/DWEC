@@ -9,10 +9,11 @@ const imagenes = [
   "imagen-7",
   "imagen-8",
 ];
-
 const puzzle = document.getElementById("puzzle");
 const piezas = document.getElementById("piezas");
 const mensaje = document.getElementById("mensaje");
+
+
 let terminado = imagenes.length;
 
 while (imagenes.length) {
@@ -24,6 +25,12 @@ while (imagenes.length) {
   div.style.backgroundImage = `url("recursos/${imagenes[index]}.jpg")`;
   piezas.appendChild(div);
   imagenes.splice(index, 1);
+}
+for (let i = 0; i < terminado; i++) {
+  const div = document.createElement("div");
+  div.className = "placeholder";
+  div.dataset.id = i;
+  puzzle.appendChild(div);
 }
 
 piezas.addEventListener("dragstart", (e) => {
