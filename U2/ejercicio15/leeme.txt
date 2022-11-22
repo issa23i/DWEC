@@ -1,0 +1,7 @@
+Debes validar todos los campos del formulario cuando cambie el foco de cada campo y/o cuando se envíe.
+Reglas de validación:
+1) FullName: no puede haber números, no puede estar vacío y como máximo 80 caracteres
+2) Email Address: loquesea@loquesea.loquesea
+3) Phone number: 9 dígitos
+4) Affair: no puede incluir los caracteres / o \, no puede estar vacío y como máximo 120 caracteres
+5) Message: no puede estar vacío y como máximo 300 caracteres
