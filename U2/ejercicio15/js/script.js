@@ -5,3 +5,7 @@
  * 
  */
 
+const $d = document
+
+
+
