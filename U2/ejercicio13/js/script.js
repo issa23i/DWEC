@@ -15,24 +15,21 @@ seleccionado “Mislata”).
 const $d = document;
 const $btn = $d.querySelector("button");
 const $select1 = $d.querySelector("#opcionesA");
-const $select2 = $d.querySelector("#opcionesB");
 
-
-// Arrays del select de las poblaciones
-const arraySelect2 = Array.from($select2.options)
 
 /**
  * Ocultar todos las option del select B
  * menos la primera que es selected
  */
 const ocultar = () => {
-    for (const option of arraySelect2) {
+    let $select2 = $d.querySelector("#opcionesB");
+    for (const option of Array.from($select2.options)) {
         if( (! option.hasAttribute('selected')) || ( option.value === "Mislata") ){
             option.setAttribute('hidden',true)
         }
     }
     // seleccionar primero
-     $select2.seletedIndex=0
+    $select2.seletedIndex=0
 }
 ocultar()
 
@@ -41,6 +38,7 @@ ocultar()
  * mostrar sólo las poblaciones de esa provincia
  */
 const mostrarPoblaciones = (e) => {
+    let $select2 = $d.querySelector("#opcionesB");
     // probar seletedIndex no funciona
     // console.log(arraySelect1.seletedIndex);
   switch (e.target.value) {
@@ -75,8 +73,8 @@ const mostrarPoblaciones = (e) => {
 };
 
 const validar = (e) => {
-    if ($select1.selectedIndex === 0
-        || $select2.selectedIndex === 0){
+    if ($d.querySelector("#opcionesA").selectedIndex === 0
+        || $d.querySelector("#opcionesB").selectedIndex === 0){
             e.preventDefault()
             alert('Seleccione una provincia y una población')
         } else {

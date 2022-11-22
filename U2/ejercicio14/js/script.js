@@ -6,8 +6,7 @@ SOL: https://medium.com/@LoretoVaquero/validar-fechas-con-javascript-fe1b1c7b652
  */
 
 const $d = document
-const $input = $d.querySelector('input')
-const $btn = $d.querySelector('button')
+const $form = $d.querySelector('form')
 
 
 //const DATE_REGEX = /^(0[1-9]|[1-2]\d|3[01])(\/)(0[1-9]|1[012])\2(\d{4})$/
@@ -37,12 +36,12 @@ const validateDate = (birthDate) => {
 };
 
 const validar = (e) => {
-    if(!validateDate($input.value)){
+    if(!validateDate($d.querySelector('input').value)){
         e.preventDefault()
         alert("Fecha no válida");
     }
     alert("Fecha válida, enviado correctamente");
 }
 
-$btn.addEventListener('click', validar)
+$form.addEventListener('submit', validar)
 

@@ -6,12 +6,11 @@
 
 // Ejemplo
 const $d = document
-const $input = $d.querySelector('#email')
 const $btn = $d.querySelector('button')
 
 const validar = (e) => {
     let exreg = new RegExp(/\d+\w*@\d*\w*\.\d*\w*/)
-    if(!exreg.test($input.value) || !validarServidor($input.value)){
+    if(!exreg.test($d.querySelector('#email').value) || !validarServidor($input.value)){
         e.preventDefault()
         alert("Email no válido")
     }
