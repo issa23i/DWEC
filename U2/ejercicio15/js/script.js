@@ -13,6 +13,83 @@ const $inputTelefono = $d.querySelector('#inputPhoneNumber')
 const $inputAsunto = $d.querySelector('#inputAffair')
 const $textAreaMensaje = $d.querySelector('#areaMessage')
 
+
+//// EVENTOS ///////////////////////////////////////////////////////////////
+
+const validarFormulario = (e) => {
+    // nombre no válido
+  if (!validarNombre($d.querySelector("#inputFullName").value)) {
+    mostrarMensajeError(1);
+    e.preventDefault();
+    return;
+  }
+  // email no válido
+  if (!validarEmail($d.querySelector("#inputEmailAdress").value)) {
+    mostrarMensajeError(2);
+    e.preventDefault();
+    return;
+  }
+  // teléfono no válido
+  if (!validarTelefono($d.querySelector("#inputPhoneNumber").value)) {
+    mostrarMensajeError(3);
+    e.preventDefault();
+    return;
+  }
+  // asunto no válido
+  if (!validarAsunto($d.querySelector("#inputAffair").value)) {
+    mostrarMensajeError(4);
+    e.preventDefault();
+    return;
+  }
+  // mensaje no válido
+  if (!validarMensaje($d.querySelector("#areaMessage").value)) {
+    mostrarMensajeError(5);
+    e.preventDefault();
+    return;
+  }
+};
+
+const eventoNombre = (e) => {
+  if (!validarNombre(e.target.value)) {
+      mostrarMensajeError(1)
+  }
+}
+
+const eventEmail = (e) => {
+  if (!validarEmail(e.target.value)) {
+      mostrarMensajeError(2)
+  }
+}
+
+const eventTelefono = (e) => {
+  if (!validarTelefono(e.target.value)) {
+      mostrarMensajeError(3)
+  }
+}
+
+const eventAsunto = (e) => {
+  if (!validarAsunto(e.target.value)) {
+      mostrarMensajeError(4)
+  }
+}
+
+const eventMensaje = (e) => {
+  if (!validarMensaje(e.target.value)) {
+      mostrarMensajeError(5)
+  }
+}
+
+
+////// LISTENERS /////////////////////////////////////////////////////////
+
+$inputNombre.addEventListener('change',eventoNombre)
+$inputEmail.addEventListener('change',eventEmail)
+$inputTelefono.addEventListener('change',eventTelefono)
+$inputAsunto.addEventListener('change',eventAsunto)
+$textAreaMensaje.addEventListener('change',eventMensaje)
+$form.addEventListener('submit',validarFormulario)
+
+
 ////// FUNCIONES DE VALIDACIÓN //////////////////////////////////////////
 
 /** FullName: no puede haber números, no puede estar vacío y como máximo 80 caracteres */
@@ -80,77 +157,3 @@ const mostrarMensajeError = (codigoError) => {
   }, 6000);
 };
 
-
-//// EVENTOS ///////////////////////////////////////////////////////////////
-
-const validarFormulario = (e) => {
-    // nombre no válido
-  if (!validarNombre($d.querySelector("#inputFullName").value)) {
-    mostrarMensajeError(1);
-    e.preventDefault();
-    return;
-  }
-  // email no válido
-  if (!validarEmail($d.querySelector("#inputEmailAdress").value)) {
-    mostrarMensajeError(2);
-    e.preventDefault();
-    return;
-  }
-  // teléfono no válido
-  if (!validarTelefono($d.querySelector("#inputPhoneNumber").value)) {
-    mostrarMensajeError(3);
-    e.preventDefault();
-    return;
-  }
-  // asunto no válido
-  if (!validarAsunto($d.querySelector("#inputAffair").value)) {
-    mostrarMensajeError(4);
-    e.preventDefault();
-    return;
-  }
-  // mensaje no válido
-  if (!validarMensaje($d.querySelector("#areaMessage").value)) {
-    mostrarMensajeError(5);
-    e.preventDefault();
-    return;
-  }
-};
-
-const eventoNombre = (e) => {
-    if (!validarNombre(e.target.value)) {
-        mostrarMensajeError(1)
-    }
-}
-
-const eventEmail = (e) => {
-    if (!validarEmail(e.target.value)) {
-        mostrarMensajeError(2)
-    }
-}
-
-const eventTelefono = (e) => {
-    if (!validarTelefono(e.target.value)) {
-        mostrarMensajeError(3)
-    }
-}
-
-const eventAsunto = (e) => {
-    if (!validarAsunto(e.target.value)) {
-        mostrarMensajeError(4)
-    }
-}
-
-const eventMensaje = (e) => {
-    if (!validarMensaje(e.target.value)) {
-        mostrarMensajeError(5)
-    }
-}
-
-////// LISTENERS /////////////////////////////////////////////////////////
-
-$inputNombre.addEventListener('change',eventoNombre)
-$inputEmail.addEventListener('change',eventEmail)
-$inputTelefono.addEventListener('change',eventTelefono)
-$inputAsunto.addEventListener('change',eventAsunto)
-$textAreaMensaje.addEventListener('change',eventMensaje)
-$form.addEventListener('submit',validarFormulario)
