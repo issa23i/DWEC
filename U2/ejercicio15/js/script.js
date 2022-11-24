@@ -33,7 +33,7 @@ const validarTelefono = (str) => {
 /** Affair: no puede incluir los caracteres / o \, no puede estar vacío y como máximo 120 caracteres */
 const validarAsunto = (str) => {
   return (
-    new RegExp(/^([^\/\\]\w* {0,1}\w*)+$/).test(str) && str.length <= 120
+    new RegExp(/^([^/\\]\w* {0,1}\w*)+$/).test(str) && str.length <= 120
   );
 };
 
