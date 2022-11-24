@@ -27,8 +27,8 @@ const validarEmail = () => {
 const validarPassword = () => {
     let password = $d.getElementById('password')
     let pass = false
-    pass = new RegExp(/(^[A-Z]\w{5,}$)|(\w[])/).test('bcddd')
+    pass = new RegExp(/^(\w*[A-ZÁÉÍÓÚ]+\w*){5,}$  (\w*[a-záéíóú]+\w*){5,}$   (\w*\d+\w*){5,}/).test('bcddd')
     if(pass)
-    /// vou por aquío expresion regular
+    /// vou por aquío expresion regular (tres regex ???)
     
 }
