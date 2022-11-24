@@ -82,11 +82,11 @@ const eventMensaje = (e) => {
 
 ////// LISTENERS /////////////////////////////////////////////////////////
 
-$inputNombre.addEventListener('change',eventoNombre)
-$inputEmail.addEventListener('change',eventEmail)
-$inputTelefono.addEventListener('change',eventTelefono)
-$inputAsunto.addEventListener('change',eventAsunto)
-$textAreaMensaje.addEventListener('change',eventMensaje)
+$inputNombre.addEventListener('blur',eventoNombre)
+$inputEmail.addEventListener('blur',eventEmail)
+$inputTelefono.addEventListener('blur',eventTelefono)
+$inputAsunto.addEventListener('blur',eventAsunto)
+$textAreaMensaje.addEventListener('blur',eventMensaje)
 $form.addEventListener('submit',validarFormulario)
 
 
@@ -94,7 +94,7 @@ $form.addEventListener('submit',validarFormulario)
 
 /** FullName: no puede haber números, no puede estar vacío y como máximo 80 caracteres */
 const validarNombre = (str) => {
-  return new RegExp(/^([A-Za-z]+ {0,1}[A-Za-z]*)+$/).test(str) && str.length <= 80;
+  return new RegExp(/^([a-záéíóú]+ {0,1}[a-záéíóú]*){1,80}$/i).test(str);
 };
 
 /** Email Address: loquesea@loquesea.loquesea */
@@ -110,13 +110,13 @@ const validarTelefono = (str) => {
 /** Affair: no puede incluir los caracteres / o \, no puede estar vacío y como máximo 120 caracteres */
 const validarAsunto = (str) => {
   return (
-    new RegExp(/^([^/\\]\w* {0,1}\w*)+$/).test(str) && str.length <= 120
+    new RegExp(/^([^/|\\]\w* {0,1}\w*){1,120}$/).test(str)
   );
 };
 
 /** Message: no puede estar vacío y como máximo 300 caracteres */
 const validarMensaje = (str) => {
-  return new RegExp(/^(\w+ {0,1}\w*)+$/).test(str) && str.length <= 300;
+  return new RegExp(/^(\w+ {0,1}\w*){1,300}$/).test(str);
 };
 
 //// SALIDA DE MENSAJES DE ERROR ///////////////////////////////////////////
