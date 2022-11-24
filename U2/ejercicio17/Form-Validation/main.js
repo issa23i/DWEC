@@ -1,37 +1,34 @@
-let id = (id) => document.getElementById(id);
+const $d = document
+const $form = $d.querySelector('form')
 
-let classes = (classes) => document.getElementsByClassName(classes);
+///// EVENTOS ////////////////////////////////////////////
 
-let username = id("username"),
-  email = id("email"),
-  password = id("password"),
-  form = id("form"),
-  errorMsg = classes("error"),
-  successIcon = classes("success-icon"),
-  failureIcon = classes("failure-icon");
+const validar = () => {
+    validarUserName()
+    validarEmail()
+    validarPassword()
+}
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+$form.addEventListener('submit',validar)
 
-  engine(username, 0, "Username cannot be blank");
-  engine(email, 1, "Email cannot be blank");
-  engine(password, 2, "Password cannot be blank");
-});
 
-let engine = (id, serial, message) => {
-  if (id.value.trim() === "") {
-    errorMsg[serial].innerHTML = message;
-    id.style.border = "2px solid red";
+///// VALIDACIONES //////////////////////////////////////
 
-    // icons
-    failureIcon[serial].style.opacity = "1";
-    successIcon[serial].style.opacity = "0";
-  } else {
-    errorMsg[serial].innerHTML = "";
-    id.style.border = "2px solid green";
+const validarUserName = () => {
+    let username = $d.getElementById('username')
+    return new RegExp(/^[^ .;,!?]\w+$/i).test(username)
+}
 
-    // icons
-    failureIcon[serial].style.opacity = "0";
-    successIcon[serial].style.opacity = "1";
-  }
-};
+const validarEmail = () => {
+    let email = $d.getElementById('email')
+    return new RegExp(/^\w+@(hotmail|gmail|yahoo)\.\w+$/i).test(email)
+}
+
+const validarPassword = () => {
+    let password = $d.getElementById('password')
+    let pass = false
+    pass = new RegExp(/(^[A-Z]\w{5,}$)|(\w[])/).test('bcddd')
+    if(pass)
+    /// vou por aquío expresion regular
+    
+}

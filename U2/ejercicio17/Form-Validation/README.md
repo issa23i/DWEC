@@ -1,3 +1,23 @@
+/** Botón de submit tiene que estar deshabilitado hasta que estén rellenados correctamente los campos 
+(disabled)
+Validaciones al pulsar el submit:
+    user name --> no puede tener espacios, ni caracteres .;,!?
+    email --> eamil valido y solo (hotmail, gmail, yahoo)
+    password -->  >5 caracteres , 1 mayúscula, 1 minúscula , 1 número
+mensajes de error:
+    clases css
+    desaparezca a los 3 segundos (setimeout)
+    mensaje personalizado debajo del input
+
+
+
+
+
+
+
+
+
+
 # Image-Hosting
 
 This Repository contains project images for learners to work with.
