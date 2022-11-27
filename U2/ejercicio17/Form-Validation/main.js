@@ -1,27 +1,12 @@
 const $d = document
 const $form = $d.querySelector('form')
+const $username = $d.getElementById('username')
+const $email = $d.getElementById('email')
+const $pass = $d.getElementById('password')
 
 /// DESHABILITAR BOTÓN DE ENVIAR
 let $btn = $d.getElementById('submit')
 $btn.setAttribute('disabled', true)
-
-///// EVENTOS ////////////////////////////////////////////
-
-const validar = () => {
-    if( !validarUserName() || !validarEmail() || !validarPassword() ) {
-        $form.preventDefault();
-        return false
-    } else {
-
-    }
-}
-
-const habilitar = () =>{
-    $btn.removeAttribute('disabled')
-}
-
-$form.addEventListener('mouseover', habilitar)
-$form.addEventListener('submit',validar)
 
 
 ///// VALIDACIONES //////////////////////////////////////
@@ -38,10 +23,9 @@ const validarUserName = () => {
 
 const validarEmail = () => {
     let email = $d.getElementById('email')
-    error(email,2)
     let val =  new RegExp(/^\w+@(hotmail|gmail|yahoo)\.\w+$/i).test(email)
     if (!val) {
-        error(username,1)
+        error(email,2)
         return false
     }
     return true
@@ -49,7 +33,6 @@ const validarEmail = () => {
 
 const validarPassword = () => {
     let password = $d.getElementById('password')
-    error(password,3)
     let min5chars = new RegExp(/\w{5,}/)
     let upper = new RegExp(/[A-ZÁÉÍÓÚ]+/)
     let lower = new RegExp(/[a-záéíóú]+/)
@@ -57,11 +40,39 @@ const validarPassword = () => {
     let val = min5chars.test(password) && upper.test(password)
           && lower.test(password) && num.test(password)
     if (!val) {
-        error(username,1)
+        error(password,3)
         return false
     }
     return true
 }
+
+
+///// EVENTOS ////////////////////////////////////////////
+
+const validar = () => {
+    if( !validarUserName() || !validarEmail() || !validarPassword() ) {
+        $form.preventDefault();
+        return false
+    } else {
+        return true
+    }
+}
+
+const habilitar = () =>{
+    if( validarUserName() && validarEmail() && validarPassword() ) {
+        if($btn.getAttribute('disabled')){
+            $btn.removeAttribute('disabled')
+        }
+    }
+}
+
+
+$username.addEventListener('blur',validarUserName)
+$email.addEventListener('blur',validarEmail)
+$pass.addEventListener('blur',validarPassword)
+$btn.addEventListener('mouseover',habilitar)
+$form.addEventListener('submit',validar)
+
 
 ///// MOSTRAR ERROR ////////////
 
