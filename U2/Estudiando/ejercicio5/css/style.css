@@ -1,0 +1,11 @@
+div{
+    height: 500px;
+    width: 900px;
+    padding: 300px auto;
+    margin: 300px;
+}
+h1{
+    color: palevioletred;
+    font-weight: 800;
+    font-size: 6em;
+}

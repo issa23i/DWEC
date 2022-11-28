@@ -1,0 +1,19 @@
+#uno{
+    background-color: pink;
+}
+#dos{
+    background-color: violet;
+}
+#tres{
+    background-color: blueviolet;
+}
+p{
+    font-size: larger;
+    text-align: center;
+    vertical-align:middle;
+    padding: 100px;
+    border: 2px solid black;
+}
+.hidden{
+    display: none;
+}
