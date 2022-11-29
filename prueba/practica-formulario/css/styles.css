@@ -1,0 +1,126 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+:root {
+    --amarillo: #F0A500;
+    --gris: #334756;
+    --negroFondo: #303030;
+}
+
+body {
+    background: var(--negroFondo);
+    color: #fff;
+    line-height: 1.6;
+    padding: 0 1.5em;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+}
+
+.rellenar {
+    background-color: var(--amarillo);
+    color: white;
+    border: none;
+    padding: 1.5em;
+    border-radius: .5rem;
+}
+
+.contenido-formulario {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 1.5em;
+}
+
+.contenido-formulario form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+.contenido-formulario form .colorLabel {
+    color: var(--amarillo);
+}
+
+
+.contenido-formulario form input,
+textarea {
+    width: 100%;
+    padding: .7em;
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    background: none;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid var(--amarillo);
+}
+
+.contenido-formulario .divBoton {
+    display: flex;
+    justify-content: center;
+}
+
+.contenido-formulario .enviar {
+    width: 50%;
+    border-radius: 1rem;
+    border: none;
+    color: var(--amarillo);
+    background-color: var(--gris);
+}
+
+.botonError {
+    /* padding: 1rem;
+    width: 50%; */
+    border-radius: 1rem;
+    border: none;
+    color: var(--amarillo);
+    background-color: var(--gris);
+}
+
+.divRadio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.divRadio div input {
+    width: 2rem;
+}
+
+.divRadio div {
+    display: flex;
+    flex-direction: row;
+}
+
+.divAficiones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.divAficiones div {
+    display: flex;
+    flex-direction: row;
+}
+
+.divAficiones div input {
+    width: 2rem;
+}
+
+.divError {
+    padding-left: 1.5rem;
+}
+
+.divError {
+    display: flex;
+    margin-top: 1rem;
+    column-gap: 2%;
+}
