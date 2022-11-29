@@ -8,25 +8,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="https://formsubmit.co/ipaslop@iesmartinezm.es" method="POST">
+    <form action="https://formsubmit.co/ipaslop@iesmartinezm.es" method="POST" class="form-control-sm">
         <fieldset>
             <legend>Texto</legend>
-            <label for="nombre">Nombre:</label>
-            <!-- ORDEN POR TABULADOR tabindex -->
-            <input type="text" name="nombre" tabindex="1"/>
+            <p>
+                <label for="nombre">Nombre:</label>
+                <!-- ORDEN POR TABULADOR tabindex -->
+                <input type="text" name="nombre" tabindex="1"/>
+            
+                <label for="dni">DNI:</label>
+                <!-- REQUERIDO required -->
+                <input type="text" name="dni" required/>
+            </p>
+            <p>
+                <label for="apodo">Apodo:</label>
+                <!-- SÓLO LECTURA readonly -->
+                <input type="text" name="apodo" placeholder="Apodo" readonly/>
 
-            <label for="dni">DNI:</label>
-            <!-- REQUERIDO required -->
-            <input type="text" name="dni" required/>
-
-            <label for="apodo">Apodo:</label>
-            <!-- SÓLO LECTURA readonly -->
-            <input type="text" name="apodo" placeholder="Apodo" readonly/>
-
-            <label for="edad">Edad:</label>
-            <!-- DESHABILITADO disabled -->
-            <input type="number" name="edad" disabled/>
-
+                <label for="edad">Edad:</label>
+                <!-- DESHABILITADO disabled -->
+                <input type="number" name="edad" disabled/>
+            </p>
+            
             <label for="mensaje">Mensaje:</label>
             <!-- TEXTO PREDEFINIDO placeholder -->
             <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Escriba aquí su mensaje"></textarea>
@@ -60,31 +63,45 @@
         </fieldset>
         <fieldset>
             <legend>Opciones</legend>
+            
             <label for="genero">Sexo</label>
-            <input type="radio" name="genero" value="masculino" />Hombre<br />
-            <input type="radio" name="genero" value="fememino" checked />Mujer<br />
+            <p>
+                <input type="radio" name="genero" value="masculino" />Hombre<br />
+                <input type="radio" name="genero" value="fememino" checked />Mujer<br />
+            </p>
             <label for="dispositivos">Dispositivos electrónicos</label><br />
-            <input type="checkbox" name="dispositivos" value="pc" />PC<br />
-            <input type="checkbox" name="dispositivos" value="table" />Tableta<br />
-            <input type="checkbox" name="dispositivos" value="movil" />Móvil
+            <p>
+                <input type="checkbox" name="dispositivos" value="pc" />PC<br />
+                <input type="checkbox" name="dispositivos" value="table" />Tableta<br />
+                <input type="checkbox" name="dispositivos" value="movil" />Móvil
+            </p>
         </fieldset>
         <fieldset>
             <legend>Otros inputs</legend>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-            <label for="pass">Contraseña</label>
-            <input type="password" name="pass" id="pass">
-            <label for="color">Color</label>
-            <input type="color" name="color" id="color">
-            <label for="date">Fecha</label>
-            <input type="date" name="date" id="date">
-            <label for="datetime">Fecha y Hora</label>
-            <input type="datetime-local" name="datetime" id="datetime">
-            <label for="file">Archivos:</label>
-            <!-- MULTIPLE ADMITE VARIOS ARCHIVOS multiple -->
-            <!-- TIPO DE ARCHIVO .doc,.txt, o audio/* video/* image/* -->
-            <!-- TAMAÑO DE ARCHIVO EN BYTES size -->
-            <input type="file" name="file" id="file" size="10000" accept="image/*,.pdf" multiple>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass">
+            </p>
+            <p>
+                <label for="color">Color</label>
+                <input type="color" name="color" id="color">
+                <label for="date">Fecha</label>
+                <input type="date" name="date" id="date">
+            </p>
+            <p>
+                <label for="datetime">Fecha y Hora</label>
+                <input type="datetime-local" name="datetime" id="datetime">
+            </p>
+            <p>
+                <label for="file">Archivos:</label>
+                <!-- MULTIPLE ADMITE VARIOS ARCHIVOS multiple -->
+                <!-- TIPO DE ARCHIVO .doc,.txt, o audio/* video/* image/* -->
+                <!-- TAMAÑO DE ARCHIVO EN BYTES size -->
+                <input type="file" name="file" id="file" size="10000" accept="image/*,.pdf" multiple>
+             </p>
+             
             <label for="tel">Teléfono</label>
             <input type="tel" name="tel" id="tel" maxlength="9">
             <label for="time">Hora</label>

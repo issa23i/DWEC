@@ -1,6 +1,8 @@
 fieldset{
     display: flex;
     flex-direction: column;
+    padding: 2em 3em;
+    margin-top: 20px;
 }
 form{
     width: 63%;
@@ -8,4 +10,20 @@ form{
 }
 .red{
     color: red;
+}
+input[type="button"], button{
+    max-width: 10em;
+    margin: 1em auto;
+}
+label{
+    margin: 1em 1em;
+    font-weight: 700;
+}
+legend{
+    font-size: larger;
+}
+input, button, select, textarea{
+    
+    padding: 1em;
+    border-radius: 10px;
 }

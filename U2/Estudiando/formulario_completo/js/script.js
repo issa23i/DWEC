@@ -13,9 +13,10 @@ const validar = (e) => {
     let programaOk = validarPrograma()
     let generoOk = validarGenero()
     let dispositivoOk = validarDispositivo()
+    let fechaOk = validarFecha()
     if(!nombreOk || !dniOk || !edadOk || !emailOk
         || !ciudadOk || !programaOk 
-        || !generoOk || !dispositivoOk) {
+        || !generoOk || !dispositivoOk || !fechaOk) {
         e.preventDefault()
         alert('No enviado')
     }
@@ -105,6 +106,15 @@ const validarDispositivo = () => {
     let valido = valor !== ''
     if(!valido) error(elementos[elementos.length-1],'Debe seleccionar al menos un dispositivo')
     return valido
+}
+
+const validarFecha = () => {
+    let fecha = document.querySelector('[name="date"]')
+    let valor = fecha.value
+    valor = new Date(valor)
+    let anyo = valor.getFullYear()
+    let valido = anyo < 2016
+    if(!valido) error(fecha,'Debe ser una fecha anterior a 2016')
 }
 /// /////////// ////////// ////////// //////////
 
