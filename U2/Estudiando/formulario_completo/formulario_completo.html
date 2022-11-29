@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form action="https://formsubmit.co/ipaslop@iesmartinezm.es" method="POST">
+        <fieldset>
+            <legend>Texto</legend>
+            <label for="nombre">Nombre:</label>
+            <!-- ORDEN POR TABULADOR tabindex -->
+            <input type="text" name="nombre" tabindex="1"/>
+
+            <label for="dni">DNI:</label>
+            <!-- REQUERIDO required -->
+            <input type="text" name="dni" required/>
+
+            <label for="apodo">Apodo:</label>
+            <!-- SÓLO LECTURA readonly -->
+            <input type="text" name="apodo" placeholder="Apodo" readonly/>
+
+            <label for="edad">Edad:</label>
+            <!-- DESHABILITADO disabled -->
+            <input type="number" name="edad" disabled/>
+
+            <label for="mensaje">Mensaje:</label>
+            <!-- TEXTO PREDEFINIDO placeholder -->
+            <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Escriba aquí su mensaje"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Listas</legend>
+            <label for="ciudad">Ciudad:</label>
+            <select name="ciudad">
+                <optgroup label="Aragon">
+                    <option value="ZA">Zaragoza</option>
+                    <option value="HU">Huesca</option>
+                    <option value="TE">Teruel</option>
+                </optgroup>
+                <optgroup label="C.Valenciana">
+                    <option value="VA">Valencia</option>
+                    <option value="TO">Torrent</option>
+                    <option value="MI">Mislata</option>
+                    <!-- Para selección por defecto: selected -->
+                    <option value="CU" selected >Cullera</option>
+                </optgroup>
+            </select>
+            <label for="ndata">Programa:</label>
+            <input list="editor">
+            <datalist id="editor">
+                <option value="Atom">
+                <option value="NotePad++">
+                <option value="VsCode">
+                <option value="Sublime">
+                <option value="Brackets">
+            </datalist>
+        </fieldset>
+        <fieldset>
+            <legend>Opciones</legend>
+            <label for="genero">Sexo</label>
+            <input type="radio" name="genero" value="masculino" />Hombre<br />
+            <input type="radio" name="genero" value="fememino" checked />Mujer<br />
+            <label for="dispositivos">Dispositivos electrónicos</label><br />
+            <input type="checkbox" name="dispositivos" value="pc" />PC<br />
+            <input type="checkbox" name="dispositivos" value="table" />Tableta<br />
+            <input type="checkbox" name="dispositivos" value="movil" />Móvil
+        </fieldset>
+        <fieldset>
+            <legend>Otros inputs</legend>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass" id="pass">
+            <label for="color">Color</label>
+            <input type="color" name="color" id="color">
+            <label for="date">Fecha</label>
+            <input type="date" name="date" id="date">
+            <label for="datetime">Fecha y Hora</label>
+            <input type="datetime-local" name="datetime" id="datetime">
+            <label for="file">Archivos:</label>
+            <!-- MULTIPLE ADMITE VARIOS ARCHIVOS multiple -->
+            <!-- TIPO DE ARCHIVO .doc,.txt, o audio/* video/* image/* -->
+            <!-- TAMAÑO DE ARCHIVO EN BYTES size -->
+            <input type="file" name="file" id="file" size="10000" accept="image/*,.pdf" multiple>
+            <label for="tel">Teléfono</label>
+            <input type="tel" name="tel" id="tel" maxlength="9">
+            <label for="time">Hora</label>
+            <input type="time" name="time" id="time">
+            <label for="week">Semana</label>
+            <input type="week" name="week" id="week">
+        </fieldset>
+        <fieldset>
+            <legend>Botones</legend>
+            <button disabled>Valida</button>
+            <input type="button" value="No hace nada">
+            <button type="submit">Enviar</button>
+            <button type="reset">Borrar formulario</button>
+        </fieldset>
+    </form>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form action="https://formsubmit.co/ipaslop@iesmartinezm.es" method="POST">
+        <fieldset>
+            <legend>Texto</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre"/>
+
+            <label for="dni">DNI:</label>
+            <input type="text" name="dni"/>
+
+            <label for="edad">Edad:</label>
+            <input type="text" name="edad"/>
+
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+        </fieldset>
+        <fieldset>
+            <legend>Listas</legend>
+
+            <label for="ciudad">Ciudad:</label>
+            <select name="ciudad">
+                <option value=""></option>
+                <optgroup label="Aragon">
+                    <option value="ZA">Zaragoza</option>
+                    <option value="HU">Huesca</option>
+                    <option value="TE">Teruel</option>
+                </optgroup>
+                <optgroup label="C.Valenciana">
+                    <option value="VA">Valencia</option>
+                    <option value="TO">Torrent</option>
+                    <option value="MI">Mislata</option>
+                    <option value="CU">Cullera</option>
+                </optgroup>
+            </select>
+
+            <label for="ndata">Programa:</label>
+            <input list="editor">
+            <datalist id="editor">
+                <option value="Atom">
+                <option value="NotePad++">
+                <option value="VsCode">
+                <option value="Sublime">
+                <option value="Brackets">
+            </datalist>
+
+        </fieldset>
+        <fieldset>
+            <legend>Opciones</legend>
+
+            <label for="genero">Sexo</label>
+            <input type="radio" name="genero" value="masculino" />Hombre<br />
+            <input type="radio" name="genero" value="fememino" />Mujer<br />
+            
+            <label for="dispositivos">Dispositivos electrónicos</label><br />
+            <input type="checkbox" name="dispositivos" value="pc" />PC<br />
+            <input type="checkbox" name="dispositivos" value="table" />Tableta<br />
+            <input type="checkbox" name="dispositivos" value="movil" />Móvil
+        
+        </fieldset>
+        
+        <fieldset>
+            <legend>Botones</legend>
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+    <script src="js/script.js"></script>
+</body>
+</html>
