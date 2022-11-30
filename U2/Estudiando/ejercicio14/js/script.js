@@ -57,11 +57,13 @@ const validarDias = (fecha) => {
     let dia = array[0]
     let mes = array[1]
     let ano = array[2]
+    
+    if(dia>31 || mes>12 ) return false
     // febrero 28 dias, si bisiesto 29
     let bisiesto = ano%4===0
-    if(dia>31 || mes>12 ) return false
     if(mes==2 && bisiesto && dia>29) return false
     if(mes==2 && (!bisiesto) && dia>28 ) return false
+    // meses con 30 días
     if( (mes==4 || mes==6 || mes==9 | mes==11) && dia>30 ) return false
     return true
 }
