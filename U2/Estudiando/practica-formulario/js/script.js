@@ -104,8 +104,6 @@ $form.addEventListener('submit', verificar)
 $fecha.addEventListener('blur', validarFecha)
 $email.addEventListener('blur', validarEmail)
 $nombre.addEventListener('blur', validarNombre)
-//$ciudades.addEventListener('blur', validarCiudad)
-//$texto.addEventListener('blur',validarMensaje)
 
 
 ///// ERROR ///////////////////////////////////
@@ -113,7 +111,7 @@ const error = (elemento, mensaje) => {
     let $p = $d.createElement('p')
     $p.textContent = mensaje
     elemento.insertAdjacentElement('afterend',$p)
-    elemento.setAttribute('class','red')
+    $p.setAttribute('class','red')
     setTimeout(() => {
         $p.remove()
     }, 5000);
