@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    
+
+    <div class="contenido-formulario">
+      <form
+        action="https://formsubmit.co/idiator770@iesmartinezm.es"
+        method="POST"
+        class="formulario"
+      >
+        <div class="divNombre">
+          <label class="colorLabel" for="nombreApellidos"
+            >Nombre y apellidos: </label
+          ><input
+            type="text"
+            name="nombreApellidos"
+            class="nombreApellidos"
+            id="nombreApellidosLabel"
+          />
+        </div>
+        <div class="divCorreo">
+          <label class="colorLabel" for="correo">Correo: </label
+          ><input
+            type="text"
+            name="correo"
+            id="nombreApellidosLabel"
+            class="correo"
+          />
+        </div>
+        <div class="divFecha">
+          <label class="colorLabel" for="fecha">Fecha de nacimiento: </label
+          ><input
+            type="date"
+            name="fecha"
+            id="nombreApellidosLabel"
+            class="fecha"
+          />
+        </div>
+        <div class="divRadio">
+          <label class="colorLabel" for="sexo">Sexo:</label>
+          <div>
+            <input name="sexo" value="HOMBRE" type="radio"  /><label for="HOMBRE"
+              >HOMBRE</label
+            >
+          </div>
+          <div>
+            <input name="sexo" value="MUJER" type="radio" /><label for="MUJER"
+              >MUJER</label
+            >
+          </div>
+          <div>
+            <input name="sexo" value="NSNC" type="radio" /><label for="NSNC"
+              >NSNC</label
+            >
+          </div>
+        </div>
+        <div class="divAficiones">
+          <label class="colorLabel">Elige una aficion:</label>
+          <div>
+            <input
+              type="checkbox"
+              class="aficiones"
+              name="aficiones"
+              id="Videojuegos"
+              value="Videojuegos"
+            /><label for="Videojuegos">Videojuegos</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              class="aficiones"
+              name="aficiones"
+              id="Deporte"
+              value="Deporte"
+            /><label for="Deporte">Deporte</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              class="aficiones"
+              name="aficiones"
+              id="Lectura"
+              value="Lectura"
+            /><label for="Lectura">Lectura</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              class="aficiones"
+              name="aficiones"
+              id="Salir con los amigos"
+              value="Salir con los amigos"
+            /><label for="Salir con los amigos">Salir con los amigos</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              class="aficiones"
+              name="aficiones"
+              id="Otros"
+              value="Otros"
+            /><label for="Otros" class="labelOtro">Otros</label>
+          </div>
+        </div>
+        <div class="divCiudades">
+          <label class="colorLabel" for="listaCiudades"
+            >Elige una ciudad:<input
+              list="listaCiudades"
+              name="listaCiudades"
+              class="ciudadesLista" /></label
+          ><datalist id="listaCiudades">
+            <option value="Almería"></option>
+            <option value="Granada"></option>
+            <option value="Jaén"></option>
+            <option value="Córdoba"></option>
+            <option value="Málaga"></option>
+            <option value="Sevilla"></option>
+            <option value="Cádiz"></option>
+            <option value="Huelva"></option>
+          </datalist>
+        </div>
+        <div class="divMensaje">
+          <label class="colorLabel" for="textarea">Mensaje: </label
+          ><textarea class="textarea" name="mensaje"></textarea>
+        </div>
+        <div class="divBoton">
+          <input type="submit" value="Enviar" class="enviar" />
+        </div>
+      </form>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
