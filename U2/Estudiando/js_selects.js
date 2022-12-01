@@ -1,5 +1,5 @@
-const  comprobarSelect = posicion =>{
-    let select = document.querySelector(posicion);
+const  comprobarSelect = elemento =>{
+    let select = document.querySelector(elemento);
 
     //Esta variable guarda el índice de la opción que está seleccionada (0, 1, 2,...)
     let opcionSel = select.selectedIndex;
