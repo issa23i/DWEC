@@ -21,6 +21,10 @@ const validarFormulario = (e) => {
     if(!validarNombre()) ok = false
     if(!validarCorreo()) ok = false
     if(!validarFecha()) ok = false
+    if(!validarSexo()) ok = false
+    if(!validarAficiones()) ok = false
+    if(!validarCiudad()) ok = false
+    if(!validarMensaje()) ok = false
     if(ok===false){
         e.preventDefault()
         return false
@@ -30,14 +34,14 @@ const validarFormulario = (e) => {
 
 const validarNombre = () => {
     let nombreValidar = document.querySelector('[name="nombreApellidos"]')
-    let valido = new RegExp(/[^\d]+/).test(nombreValidar.value)
+    let valido = new RegExp(/^[^\d]+$/).test(nombreValidar.value)
     if(!valido) error(nombreValidar,'El nombre no puede contener números ni estar vacío')
     return valido
 }
 
 const validarCorreo = () => {
     let correoValidar = document.querySelector('[name="correo"]')
-    let valido = new RegExp(/\w+/).test(correoValidar.value)
+    let valido = new RegExp(/^\w+@\w+\.\w+$/).test(correoValidar.value)
     if(!valido) error(correoValidar, 'El correo no puede estar vacío')
     return valido
 }
@@ -46,6 +50,34 @@ const validarFecha = () => {
     let fechaValidar = document.querySelector('[name="fecha"]')
     let valido = before2010(fechaValidar.value)
     if(!valido) error(fechaValidar, 'La fecha debe ser anterior a 2010')
+    return valido
+}
+
+const validarSexo = () => {
+    let sexoValidar = document.querySelectorAll('[name="sexo"]')
+    let valido = (Array.from(sexoValidar).filter(s => s.checked)).length>0
+    if(!valido) error(document.querySelector('.divRadio'),'Debe elegir un sexo')
+    return valido
+}
+
+const validarAficiones = () => {
+    let aficionesValidar = document.querySelectorAll('[name="aficiones"]')
+    let valido = (Array.from(aficionesValidar).filter(a => a.checked)).length>0
+    if(!valido) error(document.querySelector('.divAficiones'),'Debe seleccionar al menos una afición')
+    return valido
+}
+
+const validarCiudad = () => {
+    let ciudadValidar= document.querySelector('[name="listaCiudades"]')
+    let valido = ciudadValidar.value !== ''
+    if(!valido) error(document.querySelector('.divCiudades'),'Debe seleccionar una ciudad')
+    return valido
+}
+
+const validarMensaje = () => {
+    let mensajeValidar = document.querySelector('[name="mensaje"]')
+    let valido = mensajeValidar.value !== ''
+    if(!valido) error(mensajeValidar,'El mensaje no puede estar vacío')
     return valido
 }
 
