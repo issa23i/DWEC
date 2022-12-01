@@ -12,86 +12,108 @@ campo en cuestión con un formato proporcionado por una clase CSS (color rojo). 
  */
 
 const $d = document
-$nombre = $d.querySelector('.nombreApellidos')
+$nombre = $d.querySelector('[name="nombreApellidos"]')
 $email = $d.querySelector('.correo')
 $fecha = $d.querySelector('.fecha')
-$sexos = $d.querySelectorAll('[name="sexo"]')
-$aficiones = $d.querySelectorAll('.aficiones')
-$ciudades = $d.querySelector('#listaCiudades')
+$ciudades = $d.querySelector('[name="listaCiudades"]')
 $texto = $d.querySelector('.textarea')
 $btn = $d.querySelector('.enviar')
 
 $form = $d.querySelector('form')
 
 
+///// VERIFICAR FORMULARIO //////////////////////
+const verificar = (e) => {
+    let ok = true
+    if (!validarSexo()) ok = false
+    if (!validarAficiones()) ok = false
+    if (!validarNombre()) ok = false
+    if (!validarCiudad()) ok = false
+    if (!validarEmail()) ok = false
+    if (!validarFecha()) ok = false
+    if (!validarMensaje()) ok = false
+    if(!ok){
+        e.preventDefault()
+        error(e,'Formulario no enviado. Verifique todos los campos')
+        return false
+    }
+    return true
+}
+
 ////// VALIDACIONES ////////////////////////////
 // No vacío ni números
-const validarNombre = (e) => {
-    let str = e.target.value
+const validarNombre = () => {
+    let nombre = document.querySelector('[name="nombreApellidos"]')
+    let str = $d.querySelector('.nombreApellidos').value
     let valido = new RegExp(/([^\d])+/).test(str)
-    if(!valido) error(e.target,'Nombre no puede estar vacío ni contener números')
+    if(!valido) error(nombre,'Nombre no puede estar vacío ni contener números')
     return valido
 }
 
 // año anterior a 2010
-const validarFecha = (e) => {
+const validarFecha = () => {
+    let inputFecha = document.querySelector('[name="fecha"]')
     let anyo = 2010
-    fecha = new Date(e.target.value)
+    let fecha = new Date(inputFecha.value)
     
     let y = fecha.getFullYear()
     let valido = y<anyo
-    if(!valido) error(e.target,'Fecha no puede ser posterior o igual a 2010 ni estar vacía')
+    if(!valido) error(inputFecha,'Fecha no puede ser posterior o igual a 2010 ni estar vacía')
     return valido
 }
 
-const validarEmail = (e) => {
-    let str = e.target.value
+const validarEmail = () => {
+    let email = document.querySelector('[name="correo"]')
+    let str = email.value
     let valido = new RegExp(/\w+/).test(str)
-    if(!valido) error(e.target,'Email no puede estar vacío')
+    if(!valido) error(email,'Email no puede estar vacío')
     return valido
 }
 
-const validarSexo = (e) => {
+const validarSexo = () => {
     let sexos = $d.querySelectorAll('[name="sexo"]')
-    let valido = sexos.entries().length > 0
-    if(!valido) error(e.target,'Sexo no puede estar vacío')
+    let valido = ((Array.from(sexos).filter(s => s.checked)).length) > 0
+    if(!valido) error($d.querySelector('.divRadio'),'Sexo no puede estar vacío')
     return valido
 }
 
-const validarAficiones = (e) => {
+const validarAficiones = () => {
     let aficiones = $d.querySelectorAll('[name="aficiones"]')
-    let valido = aficiones.values().length > 0
-    if(!valido) error(e.target,'Aficiones no puede estar vacío')
+    let valido = ((Array.from(aficiones).filter(a => a.checked)).length)>0
+    if(!valido) error($d.querySelector('.divAficiones'),'Aficiones no puede estar vacío')
     return valido
 }
 
-const validarCiudad = (e) => {
-    let ciudad = $d.querySelector('#listaCiudades')
+const validarCiudad = () => {
+    let ciudad = $d.querySelector('[name="listaCiudades"]')
     let valido = ciudad.value !== ''
-    if(!valido) error(e.target, 'Ciudad no puede estar vacío')
+    if(!valido) error(document.querySelector('.divCiudades'), 'Ciudad no puede estar vacío')
     return valido
 }
 
-const validarMensaje = (e) => {
-    let str = e.target.value
+const validarMensaje = () => {
+    let inputMensaje = document.querySelector('[name="mensaje"]')
+    let str = inputMensaje.value
     let valido = new RegExp(/\w+/).test(str)
-    if(!valido) error(e.target,'Mensaje no puede estar vacío')
+    if(!valido) error(inputMensaje,'Mensaje no puede estar vacío')
     return valido
 }
 
+
+$form.addEventListener('submit', verificar)
 $fecha.addEventListener('blur', validarFecha)
-//$aficiones.addEventListener('blur', validarAficiones)
-//$sexos.addEventListener('blur', validarSexo)
 $email.addEventListener('blur', validarEmail)
 $nombre.addEventListener('blur', validarNombre)
-$ciudades.addEventListener('blur', validarCiudad)
-$texto.addEventListener('blur',validarMensaje)
+//$ciudades.addEventListener('blur', validarCiudad)
+//$texto.addEventListener('blur',validarMensaje)
+
 
 ///// ERROR ///////////////////////////////////
 const error = (elemento, mensaje) => {
     let $p = $d.createElement('p')
     $p.textContent = mensaje
     elemento.insertAdjacentElement('afterend',$p)
+    elemento.setAttribute('class','red')
     setTimeout(() => {
         $p.remove()
     }, 5000);
