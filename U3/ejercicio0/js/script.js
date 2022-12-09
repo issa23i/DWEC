@@ -83,5 +83,5 @@ const checkSS = () => {
   window.addEventListener("load", checkSS);
 
 
- // clear ---- 
+ // clear ---- limpiar local y session Storage
  // document.location.reload() --- RECARGAR PÁGINA
