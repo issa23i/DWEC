@@ -57,6 +57,11 @@ const colorFondo = (color) => {
     document.body.style = `background-color: ${color}`
 }
 
+//// no funciona !!!!!!!!!! ///////////////////////////////////////////////////////////////////////
+const fondo = (e) => {
+    let seleccionado= e.target.options[this.seletedIndex]
+    document.body.style = `background-color: ${seleccionado.textContent}`
+}
 const color = () => {
     if(inputCheckbox.checked){
         crearSelect()
@@ -91,8 +96,9 @@ const crearSelect = () => {
         option.text = `Color : ${color}`
         option.style = `background-color: ${color}`
         select.insertAdjacentElement('beforeend',option)
-        //option.addEventListener('select',colorFondo(color))
+        
     }
+    select.addEventListener('change', fondo())
 }
 
 const borrarSelect = () => {

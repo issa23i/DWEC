@@ -48,6 +48,9 @@ function getCookie(cname) {
   }
   return "";
 }
+ /// deleteCookie('contador)
+
+
 
 ///// LOCALSTORAGE ////////////////////////////
 
@@ -78,3 +81,7 @@ const checkSS = () => {
   };
   
   window.addEventListener("load", checkSS);
+
+
+ // clear ---- 
+ // document.location.reload() --- RECARGAR PÁGINA
