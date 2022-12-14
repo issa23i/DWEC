@@ -1,11 +1,15 @@
 /**
- * con la api reqres.in obtener para todos los usuarios mostrar el firstname e imagen (no url, sino la imagen) html
-todos los usuarios de todas las paginas (mirar la api para ver cuántqas páginas hay)
+ * con la api reqres.in obtener para todos los usuarios mostrar el firstname e imagen 
+ * (no url, sino la imagen) 
+cargar todos los usuarios de todas las paginas en el html
+(mirar la api para ver cuántqas páginas hay)
 hacer un listado con firtsname e imagen
 
 usar postman para conocer la api
 
 gestión de errores
+
+
  */
 
 let urlReqres = "https://reqres.in/api/users/";
