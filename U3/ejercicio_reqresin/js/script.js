@@ -13,7 +13,7 @@ gestión de errores
  */
 
 let urlReqres = "https://reqres.in/api/users/";
-let user = 0;
+let user = 1;
 let users = 0;
 let responseOK = false
 let responseOK_ = false
@@ -26,10 +26,10 @@ fetch(urlReqres)
 .then(data => {
     users = data['total']
     if(responseOK){
-        while(user<users){
-            user++
+        while(user<=users){
             let urlUser = urlReqres + user;
             llamar(urlUser)
+            user++
         }
     }
     return data
@@ -62,4 +62,3 @@ const llamar = (url) => {
             })
             .catch((error) => console.log("Error" + error));
 }
-llamar(urlReqres+8)
