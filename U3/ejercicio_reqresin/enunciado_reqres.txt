@@ -1,0 +1,27 @@
+
+
+/**
+ * con la api reqres.in obtener para todos los usuarios mostrar el firstname e imagen 
+ * (no url, sino la imagen) 
+cargar todos los usuarios de todas las paginas en el html
+(mirar la api para ver cuántqas páginas hay)
+hacer un listado con firtsname e imagen
+
+usar postman para conocer la api
+
+gestión de errores*/
+
+1. Usando la API de https://reqres.in/ e implementado control de errores, realiza:
+a. Obtén todos los usuarios (first_name e imagen)
+b. Obtén el email, first_name, last_name y avatar (la imagen, no la URL) para un id de
+usuario seleccionado por el usuario.
+c. Crea un usuario con los datos proporcionados por un usuario y muestra la respuesta
+(código y objeto {})
+d. Actualiza un usuario con los datos proporcionados por un usuario y muestra la
+respuesta (código y objeto {})
+e. Elimina un usuario con los datos proporcionados por un usuario y muestra la respuesta
+(código y objeto {})
+NOTA: La entrada y salida se hace por HTML (el CSS no importa)
+
+
+// estudiar await (siempre delante del método async)

@@ -22,3 +22,8 @@ p{
     text-align: center;
     font-weight: 600;
 }
+
+.wrapped{
+    width: 90vw;
+    text-align: center;
+}
