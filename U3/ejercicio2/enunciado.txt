@@ -8,4 +8,6 @@ formulario text iput tarea, prioridad un select
 - siempre aparecerá en la tabla primero las de prioridad  alta y luego media y luego baja
 
 almacenar en el local storage nombre:valor
-un array de objetos [{tarea:----, prioridad:----, prioridad_numero: ...}, {tarea:---.., prioridad: ---, prioridad_numero: ...}, ... ]
+un array de objetos [{id:...,tarea:----, prioridad:----, prioridad_numero: ...}, {id:---,tarea:---.., prioridad: ---, prioridad_numero: ...}, ... ]
+
+para nota: un botón para eliminarla de la lista y del localstorage
