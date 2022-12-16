@@ -1,0 +1,11 @@
+3. Realiza una web del tipo TODO list donde puedas ir guardando tareas y prioridad (alta, media
+y baja) y las vaya mostrando por orden de prioridad.
+
+formulario text iput tarea, prioridad un select
+-la primera vez se recupera el localStorage, si no existe lo crea
+- cada vez que se inserta , se mete en un array localStorage
+- aparecerá en una tabla
+- siempre aparecerá en la tabla primero las de prioridad  alta y luego media y luego baja
+
+almacenar en el local storage nombre:valor
+un array de objetos [{tarea:----, prioridad:----, prioridad_numero: ...}, {tarea:---.., prioridad: ---, prioridad_numero: ...}, ... ]
