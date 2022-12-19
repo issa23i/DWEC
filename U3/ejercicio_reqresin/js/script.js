@@ -1,6 +1,6 @@
 
 // constantes
-const $btn = document.querySelector['button']
+const $btn = document.querySelector('button')
 const urlReqres = "https://reqres.in/api/users/";
 
 
@@ -29,18 +29,22 @@ fetch(urlReqres)
     return data
 })
 .catch((error) => console.log("Error" + error));
+
+
 /** Mostrar el seleccionado */
 const seleccionarUsuario = (e) => {
     e.preventDefault()
     $input = document.getElementById("num_usuario")
     let id = $input.value
     let urlUser = urlReqres+id
-    console.log(urlUser);
     fetch(urlUser)
     .then(json => json.json())
     .then(data => {
-        nombreUsuario  = data['data']['first_name']
-        console.log(nombreUsuario);
+        let email = data['data']['email']
+        let first_name  = data['data']['first_name']
+        let last_name = data['data']['last_name']
+        let avatar = data['data']['avatar']
+        mostrarUsuario(email,first_name,last_name,avatar)
     })
     
 }
@@ -76,7 +80,7 @@ const crearTarjeta = (nombre,imagen) => {
 }
 
 const mostrarUsuario = (email,nombre,apellido,avatar) => {
-    let $divShow = document.querySelector['#show']
+    let $divShow = document.getElementById('show')
     let $tarjeta = document.createElement('article')
     $divShow.insertAdjacentElement('afterbegin',$tarjeta)
     let $img = document.createElement('img')
@@ -95,4 +99,4 @@ const mostrarUsuario = (email,nombre,apellido,avatar) => {
 }
 
 // listeners
-addEventListener('click',seleccionarUsuario)
+$btn.addEventListener('click',seleccionarUsuario)
