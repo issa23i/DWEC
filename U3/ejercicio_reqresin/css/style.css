@@ -27,3 +27,27 @@ p{
     width: 90vw;
     text-align: center;
 }
+
+form{
+    display: inline-flex;
+    flex-direction: column;
+    padding: 2em;
+    border: 1px solid black;
+    text-align: center;
+    align-content: center;
+    background-color: orange;
+}
+
+form>input , button{
+    margin: 1em;
+    padding: 0.6em;
+    border-radius: 16px;
+}
+
+.formulario{
+    margin-top: 2em;
+}
+
+button{
+    background-color: gold;
+}
