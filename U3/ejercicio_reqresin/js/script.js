@@ -124,7 +124,13 @@ const addUsuario = (e) => {
     let avatar = document.getElementById('avatar').value
 
     // crear el objeto Usuario
-    let newUser = new Usuario(email,first_name,last_name,avatar)
+    let newUser = {
+        'email':email,
+        'first_name':first_name,
+        'last_name':last_name,
+        'avatar':avatar
+    }
+
 
     // guardar el objeto Usuario en Local Storage
     localStorage.setItem('usuario',newUser)
@@ -132,7 +138,7 @@ const addUsuario = (e) => {
     // Enviar usuario 
     fetch("https://reqres.in/api/users", {
         method: "POST",
-        body: JSON.stringify({ user: newUser})
+        body: JSON.stringify({newUser})
     })
     .then(response => { 
         console.log(response.status)
