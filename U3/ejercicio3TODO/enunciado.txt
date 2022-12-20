@@ -4,10 +4,19 @@ y baja) y las vaya mostrando por orden de prioridad.
 formulario text iput tarea, prioridad un select
 -la primera vez se recupera el localStorage, si no existe lo crea
 - cada vez que se inserta , se mete en un array localStorage
-- aparecerá en una tabla
-- siempre aparecerá en la tabla primero las de prioridad  alta y luego media y luego baja
+- aparecerá en una tabla (método que lo muestre)
+- siempre aparecerá en la tabla primero las de prioridad  alta y luego media y luego baja (ordenar con getItem)
 
 almacenar en el local storage nombre:valor
 un array de objetos [{id:...,tarea:----, prioridad:----, prioridad_numero: ...}, {id:---,tarea:---.., prioridad: ---, prioridad_numero: ...}, ... ]
 
 para nota: un botón para eliminarla de la lista y del localstorage
+    el botón tiene que tener la id de la entrada para poder borrar ese registro y no otro
+
+al cargar la página carga (pinta) la tabla
+tres addEventlistener (al borrar registro, al añadir registro y al cargar la página)
+
+addEventlistener('clic', (e)=>{
+    eliminarTarea(e.target)
+    mostrarTabla
+})
