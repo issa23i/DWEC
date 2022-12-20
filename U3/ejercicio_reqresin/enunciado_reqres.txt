@@ -1,4 +1,4 @@
-
+Mirar archivo json_server.txt 
 
 /**
  * con la api reqres.in obtener para todos los usuarios mostrar el firstname e imagen 

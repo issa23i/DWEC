@@ -134,6 +134,10 @@ const addUsuario = (e) => {
         method: "POST",
         body: JSON.stringify({ user: newUser})
     })
+    .then(response => { 
+        console.log(response.status)
+        return response
+    })
     .then(response => response.json())
     .then(data => console.log(data));
 }
@@ -175,8 +179,8 @@ const eliminarUsuario = (e) => {
     fetch(`https://reqres.in/api/users/${id}`, {
     method: "DELETE"
     })
-    .then(response => response.json())
-    .then(json => console.log(json))
+    .then(response => console.log(response.status))
+    .catch(error => console.log('Error : ' + error))
 }
 
 // listeners

@@ -1,0 +1,13 @@
+En el directorio donde esté el archivo json
+
+instalar npm node, comprobar si está instalado:
+node -v
+npm -v
+
+npm install –g json-server
+
+
+json-server -w db.json
+O si no funciona, probar este comando:
+npx json-server -w db.json
+
