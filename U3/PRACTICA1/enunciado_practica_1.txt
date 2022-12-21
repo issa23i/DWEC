@@ -1,0 +1,6 @@
+Sigue estos videotutoriales (https://www.youtube.com/watch?v=1PSFSsmqxgQ) para realizar una
+conexión con Stripe, pero en lugar de los “tacos” crea los 4 productos que tú quieras con un pago
+único. 5p
+Explica y defiende tu proyecto frente al profesor. 5p
+Nota: El Template HTML puede dar problemas. Ir a https://dashboard.stripe.com/settings/checkout
+para activar la integración solo del cliente.
