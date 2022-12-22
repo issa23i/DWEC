@@ -32,11 +32,7 @@ const addTarea = (e) => {
   let prioridadTarea = $inputPrioridad.value;
 
   let indiceTarea = getIndice();
-  let tarea = {
-    'indiceTarea':indiceTarea,
-    'textoTarea':textoTarea,
-    'prioridadTarea':prioridadTarea
-  }
+  let tarea = [indiceTarea, textoTarea, prioridadTarea];
 
   // si no existe en LocalStorage, lo crea
   let listaTareas = JSON.parse(localStorage.getItem("tareas"));
@@ -57,7 +53,7 @@ const borrarRegistro = (e) => {
     let listaTareas = JSON.parse(localStorage.getItem("tareas"));
     for (let i = 0; i < listaTareas.length; i++) {
       if (listaTareas[i] !== null) {
-        if (listaTareas[i].indiceTarea == $boton.value) {
+        if (listaTareas[i][0] == $boton.value) {
           delete listaTareas[i];
           listaTareas = listaTareas.filter((t) => t !== null);
           guardarTareas(listaTareas)
@@ -77,13 +73,13 @@ const printTarea = (tarea) => {
     $tbody.insertAdjacentElement("afterend", $tr);
     // Celdas para texto, prioridad, botón borrar
     let $tdTexto = document.createElement("td");
-    $tdTexto.textContent = tarea.textoTarea;
+    $tdTexto.textContent = tarea[1];
     let $tdPrioridad = document.createElement("td");
-    $tdPrioridad.textContent = getTextoPrioridad(tarea.prioridadTarea);
+    $tdPrioridad.textContent = getTextoPrioridad(tarea[2]);
     // El botón borrar lleva el índice de la tarea
     let $tdButton = document.createElement("td");
     let $button = document.createElement("button");
-    let indice = tarea.indiceTarea;
+    let indice = tarea[0];
     $button.value = indice;
     $button.textContent = "Borrar";
     $tdButton.appendChild($button);
@@ -107,18 +103,6 @@ document.querySelector('[type="submit"]').addEventListener("click", addTarea);
  * @returns Indice con autoincremento
  */
 const getIndice = () => {
-  let indice = 0
-  let listaTareas = JSON.parse(localStorage.getItem("tareas"));
-  if(! (listaTareas.length===0) ){
-    listaTareas.sort((t1,t2) => t1.indiceTarea-t2.indiceTarea)
-    let ultimaTarea = listaTareas[(listaTareas.length)-1]
-    indice = ultimaTarea.indiceTarea
-    indice++
-  }
-
-  return indice
-
-  /** 
   let indice = localStorage.getItem("indice");
   if (indice === null) {
     localStorage.setItem("indice", 0);
@@ -128,12 +112,11 @@ const getIndice = () => {
     localStorage.setItem("indice", indice);
   }
   return indice;
-  */
 };
 
 const ordenarTareas = (tareas) => {
     // ordenar de mayor prioridad a menor
-    tareas.sort( (t1,t2) => t2.prioridadTarea-t1.prioridadTarea)
+    tareas.sort( (t1,t2) => t2[2]-t1[2])
     // recargar página para que surta efecto
     window.location.reload()
 }
