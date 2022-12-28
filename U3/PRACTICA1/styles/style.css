@@ -1,0 +1,47 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  .donar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .donar>* {
+    flex: 1 1 32vw;
+    margin: 1vw;
+  }
+
+  .donacion {
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 16px;
+    font-size: 125%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+
+  .donacion:hover {
+    opacity: .9;
+    transform: scale(.9);
+  }
+
+  .donacion img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .donacion figcaption {
+    padding: 1rem;
+  }
