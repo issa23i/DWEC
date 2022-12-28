@@ -1,19 +1,25 @@
-import stripeKeys from './stripe-keys.js';
+// importar las claves públic y privada
 import STRIPE_KEYS from './stripe-keys.js'
 
 const d = document,
-$donacion = d.getElementById('donar'),
-$template = d.getElementById('donacion-template'),
+
+$donacion = d.getElementById('donar'), // section
+$template = d.getElementById('donacion-template'), // div del producto
+
 // se crea un fragmento para no sobrecargar la carga del dom al añadir elementos dinámicamente
 $fragment = d.createDocumentFragment();
+
+// cabecera del fetch con la autorización (clave privada)
 let fetchOptions = {
     headers:{
         Authorization: `Bearer ${STRIPE_KEYS.secret}`
     }
 }
 
+// variables para guardar la data proporcionada por el json de la respuesta
 let prices, products
 
+// variable para formatear el precio , poner decimales y añadir el símbolo del euro
 const moneda = num => `${num.slice(0, -2)},${num.slice(-2)} €`
 
 Promise.all([
@@ -22,14 +28,13 @@ Promise.all([
 ])
 .then((responses) => Promise.all(responses.map(res => res.json())))
 .then(json => {
-//    console.log(json)
+
     products = json[0].data
     prices = json[1].data
-//    console.log(products, prices);
-    // de cada id juntamos el precio y el producto
+
+    // de cada id juntamos el precio y el producto en un mismo array
 prices.forEach(el => {
     let productData = products.filter(product => product.id === el.product)
-    console.log(productData);
 
     // a la pasarela de pago hay que enviarle el id, por eso se le añade un atributo data-price
     $template.querySelector('.donacion').setAttribute("data-price",el.id)
