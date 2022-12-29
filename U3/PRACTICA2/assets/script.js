@@ -43,6 +43,7 @@ const seleccion = (e) => {
 const buscar = async () => {
   borrarResultados()
   borrarDetalle()
+  borrarListados()
   let $input = d.querySelector("input");
   let tipo = d.querySelector("select").value;
   let palabra = $input.value;
@@ -99,23 +100,66 @@ const listarCategorias = async () => {
   } catch (error) {
     console.error(error)
   }
-  // listar por categorías
-  console.log("listar por categorías");
 };
 
-const listarIngredientes = () => {
-  // listar por ingredientes
-  console.log("listar por ingredientes");
+const listarIngredientes = async () => {
+  let url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+  let $divListados = d.querySelector('#listados')
+  try {
+    let res = await fetch(url)
+    let resOk = await res.ok
+    if(resOk){
+      let data = await res.json()
+      let ingredientes = await data['drinks']
+      for (const i of ingredientes) {
+        let $h2 = d.createElement('h2')
+        $h2.textContent = i['strIngredient1']
+        $divListados.appendChild($h2)
+      }
+    }
+  } catch (error) {
+    console.error(error)
+  }
 };
 
-const listarVasos = () => {
-  // listar por tipo de vaso
-  console.log("listar por tipo de vaso");
+const listarVasos = async () => {
+  let url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list'
+  let $divListados = d.querySelector('#listados')
+  try {
+    let res = await fetch(url)
+    let resOk = await res.ok
+    if(resOk){
+      let data = await res.json()
+      let vasos = await data['drinks']
+      for (const v of vasos) {
+        let $h2 = d.createElement('h2')
+        $h2.textContent = v['strGlass']
+        $divListados.appendChild($h2)
+      }
+    }
+  } catch (error) {
+    console.error(error)
+  }
 };
 
-const listarAlcohol = () => {
-  //listar por tipo de alcohol
-  console.log("listar por tipo de alcohol");
+const listarAlcohol = async () => {
+  let url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list'
+  let $divListados = d.querySelector('#listados')
+  try {
+    let res = await fetch(url)
+    let resOk = await res.ok
+    if(resOk){
+      let data = await res.json()
+      let alcohol = await data['drinks']
+      for (const a of alcohol) {
+        let $h2 = d.createElement('h2')
+        $h2.textContent = a['strAlcoholic']
+        $divListados.appendChild($h2)
+      }
+    }
+  } catch (error) {
+    console.error(error)
+  }
 };
 
 const mostrarBebidas = (data) => {
