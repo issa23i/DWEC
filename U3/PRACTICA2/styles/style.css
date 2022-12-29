@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -5,56 +6,71 @@
 }
 body {
   background-color: black;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  font-size: 18px;
+  font-family: "Sacramento", sans-serif;
+  background-color: #18012d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;  
 }
 main {
   width: 100%;
-  min-height: 100%;
+  min-height: 70vh;
   background-image: url("../images/descarga.jfif");
   background-position: top;
   background-repeat: no-repeat;
-  background-color: #18012d;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
-.neonText {
+.neonText, #detalle *, h1, h2, h3, input, select, option{
+  font-family: 'Yellowtail';
+  font-size: larger;
+}
+.neonText, #detalle * {
     color: #fff;
     text-shadow:
       0 0 7px #fff,
       0 0 10px #fff,
       0 0 21px #fff,
-      0 0 42px #bc13fe,
-      0 0 82px #bc13fe,
-      0 0 92px #bc13fe,
-      0 0 102px #bc13fe,
-      0 0 151px #bc13fe;
+      0 0 42px #CB12A5,
+      0 0 82px #CB12A5,
+      0 0 92px #CB12A5,
+      0 0 102px #CB12A5,
+      0 0 151px #CB12A5;
   }
-    
-  body {
-    font-size: 18px;
-    font-family: "Sacramento", sans-serif;
-    background-color: #010a01;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-  }  
-  
+  h1, h2, h3{
+    font-size:xx-large;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #0E4CC9,
+      0 0 42px #0E4CC9,
+      0 0 82px #0E4CC9,
+      0 0 92px #0E4CC9,
+      0 0 102px #0E4CC9,
+      0 0 151px #0E4CC9!important;
+  }
   h1, h2 {
     text-align: center;
     font-weight: 400;
   }
+  h3 {
+    text-align: center;
+    font-weight: 300;
+  }
     
   select,
 input,
-button {
+button, option {
     font-size: 1em;
+    color: white;
     margin: 1em;
-    color: #E51DCB;
     text-align: center;
-    animation: pulsate 1.5s infinite alternate;  
     border: 0.2rem solid #fff;
     border-radius: 2rem;
     padding: 0.5em;
@@ -67,6 +83,24 @@ button {
   }
   button{
     padding: 0.5em 2em;
+    animation: pulsate 1.5s infinite alternate;
+  }
+  button:hover, article>img:hover{
+    cursor: pointer;
+  }
+  option{
+    background-color: #010a01;
+  }
+  select, option, input{
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 90px #bc13fe,
+      0 0 100px #bc13fe,
+      0 0 150px #bc13fe;
   }
   @keyframes pulsate {
       
@@ -100,3 +134,83 @@ button {
   .hidden{
     display: none;
   }
+
+  article{
+    margin: 1em 1em;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 23vw;
+    justify-content: center;
+    align-content: space-around;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.5em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #0E4CC9,
+              0 0 0.8rem #0E4CC9,
+              0 0 2.8rem #0E4CC9,
+              inset 0 0 1.3rem #0E4CC9; 
+  }
+  article>img{
+    width: 90%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  article>h2{
+    margin: 1rem;
+  }
+  #resultados{
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+    padding-bottom: 1em;
+  }
+  #resultados>p{
+    color: #D700B8;
+    margin-left: 40vw;
+  }
+  #imagen{
+    grid-area: imagen;
+  }
+  #imagen>img{
+    width: 100%;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.5em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #0E4CC9,
+              0 0 0.8rem #0E4CC9,
+              0 0 2.8rem #0E4CC9,
+              inset 0 0 1.3rem #0E4CC9; 
+  
+  }
+  #descripcion{
+    grid-area: descri;
+    color: #D700B8;
+  }
+  #receta{
+    grid-area: receta;
+  }
+  #detalle{
+    text-align: center;
+    width: 70%;
+    justify-content: center;
+    display: grid;
+    gap: 1rem;
+    grid-template: "imagen descri" 1fr
+                    "receta receta" 1fr /
+                    1fr 1fr
+  }
+  #detalle h1, #detalle h3{
+    margin: 1rem 0.2rem;
+  }
+  section{
+    display: flex;
+    justify-content: center;
+  }
+  

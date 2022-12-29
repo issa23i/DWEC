@@ -10,23 +10,43 @@
 <body>
     <main>
         <div id="buscador" >
-
+            <!---->
             <select name="formato" id="formato">
-                <option value="s">buscar por nombre</option>
-                <option value="c">listar por categoría</option>
-                <option value="i">listar por ingrediente</option>
-                <option value="g">listar por vaso</option>
-                <option value="a">listar por alcohol</option>
+                <option value="s">Buscar por nombre</option>
+                <option value="i">Buscar por ingrediente</option>
+                <option value="c">Listar categorías</option>
+                <option value="ii">Listar ingredientes</option>
+                <option value="g">Listar tipos de vasos</option>
+                <option value="a">Listar Bebidas sin alcohol </option>
             </select>
             <input type="text" name="s" id="s" >
             <button class="neonText">Buscar</button>
-        
+            
         </div>
+        <div id="listados" class="neonText">
+            <div class="btn hidden" id="c"><h2>Categorías</h2> </div>
+            <div class="btn hidden" id="i"><h2>Ingredientes</h2></div>
+            <div class="btn hidden" id="g"><h2>Vasos</h2></div>
+            <div class="btn hidden" id="a"><h2>Alcohol</h2></div>
+        </div>
+    </main>
+    <section>
+        <div id="listados">
 
+        </div>
+    </section>
+    <section>
         <div id="resultados">
 
         </div>
-    </main>
+    </section>
+    <section>
+        <div id="detalle">
+            <div id="imagen"></div>
+            <div id="descripcion"></div>
+            <div id="receta"></div>
+        </div>
+    </section>
     <script src="assets/script.js" type="module"></script>
 </body>
 </html>

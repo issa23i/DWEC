@@ -43,10 +43,12 @@ const seleccionarUsuario = (e) => {
     let urlUser = urlReqres+id
     fetch(urlUser)
     .then(response => {
+        console.log(response);
         responseOK = response.ok
         return response.json()
     })
     .then(data => {
+        console.log(data);
         if(responseOK){
             let email = data['data']['email']
             let first_name  = data['data']['first_name']
