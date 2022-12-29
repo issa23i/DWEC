@@ -10,15 +10,21 @@
 <body>
     <main>
         <div id="buscador" >
+
             <select name="formato" id="formato">
-                <option value="s">por nombre</option>
-                <option value="c">por categoría</option>
-                <option value="i">por ingrediente</option>
-                <option value="g">por vaso</option>
-                <option value="a">por alcohol</option>
+                <option value="s">buscar por nombre</option>
+                <option value="c">listar por categoría</option>
+                <option value="i">listar por ingrediente</option>
+                <option value="g">listar por vaso</option>
+                <option value="a">listar por alcohol</option>
             </select>
             <input type="text" name="s" id="s" >
             <button class="neonText">Buscar</button>
+        
+        </div>
+
+        <div id="resultados">
+
         </div>
     </main>
     <script src="assets/script.js" type="module"></script>

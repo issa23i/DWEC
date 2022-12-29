@@ -10,7 +10,7 @@ body {
 }
 main {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-image: url("../images/descarga.jfif");
   background-position: top;
   background-repeat: no-repeat;
@@ -19,8 +19,6 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-}
-#buscador {
 }
 .neonText {
     color: #fff;
@@ -52,13 +50,14 @@ main {
   select,
 input,
 button {
+    font-size: 1em;
     margin: 1em;
     color: #E51DCB;
     text-align: center;
     animation: pulsate 1.5s infinite alternate;  
     border: 0.2rem solid #fff;
     border-radius: 2rem;
-    padding: 0.4em;
+    padding: 0.5em;
     box-shadow: 0 0 .2rem #fff,
               0 0 .2rem #fff,
               0 0 2rem #bc13fe,
@@ -66,7 +65,9 @@ button {
               0 0 2.8rem #bc13fe,
               inset 0 0 1.3rem #bc13fe; 
   }
-  
+  button{
+    padding: 0.5em 2em;
+  }
   @keyframes pulsate {
       
     100% {
@@ -96,3 +97,6 @@ button {
       0 0 80px #bc13fe;
   
   }}
+  .hidden{
+    display: none;
+  }
