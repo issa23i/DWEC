@@ -3,6 +3,7 @@ const url = "https://www.thecocktaildb.com/api/json/v1/1/";
 const d = document;
 const $select = d.querySelector("select");
 const $searchBtn = d.querySelector("button");
+const $fijado = d.querySelector('#fijado')
 
 /// EVENTOS //////////////////////////////////////
 const seleccion = (e) => {
@@ -66,9 +67,24 @@ const buscar = async () => {
   }
   };
 
+  const cocktelDelDia = async () => {
+    let baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
+    try {
+      let res = await fetch(baseUrl)
+      let resOk = await res.ok
+      if(resOk){
+        let data = await res.json()
+        let id = await data['drinks'][0]['strDrink']
+        await mostrarDetalle(id)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
   
 /// LISTENERS ////////////////////////////////////
 $select.addEventListener("change", seleccion);
+$fijado.addEventListener('click',cocktelDelDia)
 $searchBtn.addEventListener("click", async () =>{
   await buscar()
 });
@@ -95,6 +111,7 @@ const listarCategorias = async () => {
         let $h2 = d.createElement('h2')
         $h2.textContent = c['strCategory']
         $divListados.appendChild($h2)
+        $divListados.appendChild(await crearListado('c',c['strCategory']))
       }
     }
   } catch (error) {
@@ -112,9 +129,10 @@ const listarIngredientes = async () => {
       let data = await res.json()
       let ingredientes = await data['drinks']
       for (const i of ingredientes) {
-        let $h2 = d.createElement('h2')
-        $h2.textContent = i['strIngredient1']
+        let $h2 = await d.createElement('h2')
+        $h2.textContent = await i['strIngredient1']
         $divListados.appendChild($h2)
+        $divListados.appendChild(await crearListado('i',i['strIngredient1']))
       }
     }
   } catch (error) {
@@ -135,6 +153,7 @@ const listarVasos = async () => {
         let $h2 = d.createElement('h2')
         $h2.textContent = v['strGlass']
         $divListados.appendChild($h2)
+        $divListados.appendChild(await crearListado('g',v['strGlass']))
       }
     }
   } catch (error) {
@@ -153,8 +172,10 @@ const listarAlcohol = async () => {
       let alcohol = await data['drinks']
       for (const a of alcohol) {
         let $h2 = d.createElement('h2')
-        $h2.textContent = a['strAlcoholic']
+        let txt = await a['strAlcoholic']
+        $h2.textContent = await txt
         $divListados.appendChild($h2)
+        $divListados.appendChild(await crearListado('a',txt))
       }
     }
   } catch (error) {
@@ -179,7 +200,6 @@ const mostrarBebidas = (data) => {
     }
     $resultados.appendChild(fragment)
     let articles = $resultados.querySelectorAll('article')
-    console.log(articles);
   }
 };
 
@@ -202,7 +222,9 @@ const crearTarjeta = ( str, img) => {
 }
 
 const mostrarDetalle = async (id) => {
-  console.log(id);
+  borrarDetalle()
+  borrarResultados()
+  borrarListados()
   let urlSearch = `${url}search.php?s=${id}`;
   try {
     let res = await fetch(urlSearch)
@@ -236,6 +258,7 @@ const crearDetalle = (nombre, instruccionesES, instrucciones
   , imagen, categoria, tipoVaso, ingredientes
   , medidas) => {
     // primero borrar los resultados
+    borrarListados()
     borrarResultados()
     let $divDetalle = d.querySelector('#detalle')
     let $divImagen = d.querySelector('#imagen')
@@ -278,7 +301,6 @@ const crearDetalle = (nombre, instruccionesES, instrucciones
     let $h3Receta = d.createElement('h3')
     $h3Receta.textContent = 'Preparación'
     $divReceta.appendChild($h3Receta)
-    console.log(instrucciones);
     if(instruccionesES===null){ 
       // en ingles, si no están en español
       let $p = d.createElement('p')
@@ -326,3 +348,28 @@ const borrarListados = () => {
     element.className = 'hidden'
   });
 }
+
+const crearListado = async (option,cadena) => {
+  let baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?'
+  let urlSearch = `${baseUrl}${option}=${cadena}`
+  let fragmento = d.createDocumentFragment()
+  try {
+    let res = await fetch(urlSearch)
+    let resOk = await res.ok
+    if(resOk){
+      let data = await res.json()
+      let bebidas = await data['drinks']
+      for (const bebida of bebidas) {
+        let $tarjeta = await crearTarjeta(bebida['strDrink'],bebida['strDrinkThumb'])
+        fragmento.appendChild($tarjeta)
+      }
+      
+    }
+  } catch (error) {
+    console.error(error)
+  }
+
+  // retorna un fragmento
+  return fragmento
+}
+

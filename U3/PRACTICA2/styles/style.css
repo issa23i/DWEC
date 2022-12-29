@@ -213,4 +213,16 @@ button, option {
     display: flex;
     justify-content: center;
   }
+  #listados{
+    justify-content: center;
+    align-content: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+  #listados>h2{
+    width: 100%;
+  }
+  #fijado:hover{
+   cursor: pointer;
+  }
   
