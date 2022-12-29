@@ -1,0 +1,10 @@
+PRÁCTICA 2
+Confecciona una web que permita interactuar con una API a tú elección.
+Dependiendo del tipo de API deberás ofrecer una funcionalidad adecuada. Por ejemplo, en un
+API meteorológica podrías poder consultar que tiempo va a hacer en una localidad
+determinada durante el día de hoy, mañana y dentro de 10 días, por horas o por franjas de
+horas. O si le indicas una localidad y un día que te diga qué tiempo va a hacer. Es decir,
+funcionalidades básicas y que hagan uso de la API (al menos 2 funcionalidades, es decir, dos llamadas
+a la API con algún parámetro que seleccione el usuario). Se valorará la dificultad de la API y la
+funcionalidad ofrecida. 5p
+Explica y defiende tu proyecto frente al profesor. 5p
