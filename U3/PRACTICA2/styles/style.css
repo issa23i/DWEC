@@ -222,7 +222,17 @@ button, option {
   #listados>h2{
     width: 100%;
   }
+  #fijado{
+    margin: 2rem 0rem;
+  }
   #fijado:hover{
    cursor: pointer;
   }
-  
+  @media only screen and (max-width:576px) {
+    #detalle{
+      grid-template: "imagen" 1fr
+                    "descri" 1fr
+                    "receta" 1fr /
+                    1fr;
+    }
+  }
