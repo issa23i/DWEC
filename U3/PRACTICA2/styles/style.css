@@ -235,4 +235,7 @@ button, option {
                     "receta" 1fr /
                     1fr;
     }
+    article{
+      width: 62vw;
+    }
   }
