@@ -169,11 +169,11 @@ const listarAlcohol = async () => {
     let resOk = await res.ok
     if(resOk){
       let data = await res.json()
-      let alcohol = await data['drinks']
+      let alcohol = data['drinks']
       for (const a of alcohol) {
         let $h2 = d.createElement('h2')
-        let txt = await a['strAlcoholic']
-        $h2.textContent = await txt
+        let txt = a['strAlcoholic']
+        $h2.textContent = txt
         $divListados.appendChild($h2)
         $divListados.appendChild(await crearListado('a',txt))
       }
@@ -231,13 +231,13 @@ const mostrarDetalle = async (id) => {
     let resOk = await res.ok
     if( resOk ) {
       let data = await res.json()
-      let bebida = await data['drinks'][0]
-      let nombre = await bebida['strDrink']
-      let instruccionesES = await bebida['strInstructionsES']
-      let instrucciones = await bebida['strInstructions']
-      let imagen = await bebida['strDrinkThumb']
-      let categoria = await bebida['strCategory']
-      let tipoVaso = await bebida['strGlass']
+      let bebida = data['drinks'][0]
+      let nombre = bebida['strDrink']
+      let instruccionesES = bebida['strInstructionsES']
+      let instrucciones = bebida['strInstructions']
+      let imagen = bebida['strDrinkThumb']
+      let categoria = bebida['strCategory']
+      let tipoVaso = bebida['strGlass']
       let ingredientes = []
       let medidas = []
       for (let i = 0; i < 15; i++) {

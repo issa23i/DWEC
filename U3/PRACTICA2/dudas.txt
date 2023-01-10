@@ -1,3 +1,0 @@
-No tengo muy claro en qué casos hay que poner el await
-¿en todas las sentencias de una función async?
-
