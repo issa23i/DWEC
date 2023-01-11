@@ -3,15 +3,11 @@
  */
 const url = "https://formsubmit.co/ajax/ipaslop262@iesmartinezm.es";
 
-const form = document.querySelector(".miFormulario");
-
-const post = (url, body) => fetch(url, { method: "POST", body });
-
-form.addEventListener("submit", function (ev) {
+document.addEventListener("submit", ev => {
   ev.preventDefault(); // para no actualizar la página
-  const data = new FormData(form);
+  const body = new FormData(ev.target);
 
-  post(url, data)
+  fetch(url, { method: "POST", body })
     .then((response) => response.json())
     .then((data) => ( data['success']=='true') ? console.log('enviado') : console.log('error') )
     .catch((error) => console.error("ERROR" + error));
