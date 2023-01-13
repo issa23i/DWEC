@@ -16,9 +16,10 @@ const addUser = () => {
     formData.append('avatar', avatar)
 
     
+    
     let url = 'http://localhost:3000/results'
     fetch(url, {
-        method: 'PUT',
+        method: 'POST',
         body: formData
       })
     .then(res => res.ok)

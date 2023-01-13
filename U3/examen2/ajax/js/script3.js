@@ -6,7 +6,7 @@ const enviarForm = (e) => {
     let url = 'https://formsubmit.co/ajax/ipaslop262@iesmartinezm.es'
     
     fetch(url,{
-        method: 'PUT',
+        method: 'POST',
         body: formData1
       })
     .then(res => console.log(res.ok))
