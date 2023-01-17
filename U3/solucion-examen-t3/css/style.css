@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: .5rem;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.contenedor {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: .5rem;
+}

@@ -1,0 +1,17 @@
+´<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Para importar módulos es necesario declarar el tipo modulo (type="module") -->
+    <script src="js/modulos.js" type="module"></script>
+    <!-- Para navegadores que no soportan EcmaScript6, se añade el archivo con nomodule (ES5) -->
+    <!-- y se pega el mismo código por duplicado , -->
+    <!-- al llevar el atributo nomodule, los navegadores ES6 lo ignoran -->
+    <script src="js/no-modulos.js" nomodule></script>
+</body>
+</html>
