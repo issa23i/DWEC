@@ -1,1 +1,16 @@
-<p>salida works!</p>
+<h3 class="mt-4">Listado de notas</h3>
+<div class="row">
+    <h3 *ngIf="notas.length > 0; else noTareas">Notas</h3>
+    <ng-template #noTareas>
+        <div class="alert alert-info" role="alert">No hay Notas</div>
+    </ng-template>
+    <div class="list-group">
+        <a
+          href="#"
+          *ngFor="let nota of notas"
+          (click)="borrarNota(nota)"
+          class="list-group-item list-group-item-action"
+          >{{ nota | uppercase }}</a
+        >
+      </div>
+</div>

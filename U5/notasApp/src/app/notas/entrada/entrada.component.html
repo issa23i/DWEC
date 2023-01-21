@@ -1,1 +1,16 @@
-<p>entrada works!</p>
+<div class="row justify-content-md-center">
+    <div class="col col-md-5 my-2">
+        <input type="text"
+            class="form-control"
+            placeholder="Introduce una nota"
+            [(ngModel)]="nota")]
+            (keyup.enter)="addNota()"/>
+    </div>
+    <div class="col col-md-3 my-2">
+        <button type="button"
+            (click)="addNota()"
+            class="btn btn-primary">
+            Añadir nota
+        </button>
+    </div>
+</div>
