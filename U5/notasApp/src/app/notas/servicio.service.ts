@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 
 export class ServicioService {
 
-  private _notas: string[] = [];
+  private _notas: any[] = [];
 
   constructor() { }
 
-  public get notas(): string[] {
+  public get notas(): any[] {
     return this._notas;
   }
-  public set notas(value: string[]) {
+  public set notas(value: any[]) {
     this._notas = value;
   }
 

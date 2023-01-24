@@ -8,7 +8,7 @@ import { ServicioService } from '../servicio.service';
 })
 export class SalidaComponent implements OnInit{
 
-  private _notas: string[] = [];
+  private _notas: any[] = [];
 
   constructor(private servicio: ServicioService){ }
 
@@ -16,14 +16,14 @@ export class SalidaComponent implements OnInit{
     this._notas = this.servicio.notas
   }
 
-  public borrarNota (nota: string){
-    this.notas = this.notas.filter(el => el !== nota)
+  public borrarNota (alumno: any){
+    this.notas = this.notas.filter(el => el.alumno !== alumno)
   }
 
-  public get notas(): string[] {
+  public get notas(): any[] {
     return this._notas;
   }
-  public set notas(value: string[]) {
+  public set notas(value: any[]) {
     this._notas = value;
   }
 }

@@ -8,7 +8,7 @@ import { ServicioService } from '../servicio.service';
 })
 export class EntradaComponent {
 
-  private _nota: string = '';
+  private _nota: any = '';
   
   constructor (private servicio: ServicioService){}
 
@@ -19,10 +19,10 @@ export class EntradaComponent {
     }
   }
 
-  public get nota(): string {
+  public get nota(): any {
     return this._nota;
   }
-  public set nota(value: string) {
+  public set nota(value: any) {
     this._nota = value;
   }
 
