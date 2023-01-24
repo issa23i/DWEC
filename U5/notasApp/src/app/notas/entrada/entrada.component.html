@@ -3,8 +3,11 @@
         <input type="text"
             class="form-control"
             placeholder="Introduce una nota"
-            [(ngModel)]="nota")]
-            (keyup.enter)="addNota()"/>
+            [(ngModel)]="nota.nota")]/>
+        <input type="text"
+            class="form-control"
+            placeholder="Introduce un nombre"
+            [(ngModel)]="nota.nombre")]/>
     </div>
     <div class="col col-md-3 my-2">
         <button type="button"
