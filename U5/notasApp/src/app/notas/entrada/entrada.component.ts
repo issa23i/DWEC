@@ -9,12 +9,14 @@ import { ServicioService } from '../servicio.service';
 export class EntradaComponent {
 
   private _nota: any = '';
+  private _nombre: any = '';
   
   constructor (private servicio: ServicioService){}
 
   public addNota (){
-    if(this._nota !== ''){
-      this.servicio.notas.push(this._nota)
+    if(this._nota !== '' && this._nombre !== ''){
+      let obj_nota = {nota: this._nota, nombre: this._nombre}
+      this.servicio.notas.push(obj_nota)
       this._nota = ''
     }
   }
@@ -24,6 +26,14 @@ export class EntradaComponent {
   }
   public set nota(value: any) {
     this._nota = value;
+  }
+
+  
+  public get nombre(): any {
+    return this._nombre;
+  }
+  public set nombre(value: any) {
+    this._nombre = value;
   }
 
 }
