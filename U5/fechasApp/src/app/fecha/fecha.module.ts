@@ -11,7 +11,7 @@ import { PipeComponent } from './pipe/pipe.component';
   imports: [
     CommonModule
   ],
-  exports:[
+  exports: [
     PipeComponent
   ]
 })
