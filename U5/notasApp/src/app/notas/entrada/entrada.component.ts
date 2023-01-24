@@ -9,13 +9,13 @@ import { ServicioService } from '../servicio.service';
 export class EntradaComponent {
 
   private _nota: any = '';
-  private _nombre: any = '';
+  private _alumno: any = '';
   
   constructor (private servicio: ServicioService){}
 
   public addNota (){
-    if(this._nota !== '' && this._nombre !== ''){
-      let obj_nota = {nota: this._nota, nombre: this._nombre}
+    if(this._nota !== '' && this._alumno !== ''){
+      let obj_nota = {nota: this._nota, alumno: this._alumno}
       this.servicio.notas.push(obj_nota)
       this._nota = ''
     }
@@ -29,11 +29,11 @@ export class EntradaComponent {
   }
 
   
-  public get nombre(): any {
-    return this._nombre;
+  public get alumno(): any {
+    return this._alumno;
   }
-  public set nombre(value: any) {
-    this._nombre = value;
+  public set alumno(value: any) {
+    this._alumno = value;
   }
 
 }
