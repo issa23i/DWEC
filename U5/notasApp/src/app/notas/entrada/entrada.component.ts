@@ -13,7 +13,7 @@ export class EntradaComponent {
   
   constructor (private servicio: ServicioService){}
 
-  public addNota (){
+  addNota (): void{
     if(this._nota !== '' && this._alumno !== ''){
       let obj_nota = {nota: this._nota, alumno: this._alumno}
       this.servicio.notas.push(obj_nota)
@@ -21,18 +21,18 @@ export class EntradaComponent {
     }
   }
 
-  public get nota(): any {
+  get nota(): any {
     return this._nota;
   }
-  public set nota(value: any) {
+  set nota(value: any) {
     this._nota = value;
   }
 
   
-  public get alumno(): any {
+  get alumno(): any {
     return this._alumno;
   }
-  public set alumno(value: any) {
+  set alumno(value: any) {
     this._alumno = value;
   }
 

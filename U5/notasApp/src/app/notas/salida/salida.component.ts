@@ -16,8 +16,8 @@ export class SalidaComponent implements OnInit{
     this._notas = this.servicio.notas
   }
 
-  public borrarNota (alumno: any){
-    this.notas = this.notas.filter(el => el.alumno !== alumno)
+  public borrarNota (nota: any){
+    this.notas = this.notas.filter(el => el!== nota)
   }
 
   public get notas(): any[] {

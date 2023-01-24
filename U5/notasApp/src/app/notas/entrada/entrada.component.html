@@ -1,17 +1,11 @@
 <div class="row justify-content-md-center">
     <div class="col col-md-5 my-2">
-        <input type="text"
-            class="form-control"
-            placeholder="Introduce una nota"
-            [(ngModel)]="nota")]/>
-        <input type="text"
-            class="form-control"
-            placeholder="Introduce un alumno"
-            [(ngModel)]="alumno")]/>
+        <input class="form-control" type="text" placeholder="Introduce una nota" [(ngModel)]="nota"/>
+
+        <input type="text" class="form-control" placeholder="Introduce un alumno" [(ngModel)]="alumno"/>
     </div>
     <div class="col col-md-3 my-2">
-        <button type="button"
-            (click)="addNota()"
+        <button type="button" (click)="addNota()"
             class="btn btn-primary">
             Añadir nota
         </button>

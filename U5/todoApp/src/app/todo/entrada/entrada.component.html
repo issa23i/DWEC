@@ -1,12 +1,6 @@
 <div class="row justify-content-md-center">
   <div class="col col-md-5 my-2">
-    <input
-      class="form-control"
-      placeholder="Introduce una tarea para añadir"
-      type="text"
-      [(ngModel)]="tarea"
-      (keyup.enter)="addTarea()"
-    />
+    <input class="form-control" placeholder="Introduce una tarea para añadir" type="text" [(ngModel)]="tarea" (keyup.enter)="addTarea()"/>
   </div>
   <div class="col col-md-3 my-2">
     <button type="button" (click)="addTarea()" class="btn btn-primary">
