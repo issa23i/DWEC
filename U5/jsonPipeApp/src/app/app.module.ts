@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NumberModule } from './number/number.module';
+import { PipeComponent } from '../../../fechasApp/src/app/fecha/pipe/pipe.component';
+import { PipeModule } from './pipe/pipe.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,7 @@ import { NumberModule } from './number/number.module';
   ],
   imports: [
     BrowserModule,
-    NumberModule
+    PipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

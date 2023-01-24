@@ -1,0 +1,23 @@
+<table style="width:100%">
+    <colgroup><col style="width:40%"><col style="width:60%"></colgroup>
+    <tr>
+    <td ngNonBindable>{{pi}}</td>
+    <td>{{pi| number:'4.1-5'}}</td>
+    </tr>
+    <tr>
+    <td ngNonBindable>{{pi | currency:'EUR':false}}</td>
+    <td>{{pi | currency:'EUR':false}}</td>
+    </tr>
+    <tr>
+    <td ngNonBindable>{{pi | currency:'EUR':true:'4.3-3'}}</td>
+    <td>{{pi | currency:'EUR':true:'4.3-3'}}</td>
+    </tr>
+    <tr>
+    <td ngNonBindable>{{pi | percent}}</td>
+    <td>{{pi | percent}}</td>
+    </tr>
+    <tr>
+    <td ngNonBindable>{{pi | percent:'4.3-3'}}</td>
+    <td>{{pi | percent:'4.3-3'}}</td>
+    </tr>
+    </table>
