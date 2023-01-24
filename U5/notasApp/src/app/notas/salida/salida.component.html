@@ -10,7 +10,7 @@
           *ngFor="let nota of notas"
           (click)="borrarNota(nota)"
           class="list-group-item list-group-item-action"
-          >{{ nota | uppercase }}</a
+          >{{ nota.alumno | uppercase }} - {{ nota.nota }}</a
         >
       </div>
 </div>
