@@ -1,0 +1,22 @@
+<table style="width: 100%">
+  <colgroup>
+    <col style="width: 40%" />
+    <col style="width: 60%" />
+  </colgroup>
+  <tr>
+    <td ngNonBindable>{{ fecha }}</td>
+    <td>{{ fecha }}</td>
+  </tr>
+  <tr>
+    <td ngNonBindable>{{ fecha | date | uppercase }}</td>
+    <td>{{ fecha | date | uppercase }}</td>
+  </tr>
+  <tr>
+    <td ngNonBindable>{{ fecha | date : "medium" | lowercase }}</td>
+    <td>{{ fecha | date : "medium" | lowercase }}</td>
+  </tr>
+  <tr>
+    <td ngNonBindable>{{ fecha | date : "d/M/y HH:mm:ss" }}</td>
+    <td>{{ fecha | date : "d/M/y HH:mm:ss" }}</td>
+  </tr>
+</table>
