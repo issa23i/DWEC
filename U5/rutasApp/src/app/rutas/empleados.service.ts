@@ -46,12 +46,6 @@ export class EmpleadosService {
   constructor() {}
 
   
-  public get employees_1(): any[] {
-    return this._employees;
-  }
-  public set employees_1(value: any[]) {
-    this._employees = value;
-  }
   public get employees(): any[] {
     return this._employees;
   }

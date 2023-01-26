@@ -18,7 +18,7 @@ export const routes : Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'employe',
+    path: 'employe/:id',
     component: EmployeComponent,
     pathMatch: 'full'
   },
