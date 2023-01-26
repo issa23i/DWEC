@@ -6,33 +6,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { Routes, RouterModule } from '@angular/router';
+import { PostsComponent } from './posts/posts.component';
 
-const routes : Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'employe',
-    component: EmployeComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'employees',
-    component: EmployeesComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  }
-  
-]
 
 @NgModule({
   declarations: [
@@ -40,7 +15,8 @@ const routes : Routes = [
     EmployeComponent,
     EmployeesComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    PostsComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +27,7 @@ const routes : Routes = [
     EmployeComponent,
     EmployeesComponent,
     HomeComponent,
+    PostsComponent,
     NavbarComponent,
     RouterModule
   ]
