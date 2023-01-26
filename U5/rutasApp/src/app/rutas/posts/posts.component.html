@@ -1,1 +1,12 @@
-<p>posts works!</p>
+<div class="row">
+    <div class="col">
+      <ul>
+        <li *ngFor="let post of posts">
+          <!-- <a routerLink="" (click)="showEmployee(employee.id)">  -->
+            <a [routerLink]="['/post',post.id]"> 
+              {{ post.title}} 
+            </a>
+     </li>
+      </ul>
+    </div>
+  </div>

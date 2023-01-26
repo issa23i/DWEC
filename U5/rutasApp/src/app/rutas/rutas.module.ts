@@ -5,7 +5,7 @@ import { EmployeComponent } from './employe/employe.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { PostsComponent } from './posts/posts.component';
 
 

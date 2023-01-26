@@ -26,7 +26,11 @@ export const routes : Routes = [
     path: 'employees',
     component: EmployeesComponent,
     pathMatch: 'full'
-  },
+  },/** 
+  {
+    path: 'posts/:id',
+    component: PostsComponent
+  },*/
   {
     path: 'posts',
     component: PostsComponent,
