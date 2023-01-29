@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Posts } from '../interfaces/posts';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-post',
@@ -10,25 +10,29 @@ import { Posts } from '../interfaces/posts';
 export class PostComponent implements OnInit{
 
  
-  private post : any
+  private _post: Posts = {
+    id: '',
+    userId: '',
+    title: '',
+    body: ''
+  };
 
-  constructor(private route: ActivatedRoute){
+  constructor( private servicio: PostsService){}
 
-  }
   ngOnInit(): void {
-    
-    this.route.paramMap.subscribe( (params:ParamMap) => {
-      let userId = params.get('userId')
-      let id = params.get('id')
-      let title = params.get('title')
-      let body = params.get('body')
-
-    
-      this.post.userId = userId
-      this.post.id = id
-      this.post.title = title
-      this.post.body = body
+    this.servicio.getQuery('posts').subscribe( posts => {
+      posts.find( p => {
+        if (this._post.id === p.id) {
+          this._post = p
+        }
+      })
     })
   }
-  
+  public get post(): Posts {
+    return this._post;
+  }
+  public set post(value: Posts) {
+    this._post = value;
+  }
+
 }

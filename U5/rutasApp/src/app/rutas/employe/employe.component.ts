@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EmpleadosService } from '../empleados.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { EmployeesComponent } from '../employees/employees.component';
 
 @Component({
   selector: 'app-employe',
@@ -9,14 +9,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class EmployeComponent implements OnInit{
 
-  private _employe: any = {};
+  private _employe: any;
 
-  constructor(private route : ActivatedRoute, private servicioEmpleados : EmpleadosService){}
+  constructor(private route : ActivatedRoute){}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe( (params: ParamMap) => {
-      let id = params.get('id')
-      this._employe = this.servicioEmpleados.employees.find( (empleado) => empleado.id === id)
+    this.route.paramMap.subscribe( (params: ParamMap) => { 
     })
   }
 
