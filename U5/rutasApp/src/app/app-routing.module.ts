@@ -4,6 +4,7 @@ import { AboutComponent } from './rutas/about/about.component';
 import { EmployeComponent } from './rutas/employe/employe.component';
 import { EmployeesComponent } from './rutas/employees/employees.component';
 import { HomeComponent } from './rutas/home/home.component';
+import { PostComponent } from './rutas/post/post.component';
 import { PostsComponent } from './rutas/posts/posts.component';
 
 
@@ -31,6 +32,11 @@ export const routes : Routes = [
     path: 'posts/:id',
     component: PostsComponent
   },*/
+  {
+    path: 'post/:id',
+    component: PostComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'posts',
     component: PostsComponent,

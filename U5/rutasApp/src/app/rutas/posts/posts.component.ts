@@ -14,12 +14,10 @@ export class PostsComponent implements OnInit {
 
   constructor(private postsService: PostsService) {
 
-    this.postsService.getQuery('post').subscribe( (data: Posts[]) => {
-      this._posts = data
-    })
     
     }
   ngOnInit(): void {
+  this.postsService.getQuery('posts').subscribe((value: Posts[]) => this._posts = value)
   }
     
   public get posts(): Posts[] {

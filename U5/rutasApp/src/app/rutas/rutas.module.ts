@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PostsComponent } from './posts/posts.component';
     EmployeesComponent,
     HomeComponent,
     NavbarComponent,
-    PostsComponent
+    PostsComponent,
+    PostComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { PostsComponent } from './posts/posts.component';
     HomeComponent,
     PostsComponent,
     NavbarComponent,
-    RouterModule
+    RouterModule,
+    PostComponent
   ]
 })
 export class RutasModule { }
