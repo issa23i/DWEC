@@ -3,7 +3,7 @@
       <ul>
         <li *ngFor="let employee of employees">
           <!-- <a routerLink="" (click)="showEmployee(employee.id)">  -->
-            <a [routerLink]="['/employe',employee.id]"> 
+            <a [routerLink]="['/employees',employee.id]"> 
               {{ employee.name.first }} {{ employee.name.last }}
             </a>
      </li>
