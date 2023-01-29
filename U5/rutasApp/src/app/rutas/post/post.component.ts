@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../interfaces/posts';
 import { PostsService } from '../posts.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -17,12 +18,15 @@ export class PostComponent implements OnInit{
     body: ''
   };
 
-  constructor( private servicio: PostsService){}
+  constructor( private servicio: PostsService, private activatedRoute : ActivatedRoute){}
 
   ngOnInit(): void {
+
+    this.activatedRoute.params.subscribe(({id})=>{this._post.id = id });
+
     this.servicio.getQuery('posts').subscribe( posts => {
       posts.find( p => {
-        if (this._post.id === p.id) {
+        if (this._post.id == p.id) {
           this._post = p
         }
       })
