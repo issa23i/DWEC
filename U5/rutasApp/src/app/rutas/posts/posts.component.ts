@@ -11,11 +11,9 @@ import { HttpClient} from '@angular/common/http';
 export class PostsComponent implements OnInit {
 
   private _posts!: Posts[];
+  
+  constructor(private postsService: PostsService) {}
 
-  constructor(private postsService: PostsService) {
-
-    
-    }
   ngOnInit(): void {
   this.postsService.getQuery('posts').subscribe((value: Posts[]) => this._posts = value)
   }
@@ -26,4 +24,6 @@ export class PostsComponent implements OnInit {
   public set posts(value: Posts[]) {
     this._posts = value;
   }
+
+
 }
