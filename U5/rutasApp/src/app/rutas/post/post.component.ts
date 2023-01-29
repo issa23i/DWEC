@@ -9,16 +9,25 @@ import { Posts } from '../interfaces/posts';
 })
 export class PostComponent implements OnInit{
 
-  private post! : Posts 
+ 
+  private post : any
 
   constructor(private route: ActivatedRoute){
 
   }
   ngOnInit(): void {
+    
     this.route.paramMap.subscribe( (params:ParamMap) => {
-      console.log(params.get('body'))
-      console.log(params.getAll('body'))
-      console.log(params.keys.length)
+      let userId = params.get('userId')
+      let id = params.get('id')
+      let title = params.get('title')
+      let body = params.get('body')
+
+    
+      this.post.userId = userId
+      this.post.id = id
+      this.post.title = title
+      this.post.body = body
     })
   }
   
