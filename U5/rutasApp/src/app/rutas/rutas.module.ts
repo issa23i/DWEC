@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PostComponent } from './post/post.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   exports: [
     AboutComponent,

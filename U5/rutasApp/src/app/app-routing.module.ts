@@ -19,7 +19,7 @@ export const routes : Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'employe/:id',
+    path: 'employees/:id',
     component: EmployeComponent,
     pathMatch: 'full'
   },
@@ -33,7 +33,7 @@ export const routes : Routes = [
     component: PostsComponent
   },*/
   {
-    path: 'post/:id',
+    path: 'posts/:id',
     component: PostComponent,
     pathMatch: 'full'
   },
@@ -48,7 +48,9 @@ export const routes : Routes = [
   }
 ]
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash:true})],
+  imports: [
+    RouterModule.forRoot(routes, {useHash:true})
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { 
