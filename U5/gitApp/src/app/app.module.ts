@@ -6,17 +6,16 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { GifsPageComponent } from './gifs/gifs-page/gifs-page.component';
 import { ResultadosComponent } from './gifs/resultados/resultados.component';
 import { BusquedaComponent } from './gifs/busqueda/busqueda.component';
+import { GifsModule } from './gifs/gifs.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    GifsPageComponent,
-    ResultadosComponent,
-    BusquedaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    GifsModule
   ],
   exports: [
     SidebarComponent
