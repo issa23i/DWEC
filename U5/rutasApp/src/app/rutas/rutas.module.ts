@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from '../app-routing.module';
     HomeComponent,
     NavbarComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    CommentsComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { AppRoutingModule } from '../app-routing.module';
     PostsComponent,
     NavbarComponent,
     RouterModule,
-    PostComponent
+    PostComponent,
+    CommentsComponent
   ]
 })
 export class RutasModule { }
