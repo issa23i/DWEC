@@ -11,6 +11,7 @@ import { PostComponent } from './post/post.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { CommentsComponent } from './comments/comments.component';
 import { CommentComponent } from './comment/comment.component';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CommentComponent } from './comment/comment.component';
     PostsComponent,
     PostComponent,
     CommentsComponent,
-    CommentComponent
+    CommentComponent,
+    TestComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { CommentComponent } from './comment/comment.component';
     NavbarComponent,
     RouterModule,
     PostComponent,
-    CommentsComponent
+    CommentsComponent,
+    TestComponent
   ]
 })
 export class RutasModule { }

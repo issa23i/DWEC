@@ -19,14 +19,20 @@ export class CommentComponent implements OnInit{
   constructor( private servicio: CommentService, private activatedRoute : ActivatedRoute  ){}
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id})=>{this._comment.id = id })
-    this.servicio.comments.forEach(com => { 
-      if(this._comment.id == com.id){
-        this._comment = com
-        //console.log(com.email==undefined)
-      }
+    console.log(this.activatedRoute.params)
+    this.servicio.getQuery(`posts/${this._comment.postId}/comments`).subscribe( data => {
+      data.forEach(com => {
+        if(com.id == this._comment.id){
+          this._comment = com
+        }
       })
+    })
+  
+    
+     
   }
 
+  
   
   public get comment(): Comment {
     return this._comment;
