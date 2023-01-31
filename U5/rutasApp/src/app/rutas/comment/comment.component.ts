@@ -9,7 +9,7 @@ import { Comment } from '../interfaces/comment';
 })
 export class CommentComponent implements OnInit{
   private _comment: Comment = {
-    postId: '',
+    postId: 0,
     id: '',
     name: '',
     email: '',
@@ -19,13 +19,12 @@ export class CommentComponent implements OnInit{
   constructor( private servicio: CommentService, private activatedRoute : ActivatedRoute  ){}
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id})=>{this._comment.id = id })
-    this.servicio.getQuery(`posts/${this._comment.postId}/comments`).subscribe( comments =>{
-      comments.find( comment => {
-        if( this._comment.id == comment.id) {
-          this._comment = comment
-        }
+    this.servicio.comments.forEach(com => { 
+      if(this._comment.id == com.id){
+        this._comment = com
+        //console.log(com.email==undefined)
+      }
       })
-    })
   }
 
   

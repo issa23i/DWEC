@@ -4,7 +4,7 @@
         <li *ngFor="let comment of comments">
           <!-- <a routerLink="" (click)="showEmployee(employee.id)">  -->
             <a [routerLink]="[comment.id]"> 
-              {{ comment.name}} 
+              {{ comment.id}}  :  {{ comment.name}} 
             </a>
      </li>
       </ul>
