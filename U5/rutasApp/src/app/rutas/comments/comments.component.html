@@ -1,3 +1,12 @@
-<h2>Nombre : {{ comment.name }}</h2><p>{{ comment.name }}</p>
-<h2>Email   : </h2><p>{{ comment.email }}</p>
-<h2>Body    : </h2><p>{{ comment.body }}</p>
+<div class="row">
+    <div class="col">
+      <ul>
+        <li *ngFor="let comment of comments">
+          <!-- <a routerLink="" (click)="showEmployee(employee.id)">  -->
+            <a [routerLink]="[comment.id]"> 
+              {{ comment.name}} 
+            </a>
+     </li>
+      </ul>
+    </div>
+  </div>

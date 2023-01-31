@@ -10,6 +10,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { CommentsComponent } from './comments/comments.component';
+import { CommentComponent } from './comment/comment.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CommentsComponent } from './comments/comments.component';
     NavbarComponent,
     PostsComponent,
     PostComponent,
-    CommentsComponent
+    CommentsComponent,
+    CommentComponent
   ],
   imports: [
     CommonModule,

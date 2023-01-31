@@ -7,6 +7,7 @@ import { HomeComponent } from './rutas/home/home.component';
 import { PostComponent } from './rutas/post/post.component';
 import { PostsComponent } from './rutas/posts/posts.component';
 import { CommentsComponent } from './rutas/comments/comments.component';
+import { CommentComponent } from './rutas/comment/comment.component';
 
 
 export const routes : Routes = [
@@ -33,6 +34,11 @@ export const routes : Routes = [
     path: 'posts/:id',
     component: PostsComponent
   },*/
+  {
+    path: 'posts/:id/comments/:id',
+    component: CommentComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'posts/:id/comments',
     component: CommentsComponent,
