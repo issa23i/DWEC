@@ -11,11 +11,11 @@ import { SidebarComponent } from '../shared/sidebar/sidebar.component';
   declarations: [
     BusquedaComponent,
     GifsPageComponent,
-    ResultadosComponent
+    ResultadosComponent,
   ],
   imports: [
     CommonModule,
-    SidebarComponent
+    SidebarComponent,
   ],
   exports: [
     BusquedaComponent,
