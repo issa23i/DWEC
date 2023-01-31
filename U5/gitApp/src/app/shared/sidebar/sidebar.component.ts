@@ -7,6 +7,11 @@ import { GifsService } from 'src/app/gifs/services/gifs.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  /**
+   * Desde el sidebar:
+      • Colocar los diferentes elementos del historial
+      • Si pulso en un elemento del sidebar vuelvo a mostrar esa búsqueda
+   */
 
   gethistorial() {
   }

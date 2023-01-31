@@ -1,11 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Gif } from '../interfaces/gifs';
+import { HttpClientModule, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GifsService {
+  /** LocalStorage
+      Para no perder información (historial e imágenes de resultados) al refrescar usaremos
+      LocalStorage en gifs.service.ts 
+    */
+
+  /**
+   * Dentro del servicio:
+      • Variable para guardar las búsquedas.
+      • Variable para guardar los resultados.
+      • Método para realizar búsquedas y limitar a 10 elementos únicos (sin importar mayúsculas
+          o minúsculas). Usaremos HttpClient para implementar el uso de la API (también se podría
+          hacer con fetch)
+   */
   private apiKey: string = 'DjNFYau3pbGLWJ2BlxVtdFHiNiMHA5Vu';
   private servicioUrl: string = 'https://api.giphy.com/v1/gifs'; //URL
   private _historial: string[] = []; //Guarda el historial de búsquedas
@@ -13,7 +26,7 @@ export class GifsService {
 
   gethistorial() {}
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClientModule) {}
   buscarGifs(query: string = '') {}
   /*
 fetch

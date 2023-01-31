@@ -7,18 +7,20 @@ import { GifsPageComponent } from './gifs/gifs-page/gifs-page.component';
 import { ResultadosComponent } from './gifs/resultados/resultados.component';
 import { BusquedaComponent } from './gifs/busqueda/busqueda.component';
 import { GifsModule } from './gifs/gifs.module';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidebarComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    GifsModule
+    GifsModule,
+    HttpClientModule,
+    SharedModule
   ],
   exports: [
-    SidebarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
