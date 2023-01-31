@@ -12,11 +12,11 @@ import { CommentService } from '../comment.service';
 export class CommentsComponent implements OnInit{
   private _comment: Comment = {
     postId: '',
-    id:     '',
-    name:   '',
-    email:  '',
-    body:   ''
-}
+    id: '',
+    name: '',
+    email: '',
+    body: ''
+  };
 
   constructor( private servicio: CommentService, private activatedRoute : ActivatedRoute  ){}
   ngOnInit(): void {
@@ -28,5 +28,13 @@ export class CommentsComponent implements OnInit{
         }
       })
     })
+  }
+
+  
+  public get comment(): Comment {
+    return this._comment;
+  }
+  public set comment(value: Comment) {
+    this._comment = value;
   }
 }

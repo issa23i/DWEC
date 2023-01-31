@@ -1,3 +1,6 @@
 <h2>Post Id : </h2><p>{{ post.id }}</p>
 <h2>Title   : </h2><p>{{ post.title }}</p>
 <h2>Body    : </h2><p>{{ post.body }}</p>
+<a [routerLink]="['comments']"> 
+  Ver comentarios  {{ post.id}} 
+  </a>
