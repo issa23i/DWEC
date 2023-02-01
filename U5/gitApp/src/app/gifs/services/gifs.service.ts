@@ -22,7 +22,6 @@ export class GifsService {
 
   constructor(private http: HttpClient) {}
   
-
   /**
       • Método para realizar búsquedas y limitar a 10 elementos únicos (sin importar mayúsculas
           o minúsculas). Usaremos HttpClient para implementar el uso de la API (también se podría
@@ -34,12 +33,16 @@ export class GifsService {
       .set('api_key', this.apiKey)
       .set('limit', '10')
       .set('q', query);
-    this.http
-      .get<SearchGifsResponse>(`${this.servicioUrl}/search`, { params,}) //SearchGifsResponse se obtiene de la interfaz
-      .subscribe((resp) => {
-        this.resultados = resp.data;
-        console.log(this.resultados )
-      });
+      return new Promise<Gif[]>((resolve, reject) => {
+        this.http
+          .get<SearchGifsResponse>(`${this.servicioUrl}/search`, { params,}) //SearchGifsResponse se obtiene de la interfaz
+          .subscribe((resp) => {
+            this.resultados = resp.data;
+            // aquí resultados tienen 10 items (asíncrono)
+            console.log(this.resultados )
+            resolve(this.resultados = resp.data)
+          });
+      })
   }
 
   public get historial(): string[] {

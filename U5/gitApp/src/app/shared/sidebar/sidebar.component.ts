@@ -12,10 +12,18 @@ export class SidebarComponent {
       • Colocar los diferentes elementos del historial
       • Si pulso en un elemento del sidebar vuelvo a mostrar esa búsqueda
    */
-
+  
   gethistorial() {
+    return this.gifsService.historial
   }
   constructor( private gifsService: GifsService ) { }
+  
   buscar( termino: string ) {
+    
+    if (termino !== '') {
+
+      this.gifsService.buscarGifs(termino);
+    }
   }
+
   }

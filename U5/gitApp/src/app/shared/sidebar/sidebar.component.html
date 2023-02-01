@@ -6,8 +6,9 @@
     </h3>
     <hr class="text-white" />
 
-<div class="list-group list-reset">
-  <a href="#"
+<div *ngFor="let item of gethistorial()" class="list-group list-reset">
+  
+  <a href="#" (click)="buscar(item)"
   class="list-group-item list-group-item-action">
-  </a>
+  {{item}}</a>
   </div>

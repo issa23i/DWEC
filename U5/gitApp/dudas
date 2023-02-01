@@ -1,0 +1,3 @@
+En gifs.service.ts 
+al buscarGifs(query) la respuesta se guarda en resultados
+pero cuando se llama desde el ngFor, resultados está vacío 

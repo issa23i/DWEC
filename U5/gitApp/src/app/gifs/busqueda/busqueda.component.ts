@@ -12,12 +12,18 @@ export class BusquedaComponent implements OnInit {
 
   constructor(private gifsService: GifsService) {} //crea la propiedad en el constructor
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.buscar()
+  }
 
   buscar(): void {
     if (this._valor !== '') {
       this.gifsService.historial.push(this._valor);
-      this.gifsService.buscarGifs(this._valor);
+      this.gifsService.buscarGifs(this._valor).then(() => {
+        
+      console.log(this.gifsService.resultados)
+      })
+      localStorage.setItem('busqueda',this._valor)
       this._valor = '';
       console.log(this.gifsService.historial)
     }
