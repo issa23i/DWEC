@@ -12,12 +12,6 @@ export class ListadoComponent implements OnInit {
 
   constructor (private servicioTareas : TareasService) {}
 
-  public get tareas(): string[] {
-    return this._tareas;
-  }
-  public set tareas(value: string[]) {
-    this._tareas = value;
-  }
 
   ngOnInit(): void {
     this._tareas = this.servicioTareas.tareas
@@ -26,5 +20,13 @@ export class ListadoComponent implements OnInit {
   completada(tareaCompletada: string){
     this._tareas = this._tareas.filter((tarea) => tarea !== tareaCompletada)
   }
+
+    public get tareas(): string[] {
+    return this._tareas;
+  }
+  public set tareas(value: string[]) {
+    this._tareas = value;
+  }
+
 
 }

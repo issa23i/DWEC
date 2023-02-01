@@ -7,8 +7,8 @@ import { GifsService } from '../services/gifs.service';
   styleUrls: ['./busqueda.component.css'],
 })
 export class BusquedaComponent implements OnInit {
+  
   private _valor: string = '';
-tarea: any;
 
   constructor(private gifsService: GifsService) {} //crea la propiedad en el constructor
 

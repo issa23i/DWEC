@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Gif, SearchGifsResponse } from '../interfaces/gifs';
 import { HttpClientModule, HttpParams, HttpClient } from '@angular/common/http';
+import { ResultadosComponent } from '../resultados/resultados.component';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,6 @@ export class GifsService {
   
   public resultados: Gif[] = []; // interfaz Gif • Variable para guardar las búsquedas.
 
-  
 
   constructor(private http: HttpClient) {}
   
@@ -38,6 +38,7 @@ export class GifsService {
       .get<SearchGifsResponse>(`${this.servicioUrl}/search`, { params,}) //SearchGifsResponse se obtiene de la interfaz
       .subscribe((resp) => {
         this.resultados = resp.data;
+        console.log(this.resultados )
       });
   }
 
