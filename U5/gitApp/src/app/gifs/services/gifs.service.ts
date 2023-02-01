@@ -15,9 +15,10 @@ export class GifsService {
   private apiKey: string = 'DjNFYau3pbGLWJ2BlxVtdFHiNiMHA5Vu';
   private servicioUrl: string = 'https://api.giphy.com/v1/gifs'; //URL
   private _historial: string[] = []; // historial de búsquedas • Variable para guardar los resultados.
+  
   public resultados: Gif[] = []; // interfaz Gif • Variable para guardar las búsquedas.
 
-  gethistorial() {}
+  
 
   constructor(private http: HttpClient) {}
   
@@ -38,6 +39,13 @@ export class GifsService {
       .subscribe((resp) => {
         this.resultados = resp.data;
       });
+  }
+
+  public get historial(): string[] {
+    return this._historial;
+  }
+  public set historial(value: string[]) {
+    this._historial = value;
   }
   /*
 fetch

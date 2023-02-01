@@ -3,7 +3,8 @@
     <div class="col">
       <h5>Buscar:</h5>
       <!-- Disparar evento con el contenido de la caja de búsqueda al pulsar enter -->
-      <input type="text" class="form-control" placeholder="Buscar gifs..." />
+      <input type="text" class="form-control" placeholder="Buscar gifs..." 
+      [(ngModel)]="valor" (keyup.enter)="buscar()"/>
     </div>
   </div>
   <hr />

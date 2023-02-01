@@ -5,6 +5,7 @@ import { GifsPageComponent } from './gifs-page/gifs-page.component';
 import { ResultadosComponent } from './resultados/resultados.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { Gif } from './interfaces/gifs';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { Gif } from './interfaces/gifs';
     GifsPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     GifsPageComponent,
