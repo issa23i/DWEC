@@ -1,15 +1,21 @@
+export interface SearchGifsResponse {
+    data:       Gif[];
+    pagination: Pagination;
+    meta:       Meta;
+}
+
 export interface Gif {
-    type:                       string;
+    type:                       Type;
     id:                         string;
     url:                        string;
     slug:                       string;
     bitly_gif_url:              string;
     bitly_url:                  string;
     embed_url:                  string;
-    username:                   string;
+    username:                   Username;
     source:                     string;
     title:                      string;
-    rating:                     string;
+    rating:                     Rating;
     content_url:                string;
     source_tld:                 string;
     source_post_url:            string;
@@ -19,6 +25,7 @@ export interface Gif {
     images:                     Images;
     analytics_response_payload: string;
     analytics:                  Analytics;
+    user?:                      User;
 }
 
 export interface Analytics {
@@ -55,6 +62,7 @@ export interface Images {
     preview_gif:              The480_WStill;
     preview_webp:             The480_WStill;
     "480w_still":             The480_WStill;
+    hd?:                      DownsizedSmall;
 }
 
 export interface The480_WStill {
@@ -87,4 +95,45 @@ export interface FixedHeight {
 export interface Looping {
     mp4_size: string;
     mp4:      string;
+}
+
+export enum Rating {
+    G = "g",
+    PG = "pg",
+}
+
+export enum Type {
+    GIF = "gif",
+}
+
+export interface User {
+    avatar_url:    string;
+    banner_image:  string;
+    banner_url:    string;
+    profile_url:   string;
+    username:      Username;
+    display_name:  string;
+    description:   string;
+    instagram_url: string;
+    website_url:   string;
+    is_verified:   boolean;
+}
+
+export enum Username {
+    Bachelorinparadiseau = "bachelorinparadiseau",
+    Brooklynninenine = "brooklynninenine",
+    Chipotle = "chipotle",
+    Empty = "",
+}
+
+export interface Meta {
+    status:      number;
+    msg:         string;
+    response_id: string;
+}
+
+export interface Pagination {
+    total_count: number;
+    count:       number;
+    offset:      number;
 }
