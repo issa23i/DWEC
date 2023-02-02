@@ -19,12 +19,7 @@ export class BusquedaComponent implements OnInit {
   buscar(): void {
     if (this._valor !== '') {
       this.gifsService.historial.push(this._valor);
-
-      // llamar al servicio para la búsqueda
-      this.gifsService.buscarGifs(this._valor).then(() => {
-        // resultados es asíncrono
-      console.log(this.gifsService.resultados)
-      })
+      this.gifsService.buscarGifs(this._valor)
       localStorage.setItem('busqueda',this._valor)
       this._valor = '';
       console.log(this.gifsService.historial)

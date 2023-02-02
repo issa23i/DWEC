@@ -33,16 +33,15 @@ export class GifsService {
       .set('api_key', this.apiKey)
       .set('limit', '10')
       .set('q', query);
-      return new Promise<Gif[]>((resolve, reject) => {
+      
         this.http
           .get<SearchGifsResponse>(`${this.servicioUrl}/search`, { params,}) //SearchGifsResponse se obtiene de la interfaz
           .subscribe((resp) => {
             this.resultados = resp.data;
             // aquí resultados tienen 10 items (asíncrono)
             console.log(this.resultados )
-            resolve(this.resultados = resp.data)
           });
-      })
+      
   }
 
   public get historial(): string[] {

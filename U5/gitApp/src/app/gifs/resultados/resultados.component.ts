@@ -9,19 +9,18 @@ import { GifsService } from '../services/gifs.service';
 })
 export class ResultadosComponent implements OnInit {
 
-  private _resultados: Gif[] = [];
+  //private _resultados: Gif[] = [];
 
-  constructor( private gifsService: GifsService ) { }
+  constructor( private gifsService: GifsService ) {  //this._resultados = this.gifsService.resultados
+  }
   
+ 
   ngOnInit(): void {
-    this._resultados = this.gifsService.resultados
+   
      }
+     get resultados() {
+      return this.gifsService.resultados
+    }
     
-    
-  public get resultados(): Gif[] {
-    return this._resultados;
-  }
-  public set resultados(value: Gif[]) {
-    this._resultados = value;
-  }
+  
 }
