@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PipeModule } from './pipe/pipe.module';
+import { PaisModule } from './pais/pais.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { PipeModule } from './pipe/pipe.module';
   ],
   imports: [
     BrowserModule,
-    PipeModule
+    AppRoutingModule,
+    PaisModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
