@@ -1,12 +1,10 @@
 
 
 <div *ngIf="resultados.length > 0 ; else noResultados" class="row">
- 
   <div *ngFor="let resultado of resultados" class="col-md-4 col-sm-6">
     <!--<img src={{resultado.url}}/>-->
     <div class="card">
-      <img [src]="resultado.source"/>
-      <img [src]="resultado.url"/>
+      <img [src]="resultado.images.original.url"/>
       <div class="card-body">
         <p class="card-text">{{ resultado.title | uppercase }}</p>
       </div>
@@ -19,7 +17,4 @@
   
   <div class="alert alert-info" role="alert">No hay Resultados</div>
 </ng-template>
-<div class="probando-aplicacion borrar">
-<p>tamaño array resultado: {{ resultados.length }}</p>
-</div>
 
