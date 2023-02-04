@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Gif, SearchGifsResponse } from '../interfaces/gifs';
-import { HttpClientModule, HttpParams, HttpClient } from '@angular/common/http';
-import { ResultadosComponent } from '../resultados/resultados.component';
+import {
+  HttpParams,
+  HttpClient,
+} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -12,16 +14,14 @@ export class GifsService {
       LocalStorage en gifs.service.ts 
     */
 
-  
   private apiKey: string = 'DjNFYau3pbGLWJ2BlxVtdFHiNiMHA5Vu';
   private servicioUrl: string = 'https://api.giphy.com/v1/gifs'; //URL
   private _historial: string[] = []; // historial de búsquedas • Variable para guardar los resultados.
-  
+
   public resultados: Gif[] = []; // interfaz Gif • Variable para guardar las búsquedas.
 
-
   constructor(private http: HttpClient) {}
-  
+
   /**
       • Método para realizar búsquedas y limitar a 10 elementos únicos (sin importar mayúsculas
           o minúsculas). Usaremos HttpClient para implementar el uso de la API (también se podría
@@ -33,15 +33,19 @@ export class GifsService {
       .set('api_key', this.apiKey)
       .set('limit', '10')
       .set('q', query);
-      
-        this.http
-          .get<SearchGifsResponse>(`${this.servicioUrl}/search`, { params,}) //SearchGifsResponse se obtiene de la interfaz
-          .subscribe((resp) => {
-            this.resultados = resp.data;
-            // aquí resultados tienen 10 items (asíncrono)
-            console.log(this.resultados )
-          });
-      
+
+    this.http
+
+      .get<SearchGifsResponse>(`${this.servicioUrl}/search`, { params }) //SearchGifsResponse se obtiene de la interfaz
+      // control de errores
+      .subscribe({
+        next: (resp: SearchGifsResponse) => {
+          this.resultados = resp.data;
+        },
+        error: (err) => {
+          console.error(`Ocurrió un error, no se obtuvo respuesta: ${err}`);
+        },
+      });
   }
 
   public get historial(): string[] {

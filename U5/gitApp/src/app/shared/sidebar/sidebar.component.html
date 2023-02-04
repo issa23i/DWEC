@@ -7,7 +7,7 @@
     <hr class="text-white" />
 
 <div *ngFor="let item of gethistorial()" class="list-group list-reset">
-  
+  <!-- Disparar evento con el contenido del ítem al hacer click -->
   <a href="#" (click)="buscar(item)"
   class="list-group-item list-group-item-action">
   {{item}}</a>

@@ -6,23 +6,22 @@ import { GifsService } from '../services/gifs.service';
   templateUrl: './busqueda.component.html',
   styleUrls: ['./busqueda.component.css'],
 })
-export class BusquedaComponent implements OnInit {
+export class BusquedaComponent  {
   
   private _valor: string = '';
 
   constructor(private gifsService: GifsService) {} //crea la propiedad en el constructor
 
-  ngOnInit(): void {
-    this.buscar()
-  }
-
   buscar(): void {
     if (this._valor !== '') {
+      // las búsquedas serán mostradas en el sidebar
       this.gifsService.historial.push(this._valor);
+      // El servicio busca en la API los Gifs
       this.gifsService.buscarGifs(this._valor)
+      // guardar en el navegador las búsquedas
       localStorage.setItem('busqueda',this._valor)
+      // Borra el texto de búsqueda introducido por el usuario
       this._valor = '';
-      console.log(this.gifsService.historial)
     }
   }
 
