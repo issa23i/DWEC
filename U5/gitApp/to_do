@@ -1,8 +1,0 @@
-/** LocalStorage
-      Para no perder información (historial e imágenes de resultados) al refrescar usaremos
-      LocalStorage en gifs.service.ts 
-    */
-
-/**
- * CONTROL DE ERRORES Y ARREGLAR MENSAJE DE NO HAY RESULTADOS
- */
