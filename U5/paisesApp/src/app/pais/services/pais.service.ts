@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pais } from '../interfaces/pais';
+import { environment } from 'src/environment/environment';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Pais } from '../interfaces/pais';
 })
 export class PaisService {
 
-  private apiUrl: string = 'https://restcountries.com/v2';
+  private apiUrl: string = environment.apiUrl
   get httpParams () {
     //indicamos los parámetros que queremos que nos devuelva la petición
     //depende de como funcione la API
