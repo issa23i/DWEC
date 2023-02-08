@@ -40,7 +40,8 @@
               <td>{{pais.name}}</td>
               <td>{{pais.population}}</td>
               <td>
-                <a>Ver...</a>
+                <a [routerLink]="['/pais',pais.cioc]">
+                  Ver...</a>
               </td>
             </tr>
           </tbody>

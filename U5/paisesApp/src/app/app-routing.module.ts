@@ -22,7 +22,7 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'pais/:id',
+    path: 'pais/:cioc',
     component: VerPaisComponent,
     pathMatch: 'full'
   },
