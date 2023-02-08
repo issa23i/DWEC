@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-ver-pais',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./ver-pais.component.css']
 })
 export class VerPaisComponent {
+
+  private _pais: boolean = false;
+
+
+  constructor(private paisService : PaisService){}
+
+  
+
+
+  public get pais(): boolean {
+    return this._pais;
+  }
+  public set pais(value: boolean) {
+    this._pais = value;
+  }
 
 }
