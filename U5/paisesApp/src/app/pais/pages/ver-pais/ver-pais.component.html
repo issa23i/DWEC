@@ -1,28 +1,28 @@
-<div *ngIf="!pais; else divPais" class="alert alert-info">
+<div *ngIf="!existe; else divPais" class="alert alert-info">
   Espere por favor...
 </div>
 <ng-template #divPais>
   <div class="row">
     <div class="col-12">
-      <h1>País: <small>XXXXXXXXXXXXXXXXXXX</small></h1>
+      <h1>País: <small>{{pais.name}}</small></h1>
     </div>
   </div>
   <div class="row">
     <div class="col-4">
       <h3>Bandera</h3>
-      <img XXXXXXXXXXXXXXXXX class="img-thumbnail img-fluid" />
+      <img [src]="pais.flags.svg" class="img-thumbnail img-fluid" />
     </div>
     <div class="col">
       <h3>Información</h3>
       <ul class="list-group">
         <li class="list-group-item">
-          <strong>Población</strong> XXXXXXXXXXXXX
+          <strong>Población</strong> {{pais.population}}
         </li>
         <li class="list-group-item">
-          <strong>Código CCA2</strong> XXXXXXXXXXXXXX
+          <strong>Código CCA2</strong> {{pais.alpha2Code}}
         </li>
         <li class="list-group-item">
-          <strong>Código CIOC</strong> XXXXXXXXXXXXXXX
+          <strong>Código CIOC</strong> {{pais.cioc}}
         </li>
       </ul>
     </div>
