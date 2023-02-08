@@ -8,6 +8,8 @@
           type="text"
           name="termino"
           class="form-control"
+          [(ngModel)]="termino"
+          (keyup.enter)="buscar()"
           placeholder="Buscar país ..."
         />
       </form>
@@ -15,31 +17,35 @@
   </div>
   <div class="row">
     <div class="col">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Bandera</th>
-            <th>Nombre</th>
-            <th>Población</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr  class="animate__animated animate__fadeIn animate__faster">
-            <!--*ngFor="let pais of paises; let i = index"-->
-            <td>XXXXXXX</td>
-            <td>
-              <img class="small-flag img-fluid" XXXXXXX />
-            </td>
-            <td>XXXXXX</td>
-            <td>XXXXXXXXXXXXXXXX</td>
-            <td>
-              <a>Ver...</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div *ngIf="error" class="alert alert-danger">
+        No se encontró nada con el término {{ termino }}
+      </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Bandera</th>
+              <th>Nombre</th>
+              <th>Población</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pais of paises; let i = index" class="animate__animated animate__fadeIn animate__faster">
+              <!--*ngFor="let pais of paises; let i = index"-->
+              <td>{{i + 1}}</td>
+              <td>
+                <img class="small-flag img-fluid" [src]="pais.flags.svg" />
+              </td>
+              <td>{{pais.name}}</td>
+              <td>{{pais.population}}</td>
+              <td>
+                <a>Ver...</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
     </div>
   </div>
 </div>

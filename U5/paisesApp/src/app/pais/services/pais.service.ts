@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pais } from '../interfaces/pais';
-import { environment } from 'src/environment/environment';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -11,13 +11,18 @@ import { environment } from 'src/environment/environment';
 export class PaisService {
 
   private apiUrl: string = environment.apiUrl
+
+
   get httpParams () {
     //indicamos los parámetros que queremos que nos devuelva la petición
     //depende de como funcione la API
     return new HttpParams().set( 'fields',
     'name,capital,cioc,flags,population' );
     }
+
+
   constructor(private http: HttpClient) { }
+
 
   buscarPais( termino: string ): Observable<Pais[]> {
     const url = `${ this.apiUrl }/name/${ termino }`;
