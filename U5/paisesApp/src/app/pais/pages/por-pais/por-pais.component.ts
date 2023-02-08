@@ -13,14 +13,14 @@ export class PorPaisComponent {
   
 
   private _termino: string = '';
-  private _error: boolean = false;
+  private _hayError: boolean = false;
   
 
   constructor(private paisServ : PaisService){}
 
   buscar(): void {
     if ( this._termino !== '') {
-      this._error = false;
+      this._hayError = false;
       this.paisServ.buscarPais(this._termino)
         .subscribe({
           next: (resp) => {
@@ -28,7 +28,7 @@ export class PorPaisComponent {
             //console.log(resp)
           },
           error: (err) => {
-            this._error = true
+            this._hayError = true
             this._paises = []
             console.log("ERROR " + err)
           }
@@ -51,10 +51,10 @@ export class PorPaisComponent {
     this._termino = value;
   }
 
-  public get error(): boolean {
-    return this._error;
+  public get hayError(): boolean {
+    return this._hayError;
   }
-  public set error(value: boolean) {
-    this._error = value;
+  public set hayError(value: boolean) {
+    this._hayError = value;
   }
 }
