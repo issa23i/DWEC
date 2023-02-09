@@ -4,7 +4,7 @@
   <h5>Seleccione la region</h5>
   <div class="row">
     <div class="col">
-      <button *ngFor="let region of regiones; let i = index" value="region" (click)="setRegion(region)" class="ms-3">
+      <button *ngFor="let region of regiones; let i = index" value="region" (click)="setRegion(region)" class="btn btn-primary btn-lg ms-3 active" role="button" aria-pressed="true">
         {{region}}
       </button>
     </div>
