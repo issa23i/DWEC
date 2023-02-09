@@ -10,12 +10,17 @@ import { PaisService } from '../../services/pais.service';
 export class PorRegionComponent {
 
   private _paises: Pais[] = [];
-  private _termino : string = '';
+  private _termino: string = '';
+  
   private _regiones: Region[] = Object.values(Region);
   
   
-  
   constructor(private paisServ : PaisService){}
+
+  /** para cambiar el término de búsqueda */
+  setRegion(region : string) {
+    this._termino = region
+  }
 
   buscar(): void {
     if ( this._termino !== '') {
@@ -36,6 +41,12 @@ export class PorRegionComponent {
     }
   }
 
+  public get termino(): string {
+    return this._termino;
+  }
+  public set termino(value: string) {
+    this._termino = value;
+  }
   public get paises(): Pais[] {
     return this._paises;
   }

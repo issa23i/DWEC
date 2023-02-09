@@ -1,10 +1,10 @@
 <div class="animate__animated animate__fadeIn animate__faster">
-  <h3>Buscar por region <small> xxxxx </small></h3>
+  <h3>Buscar por region <small> {{termino}} </small></h3>
   <hr />
   <h5>Seleccione la region</h5>
   <div class="row">
     <div class="col">
-      <button *ngFor="let region of regiones; let i = index" class="ms-3">
+      <button *ngFor="let region of regiones; let i = index" value="region" (click)="setRegion(region)" class="ms-3">
         {{region}}
       </button>
     </div>
