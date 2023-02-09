@@ -13,12 +13,12 @@ export const routes: Routes = [
   },
   {
     path: 'region',
-    component: PorCapitalComponent,
+    component: PorRegionComponent,
     pathMatch: 'full'
   },
   {
     path: 'capital',
-    component: PorRegionComponent,
+    component: PorCapitalComponent,
     pathMatch: 'full'
   },
   {
