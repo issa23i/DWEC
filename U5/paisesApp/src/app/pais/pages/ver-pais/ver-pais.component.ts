@@ -22,9 +22,10 @@ export class VerPaisComponent implements OnInit{
     , private activatedRoute : ActivatedRoute){}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({alpha2Code}) => {
-                this._alpha2Code = alpha2Code
-                this._pais.alpha2Code = alpha2Code})
+    this.activatedRoute.params.subscribe((params) => {
+      console.log(params['alpha2Code']);
+                this._alpha2Code = params['alpha2Code']
+                this._pais.alpha2Code = params['alpha2Code']})
     this.paisService.getPaisPorAlpha(this._alpha2Code)
       .subscribe( pais => {
         this._pais = pais
