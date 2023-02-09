@@ -38,7 +38,6 @@ export class PorRegionComponent {
               console.log("ERROR" +   err)
             }
           })
-          this._termino = ''
     }
   }
 
