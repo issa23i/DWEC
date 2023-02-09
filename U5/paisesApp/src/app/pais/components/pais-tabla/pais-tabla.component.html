@@ -1,1 +1,27 @@
-<p>pais-tabla works!</p>
+<ng-content></ng-content>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Bandera</th>
+        <th>Nombre</th>
+        <th>Población</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pais of paises; let i = index" class="animate__animated animate__fadeIn animate__faster">
+        <!--*ngFor="let pais of paises; let i = index"-->
+        <td>{{i + 1}}</td>
+        <td>
+          <img class="small-flag img-fluid" [src]="pais.flags.svg" />
+        </td>
+        <td>{{pais.name}}</td>
+        <td>{{pais.population}}</td>
+        <td>
+          <a [routerLink]="['/pais',pais.cioc]">
+            Ver...</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-pais-input',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./pais-input.component.css']
 })
 export class PaisInputComponent {
-
+  @Input() termino! : string ;
+  @Input() buscar!: () => void;
+  constructor(private paisServ : PaisService){}
 }

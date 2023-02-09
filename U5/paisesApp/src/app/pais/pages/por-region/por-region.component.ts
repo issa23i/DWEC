@@ -20,6 +20,7 @@ export class PorRegionComponent {
   /** para cambiar el término de búsqueda */
   setRegion(region : string) {
     this._termino = region
+    this.buscar()
   }
 
   buscar(): void {
