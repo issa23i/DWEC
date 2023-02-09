@@ -19,7 +19,7 @@ export class PaisService {
     //indicamos los parámetros que queremos que nos devuelva la petición
     //depende de como funcione la API
     return new HttpParams().set( 'fields',
-    'name,capital,cioc,flags,population' );
+    'name,capital,cioc,flags,population,translations,alpha2Code,alpha3Code' );
     }
 
 
