@@ -22,35 +22,9 @@
       <div *ngIf="hayError" class="alert alert-danger">
         No se encontró nada con el término {{ termino }}
       </div>
+      <!-- uso del componente hijo pais-tabla -->
       <app-pais-tabla [paises]="paises"></app-pais-tabla>
-      <!--
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Bandera</th>
-              <th>Nombre</th>
-              <th>Población</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let pais of paises; let i = index" class="animate__animated animate__fadeIn animate__faster">
-              
-              <td>{{i + 1}}</td>
-              <td>
-                <img class="small-flag img-fluid" [src]="pais.flags.svg" />
-              </td>
-              <td>{{pais.name}}</td>
-              <td>{{pais.population}}</td>
-              <td>
-                <a [routerLink]="['/pais',pais.cioc]">
-                  Ver...</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      -->
+      
     </div>
   </div>
 </div>

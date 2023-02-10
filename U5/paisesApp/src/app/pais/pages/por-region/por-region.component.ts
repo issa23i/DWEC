@@ -12,6 +12,7 @@ export class PorRegionComponent {
   private _paises: Pais[] = [];
   private _termino: string = '';
   
+  // Para obtener las regiones de la API uso Object.values
   private _regiones: Region[] = Object.values(Region);
   
   
