@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, Observable, of } from 'rxjs';
 import { InfoPagina } from '../interfaces/info-pagina';
 
 @Injectable({
@@ -11,17 +12,24 @@ export class InfoPaginaService {
   
 
   constructor(private http: HttpClient) {
-    console.log('Servicio InfoPagina');
-    this.http.get('assets/info.json')
-    .subscribe((resp: any) => {
-      this.infoPagina = resp
-      console.log(this.infoPagina['twitter']);
-    },
-    (err) => {
-      console.error('Ocurrió un erro al acceder a la información ', err)
-    });
+    this.http.get<InfoPagina>('assets/info.json')
+      .pipe(
+        catchError(this.handleError<any>('getInfo'))
+      )
+      .subscribe(resp => {
+        this.infoPagina = resp
+      });
     }
 
+    
+    // manejo de errores
+    private handleError<T>(operation = 'operation', result?: T) {
+      return (error: any): Observable<T> => {
+        console.error(`${operation} failed: ${error.message}`);
+        return of(result as T);
+      };
+    }
+    
     public get infoPagina(): InfoPagina {
       return this._infoPagina;
     }
