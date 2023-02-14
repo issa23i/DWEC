@@ -14,10 +14,11 @@ export class MiembroEquipoService {
   constructor(private httpClient: HttpClient) {
     this.httpClient
       .get<MiembroEquipo[]>(
-        'https://console.firebase.google.com/project/plantillatoangular/database/plantillatoangular-default-rtdb/data/~2F?hl=es-419'
+        'https://plantillatoangular-default-rtdb.europe-west1.firebasedatabase.app/Equipo.json'
       )
       .subscribe({
         next: (resp: MiembroEquipo[]) => {
+          this._cargada = true
           this._equipos = resp;
           console.log(this._equipos)
         },
