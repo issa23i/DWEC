@@ -1,16 +1,4 @@
-- paso 3. página 57 de la teoría, no lo entiendo, ¿donde se inserta el enlace al router link en item?
-    3. También se deben modificar tanto el footer y el item (también tienen menús) se hace igual
-    (para el item solo lo hacemos para el primero, para probar, se cargarán de forma dinámica)
-    Código primer item del componente item:
-        <a
-        href="portfolio-item.html"
-        class="rk-item rk-item--flex item-1 rk-size-12 rk-tosize-6 rk-landscape"
-        >
-        <div class="item-meta">
-        <h2>Essential Stationery</h2>
-        <p>Branding</p>
-        </div>
-        </a>
+* Voy por pagina 63 (Navegación individual de los productos)
 
 search compomente de 
 router.navtigate ( )
