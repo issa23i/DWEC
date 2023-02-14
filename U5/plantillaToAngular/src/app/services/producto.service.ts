@@ -20,7 +20,6 @@ export class ProductoService {
       next: (resp: ProductosIdx[]) => {
         this._cargando = false
         this._productosIdx = resp
-        console.log(this._productosIdx)
       },
       error: (err) => {
         console.error(err)
