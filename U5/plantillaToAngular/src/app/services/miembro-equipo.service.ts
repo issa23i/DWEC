@@ -6,7 +6,7 @@ import { MiembroEquipo } from '../interfaces/miembro-equipo';
   providedIn: 'root',
 })
 export class MiembroEquipoService {
-  private _equipo: MiembroEquipo[] = [];
+  private _equipos: MiembroEquipo[] = [];
   
   private _cargada: boolean = false;
   
@@ -18,7 +18,8 @@ export class MiembroEquipoService {
       )
       .subscribe({
         next: (resp: MiembroEquipo[]) => {
-          this._equipo = resp;
+          this._equipos = resp;
+          console.log(this._equipos)
         },
         error: (err) => {
           console.error(err);
@@ -26,11 +27,11 @@ export class MiembroEquipoService {
       });
   }
 
-  public get equipo(): MiembroEquipo[] {
-    return this._equipo;
+  public get equipos(): MiembroEquipo[] {
+    return this._equipos;
   }
-  public set equipo(value: MiembroEquipo[]) {
-    this._equipo = value;
+  public set equipos(value: MiembroEquipo[]) {
+    this._equipos = value;
   }
   public get cargada(): boolean {
     return this._cargada;

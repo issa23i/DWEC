@@ -8,7 +8,8 @@ import { MiembroEquipoService } from '../../services/miembro-equipo.service';
 })
 export class AboutComponent {
   constructor(private miembroEquipo: MiembroEquipoService){}
-  get equipo(){
-    return this.miembroEquipo.equipo
+  get equipos(){
+    //console.log(this.miembroEquipo.equipo)
+    return this.miembroEquipo.equipos
   }
 }
