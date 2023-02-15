@@ -1,4 +1,4 @@
-* Voy por pagina 64 (Navegación individual de los productos)
+
 
 search compomente de 
 router.navtigate ( )
@@ -11,3 +11,14 @@ un productoSErvices
      indexOf(termino)
      el resultado lo añadimos a un vector productos filtrado
 
+
+
+DUDAS
+
+he tenido que quitar el private de cargar Productos en productosService, 
+porque no me cargaba el array, ni con await
+
+
+TO DO
+
+Arreglar cargando en busqueda

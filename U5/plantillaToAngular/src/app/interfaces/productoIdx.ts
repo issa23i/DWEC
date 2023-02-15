@@ -1,6 +1,6 @@
 export interface ProductosIdx {
-    categoria?: string;
+    categoria: string;
     cod?:       string;
-    titulo?:    string;
+    titulo:    string;
     url?:       string;
 }

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
+import { SearchComponent } from './shared/search/search.component';
+import { VerSearchComponent } from './pages/ver-search/ver-search.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,10 @@ const routes: Routes = [
   {
   path: 'item',
   component: ItemComponent
+  },
+  {
+    path: 'search/:termino',
+    component: VerSearchComponent
   },
   {
   path: '**',
