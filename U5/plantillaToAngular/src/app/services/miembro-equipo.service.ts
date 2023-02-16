@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MiembroEquipo } from '../interfaces/miembro-equipo';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class MiembroEquipoService {
   constructor(private httpClient: HttpClient) {
     this.httpClient
       .get<MiembroEquipo[]>(
-        'https://plantillatoangular-default-rtdb.europe-west1.firebasedatabase.app/Equipo.json'
+        `${environment.baseUrl}/Equipo.json`
       )
       .subscribe({
         next: (resp: MiembroEquipo[]) => {

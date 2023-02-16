@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductosIdx } from '../interfaces/productoIdx';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class ProductoService {
   constructor(private httpClient: HttpClient) {
     this.httpClient
       .get<ProductosIdx[]>(
-        'https://plantillatoangular-default-rtdb.europe-west1.firebasedatabase.app/productos_idx.json'
+        `${environment.baseUrl}/productos_idx.json`
       )
       .subscribe({
         next: (resp: ProductosIdx[]) => {
@@ -33,7 +34,7 @@ export class ProductoService {
 
   getProducto(id: string) {
     return this.httpClient.get(
-      `https://plantillatoangular-default-rtdb.europe-west1.firebasedatabase.app/productos/${id}.json`
+      `${environment.baseUrl}/productos/${id}.json`
     );
   }
 
@@ -41,7 +42,7 @@ export class ProductoService {
     return new Promise<void>((resolve, reject) => {
       this.httpClient
         .get<ProductosIdx[]>(
-          'https://plantillatoangular-default-rtdb.europe-west1.firebasedatabase.app/productos_idx.json'
+          `${environment.baseUrl}/productos_idx.json`
         )
         .subscribe((resp: ProductosIdx[]) => {
           this.productosIdx = resp;
