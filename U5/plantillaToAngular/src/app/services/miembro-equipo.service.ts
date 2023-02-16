@@ -21,7 +21,6 @@ export class MiembroEquipoService {
         next: (resp: MiembroEquipo[]) => {
           this._cargada = true
           this._equipos = resp;
-          console.log(this._equipos)
         },
         error: (err) => {
           console.error(err);
