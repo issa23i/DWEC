@@ -11,15 +11,18 @@
     </label>
     <div _ngcontent-lwj-c12="" class="ae-container-fluid rk-topbar">
         <h1 _ngcontent-lwj-c12="" class="rk-logo">
-            <a _ngcontent-lwj-c12="" routerlink="home">{{info.titulo}}<sup _ngcontent-lwj-c12="">tm</sup></a>
+            <a _ngcontent-lwj-c12="" [routerLink]="'/home'"
+            >{{info.titulo}}<sup _ngcontent-lwj-c12="">tm</sup></a>
         </h1>
         <nav _ngcontent-lwj-c12="" class="rk-navigation">
             <ul _ngcontent-lwj-c12="" class="rk-menu">
                 <li _ngcontent-lwj-c12="" routerlinkactive="active" class="rk-menu__item active">
-                    <a routerLink="home" class="rk-menu__link">Home</a>
+                    <a [routerLink]="'/home'"
+                    class="rk-menu__link">Home</a>
                 </li>
                 <li _ngcontent-lwj-c12="" routerlinkactive="active" class="rk-menu__item">
-                    <a routerLink="about" class="rk-menu__link">About</a>
+                    <a [routerLink]="'/about'"
+                    class="rk-menu__link">About</a>
                 </li>
             </ul>
             <app-search></app-search>
