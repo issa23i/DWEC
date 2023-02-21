@@ -1,0 +1,12 @@
+<h2>Busquedas</h2>
+<hr>
+<ul class="list-group">
+<!-- Este primer RouterLink es igual a "" porque tal y como tenemos en el app-routing.module.ts,
+    al buscar por pais el path es "" y por eso es obligatorio usar el 
+    [routerLinkActiveOptions]="{ exact: true }" -->
+
+    <li class="list-group-item">
+       <a  routerLinkActive="active-link" routerLink="" [routerLinkActiveOptions]="{ exact: true }">Buscar país</a> 
+    </li>
+</ul>
+
