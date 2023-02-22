@@ -1,0 +1,30 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="bebida.strDrinkThumb" class="card-img-top" [alt]="bebida.strDrink">
+    
+    <ul class="list-group list-group-flush">
+      <li *ngIf="bebida.strIngredient1 !== null" class="list-group-item"> <span>{{bebida.strMeasure1}}</span>  {{bebida.strIngredient1}}</li>
+      <li *ngIf="bebida.strIngredient2 !== null" class="list-group-item"> <span>{{bebida.strMeasure2}}</span>  {{bebida.strIngredient2}}</li>
+      <li *ngIf="bebida.strIngredient3 !== null" class="list-group-item"> <span>{{bebida.strMeasure3}}</span>  {{bebida.strIngredient3}}</li>
+      <li *ngIf="bebida.strIngredient4 !== null" class="list-group-item"> <span>{{bebida.strMeasure4}}</span>  {{bebida.strIngredient4}}</li>
+      <li *ngIf="bebida.strIngredient5 !== null" class="list-group-item"> <span>{{bebida.strMeasure5}}</span>  {{bebida.strIngredient5}}</li>
+      <li *ngIf="bebida.strIngredient6 !== null" class="list-group-item"> <span>{{bebida.strMeasure6}}</span>  {{bebida.strIngredient6}}</li>
+      <li *ngIf="bebida.strIngredient7 !== null" class="list-group-item"> <span>{{bebida.strMeasure7}}</span>  {{bebida.strIngredient7}}</li>
+      <li *ngIf="bebida.strIngredient8 !== null" class="list-group-item"> <span>{{bebida.strMeasure8}}</span>  {{bebida.strIngredient8}}</li>
+      <li *ngIf="bebida.strIngredient9 !== null" class="list-group-item"> <span>{{bebida.strMeasure9}}</span>  {{bebida.strIngredient9}}</li>
+      <li *ngIf="bebida.strIngredient10 !== null" class="list-group-item"> <span>{{bebida.strMeasure10}}</span>  {{bebida.strIngredient10}}</li>
+      <li *ngIf="bebida.strIngredient11 !== null" class="list-group-item"> <span>{{bebida.strMeasure11}}</span>  {{bebida.strIngredient11}}</li>
+      <li *ngIf="bebida.strIngredient12 !== null" class="list-group-item"> <span>{{bebida.strMeasure12}}</span>  {{bebida.strIngredient12}}</li>
+      <li *ngIf="bebida.strIngredient13 !== null" class="list-group-item"> <span>{{bebida.strMeasure13}}</span>  {{bebida.strIngredient13}}</li>
+      <li *ngIf="bebida.strIngredient14 !== null" class="list-group-item"> <span>{{bebida.strMeasure14}}</span>  {{bebida.strIngredient14}}</li>
+      <li *ngIf="bebida.strIngredient15 !== null" class="list-group-item"> <span>{{bebida.strMeasure15}}</span>  {{bebida.strIngredient15}}</li>
+    </ul>
+
+    <div class="card-body">
+      <h5 class="card-title">{{bebida.strDrink}}</h5>
+      <p class="card-text">{{bebida.strInstructions}}</p>
+    </div>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>

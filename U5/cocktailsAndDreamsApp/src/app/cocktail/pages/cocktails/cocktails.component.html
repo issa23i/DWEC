@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row p-3">
+      <div class="col">
+        <h5>Buscar:</h5>
+        <!-- Disparar evento (keyup.enter) con el contenido de la caja de búsqueda -->
+        <!-- El atributo valor en el componente busqueda recoje el texto de la entrada del usuario -->
+        <!-- Uso del Módulo FormModule en [(ngModel)] -->
+        <input type="text" class="form-control" placeholder="Buscar cocktails..." 
+        [(ngModel)]="termino" (keyup.enter)="buscar()"/>
+      </div>
+    </div>
+    <hr />
+    <app-tabla></app-tabla>
+  </div>

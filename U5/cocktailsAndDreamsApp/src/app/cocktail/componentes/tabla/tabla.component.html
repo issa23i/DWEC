@@ -1,0 +1,12 @@
+<div class="container text-center">
+  <div *ngFor="let bebida of bebidas" class="row">
+    <div class="card" style="width: 18rem;">
+      <img [src]="bebida.strDrinkThumb" class="card-img-top" [alt]="bebida.strDrink">
+      <div class="card-body">
+        <h5 class="card-title">{{bebida.strDrink}}</h5>
+
+        <a [routerLink]="['/cocktails', bebida.idDrink]" class="btn btn-primary">Ver receta</a>
+      </div>
+    </div>
+  </div>
+</div>
