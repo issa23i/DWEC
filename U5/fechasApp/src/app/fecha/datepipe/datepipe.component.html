@@ -19,4 +19,12 @@
     <td ngNonBindable>{{ fecha | date : "d/M/y HH:mm:ss" }}</td>
     <td>{{ fecha | date : "d/M/y HH:mm:ss" }}</td>
   </tr>
+  <tr>
+    <td>{{ numero | currency : 'EUR'}}</td>
+    <td>{{ numero | percent}}</td>
+  </tr>
+  <tr>
+    <td>{{ frase | uppercase}}</td>
+    <td>{{ frase | titlecase }}</td>
+  </tr>
 </table>
