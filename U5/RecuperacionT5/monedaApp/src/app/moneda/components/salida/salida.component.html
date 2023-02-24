@@ -1,0 +1,16 @@
+<div *ngIf="hayPaises;else noHay" class="container">
+   
+    <div *ngFor="let pais of paises" class="card" style="width: 18rem;">
+        <img [src]="pais.flags.svg" class="card-img-top" [alt]="pais.name">
+        <div class="card-body">
+          <h5 class="card-title">{{pais.name}}</h5>
+          <p class="card-text">Población : {{pais.population}}</p>
+          <p class="card-text">Idioma : {{pais.languages[0].name}}</p>
+          <a [routerLink]="['/moneda', pais.alpha2Code]"  class="btn btn-primary">Ver...</a>
+          
+        </div>
+      </div>
+</div>
+<ng-template #noHay>
+  No hay paises con esa moneda
+</ng-template>
