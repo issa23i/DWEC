@@ -8,14 +8,16 @@ import { ApiService } from '../../services/api.service';
 })
 export class SalidaComponent {
 
-  private _hayPaises: boolean = false;
+  private _hayPaises: boolean = true;
   constructor(private servAPI : ApiService){
 
   }
   get paises(){
     if(this.servAPI.paises.length>0){
       this._hayPaises=true
-    } 
+    } else {
+      this._hayPaises=false
+    }
     return this.servAPI.paises
   }
   
